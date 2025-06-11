@@ -1,0 +1,29 @@
+[package]
+name = "uu_users"
+description = "users ~ (uutils) display names of currently logged-in users"
+repository = "https://github.com/uutils/coreutils/tree/main/src/uu/users"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+edition.workspace = true
+readme.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/users.rs"
+
+[dependencies]
+clap = { workspace = true }
+uucore = { workspace = true, features = ["utmpx"] }
+
+[target.'cfg(target_os = "openbsd")'.dependencies]
+utmp-classic = { workspace = true }
+
+[[bin]]
+name = "users"
+path = "src/main.rs"

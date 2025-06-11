@@ -1,0 +1,26 @@
+[package]
+name = "uu_stdbuf_libstdbuf"
+description = "stdbuf/libstdbuf ~ (uutils); dynamic library required for stdbuf"
+repository = "https://github.com/uutils/coreutils/tree/main/src/uu/stdbuf"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+edition.workspace = true
+
+[lib]
+name = "libstdbuf"
+path = "src/libstdbuf.rs"
+crate-type = [
+  "cdylib",
+  "rlib",
+] # XXX: note: the rlib is just to prevent Cargo from spitting out a warning
+
+[dependencies]
+cpp = "0.5.10"
+libc = { workspace = true }
+
+[build-dependencies]
+cpp_build = "0.5.10"

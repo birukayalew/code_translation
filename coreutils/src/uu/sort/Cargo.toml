@@ -1,0 +1,41 @@
+[package]
+name = "uu_sort"
+description = "sort ~ (uutils) sort input lines"
+repository = "https://github.com/uutils/coreutils/tree/main/src/uu/sort"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+edition.workspace = true
+readme.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/sort.rs"
+
+[dependencies]
+binary-heap-plus = { workspace = true }
+clap = { workspace = true }
+compare = { workspace = true }
+ctrlc = { workspace = true }
+fnv = { workspace = true }
+itertools = { workspace = true }
+memchr = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+self_cell = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+unicode-width = { workspace = true }
+uucore = { workspace = true, features = ["fs", "parser", "version-cmp"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+nix = { workspace = true }
+
+[[bin]]
+name = "sort"
+path = "src/main.rs"

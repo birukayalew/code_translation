@@ -1,0 +1,4 @@
+# clippy.toml
+disallowed-macros = [
+    { path = "std::dbg", reason = "Avoid leaving debug code in production" },
+]

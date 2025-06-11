@@ -1,0 +1,67 @@
+#![allow(clippy::missing_docs_in_private_items, reason="To focus only on important warnings.")]
+mod async_concurrency_issues;
+mod attribute_issues;
+mod compatibility;
+mod convention_violation;
+mod documentation_issues;
+mod error_handling_issues;
+mod formatting_issues;
+mod implementation_issues;
+mod inflexible_code;
+mod integer_overflow;
+mod invalid_pointer_casting;
+mod logical_issue;
+mod misleading_code;
+mod missing_unsafe_block;
+mod non_production_code;
+mod performance;
+mod pointer_aliasing;
+mod policy_violation;
+mod precision_issues;
+mod readabillity_issues;
+mod redundant_code;
+mod resource_leak;
+mod run_time_panic_risks;
+mod security;
+mod stack_overflow;
+mod thread_safety;
+mod type_safety;
+mod underflow_issues;
+mod unnecessary_unsafe;
+mod unsafe_initialization;
+mod unsafe_transmute;
+
+
+fn main() {
+    async_concurrency_issues::run();
+    attribute_issues::run();
+    compatibility::run();
+    convention_violation::run();
+    documentation_issues::run();
+    error_handling_issues::run();
+    formatting_issues::run();
+    implementation_issues::run();
+    inflexible_code::run();
+    integer_overflow::run();
+    invalid_pointer_casting::run();
+    logical_issue::run();
+    misleading_code::run();
+    missing_unsafe_block::run();
+    non_production_code::run();
+    performance::run();
+    pointer_aliasing::run();
+    policy_violation::run();
+    precision_issues::run();
+    readabillity_issues::run();
+    redundant_code::run();
+    resource_leak::run();
+    run_time_panic_risks::run();
+    security::run();
+    stack_overflow::run();
+    thread_safety::run();
+    type_safety::run();
+    underflow_issues::run();
+    unnecessary_unsafe::run();
+    unsafe_initialization::run();
+    unsafe_transmute::run();
+}

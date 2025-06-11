@@ -1,0 +1,12 @@
+[package]
+name = "sanity_main"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/biruk/sanity_main"
+description = "Simple summary"
+readme = "README.md"
+keywords = ["clippy", "sanity", "analysis"]
+categories = ["development-tools::linter"]
+
+[dependencies]
+futures = "0.3"

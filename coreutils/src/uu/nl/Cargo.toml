@@ -1,0 +1,27 @@
+[package]
+name = "uu_nl"
+description = "nl ~ (uutils) display input with added line numbers"
+repository = "https://github.com/uutils/coreutils/tree/main/src/uu/nl"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+edition.workspace = true
+readme.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+path = "src/nl.rs"
+
+[dependencies]
+clap = { workspace = true }
+regex = { workspace = true }
+uucore = { workspace = true }
+
+[[bin]]
+name = "nl"
+path = "src/main.rs"

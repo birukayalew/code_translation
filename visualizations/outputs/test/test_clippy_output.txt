@@ -1,0 +1,536 @@
+    Checking sanity_main v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/sanity_tests)
+warning: unused import: `NonZeroU64`
+ --> src/type_safety.rs:7:28
+  |
+7 | use std::num::{NonZeroU32, NonZeroU64};
+  |                            ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused variable: `y`
+ --> src/convention_violation.rs:5:9
+  |
+5 |     let y = _x + 1; 
+  |         ^ help: if this is intentional, prefix it with an underscore: `_y`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `midpoint`
+ --> src/integer_overflow.rs:9:9
+  |
+9 |     let midpoint = (a + b) / 2; 
+  |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_midpoint`
+
+warning: unused variable: `mut_ptr`
+  --> src/invalid_pointer_casting.rs:13:9
+   |
+13 |     let mut_ptr: *mut u32 = &mut 42_u32;
+   |         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_mut_ptr`
+
+warning: unused variable: `y`
+ --> src/precision_issues.rs:4:9
+  |
+4 |     let y = x as f64;
+  |         ^ help: if this is intentional, prefix it with an underscore: `_y`
+
+warning: unused variable: `first`
+ --> src/readabillity_issues.rs:6:9
+  |
+6 |     let first = array[2..].iter().next();
+  |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_first`
+
+warning: unused variable: `a`
+  --> src/thread_safety.rs:12:9
+   |
+12 |     let a = Arc::new(42);
+   |         ^ help: if this is intentional, prefix it with an underscore: `_a`
+
+warning: unused variable: `b`
+  --> src/thread_safety.rs:16:9
+   |
+16 |     let b = Arc::new(RefCell::new(42));
+   |         ^ help: if this is intentional, prefix it with an underscore: `_b`
+
+warning: unused variable: `c`
+  --> src/thread_safety.rs:20:9
+   |
+20 |     let c = Arc::new(RwLock::new(42));
+   |         ^ help: if this is intentional, prefix it with an underscore: `_c`
+
+warning: unused variable: `r1`
+  --> src/type_safety.rs:11:9
+   |
+11 |     let r1 = x / u64::from(y.get());
+   |         ^^ help: if this is intentional, prefix it with an underscore: `_r1`
+
+warning: unused variable: `time_passed`
+ --> src/underflow_issues.rs:9:9
+  |
+9 |     let time_passed = Instant::now() - Duration::from_secs(5);
+  |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_time_passed`
+
+warning: unused variable: `b`
+  --> src/unsafe_transmute.rs:11:9
+   |
+11 |     let b: bool = unsafe { std::mem::transmute(x) };
+   |         ^ help: if this is intentional, prefix it with an underscore: `_b`
+
+warning: fields `some_field` and `last` are never read
+ --> src/attribute_issues.rs:4:5
+  |
+3 | struct RarelyUseful {
+  |        ------------ fields in this struct
+4 |     some_field: u32,
+  |     ^^^^^^^^^^
+5 |     last: [u32; 0], // ⚠️ Triggers the lint
+  |     ^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: struct `Foo` is never constructed
+ --> src/implementation_issues.rs:6:8
+  |
+6 | struct Foo(u32);
+  |        ^^^
+
+warning: function `as_u64` is never used
+ --> src/misleading_code.rs:4:4
+  |
+4 | fn as_u64(x: u8) -> u64 {
+  |    ^^^^^^
+
+warning: function `foo` is never used
+ --> src/performance.rs:5:4
+  |
+5 | fn foo(values: &[u8]) -> bool {
+  |    ^^^
+
+warning: function `readability_issues_example` is never used
+ --> src/readabillity_issues.rs:4:4
+  |
+4 | fn readability_issues_example() {
+  |    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `type_safety_example` is never used
+ --> src/type_safety.rs:9:4
+  |
+9 | fn type_safety_example(x: u64, y: NonZeroU32) {
+  |    ^^^^^^^^^^^^^^^^^^^
+
+warning: function `unnecessary_unsafe_example` is never used
+ --> src/unnecessary_unsafe.rs:6:10
+  |
+6 | const fn unnecessary_unsafe_example() {
+  |          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `clippy_example_unsafe_initialization` is never used
+ --> src/unsafe_initialization.rs:6:10
+  |
+6 | const fn clippy_example_unsafe_initialization() {
+  |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `unsafe_transmute_example` is never used
+ --> src/unsafe_transmute.rs:7:4
+  |
+7 | fn unsafe_transmute_example() {
+  |    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: package `sanity_main` is missing `either package.license or package.license_file` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+  = note: `-W clippy::cargo-common-metadata` implied by `-W clippy::cargo`
+  = help: to override `-W clippy::cargo` add `#[allow(clippy::cargo_common_metadata)]`
+
+warning: this `RefCell` reference is held across an await point
+  --> src/async_concurrency_issues.rs:14:9
+   |
+14 |     let mut y = x.borrow_mut(); // This is held across await
+   |         ^^^^^
+   |
+   = help: ensure the reference is dropped before calling `await`
+note: these are all the await points this reference is held through
+  --> src/async_concurrency_issues.rs:16:11
+   |
+16 |     baz().await; // ⚠️ Lint should trigger here
+   |           ^^^^^
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#await_holding_refcell_ref
+   = note: `-W clippy::await-holding-refcell-ref` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::await_holding_refcell_ref)]`
+
+warning: trailing zero-sized array in a struct which is not marked with a `repr` attribute
+ --> src/attribute_issues.rs:3:1
+  |
+3 | / struct RarelyUseful {
+4 | |     some_field: u32,
+5 | |     last: [u32; 0], // ⚠️ Triggers the lint
+6 | | }
+  | |_^
+  |
+  = help: consider annotating `attribute_issues::RarelyUseful` with `#[repr(C)]` or another `repr` attribute
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#trailing_empty_array
+  = note: `-W clippy::trailing-empty-array` implied by `-W clippy::nursery`
+  = help: to override `-W clippy::nursery` add `#[allow(clippy::trailing_empty_array)]`
+
+warning: using `str.trim().split()` with hard-coded newlines
+ --> src/compatibility.rs:5:17
+  |
+5 |     for line in text.trim().split('\n') {
+  |                 ^^^^^^^^^^^^^^^^^^^^^^^ help: use `str.lines()` instead: `text.lines()`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#str_split_at_newline
+  = note: `-W clippy::str-split-at-newline` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::str_split_at_newline)]`
+
+warning: used underscore-prefixed binding
+ --> src/convention_violation.rs:5:13
+  |
+5 |     let y = _x + 1; 
+  |             ^^
+  |
+note: binding is defined here
+ --> src/convention_violation.rs:4:9
+  |
+4 |     let _x = 0;
+  |         ^^
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#used_underscore_binding
+  = note: `-W clippy::used-underscore-binding` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::used_underscore_binding)]`
+
+warning: doc list item overindented
+ --> src/documentation_issues.rs:3:5
+  |
+3 | ///        and this line is overindented
+  |     ^^^^^^^ help: try using `  ` (2 spaces)
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#doc_overindented_list_items
+  = note: `-W clippy::doc-overindented-list-items` implied by `-W clippy::all`
+  = help: to override `-W clippy::all` add `#[allow(clippy::doc_overindented_list_items)]`
+
+warning: `Err(_)` matches all errors
+ --> src/error_handling_issues.rs:8:9
+  |
+8 |         Err(_) => panic!("err"),
+  |         ^^^^^^
+  |
+  = note: match each error separately or use the error output, or use `.expect(msg)` if the error case is unreachable
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_wild_err_arm
+  = note: `-W clippy::match-wild-err-arm` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::match_wild_err_arm)]`
+
+warning: unnecessary `Debug` formatting in `println!` args
+  --> src/formatting_issues.rs:10:34
+   |
+10 |     println!("The path is {:?}", path);
+   |                                  ^^^^
+   |
+   = help: use `Display` formatting and change this to `path.display()`
+   = note: switching to `Display` formatting will change how the value is shown; escaped characters will no longer be escaped and surrounding quotes will be removed
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_debug_formatting
+   = note: `-W clippy::unnecessary-debug-formatting` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::unnecessary_debug_formatting)]`
+
+warning: non-canonical implementation of `clone` on a `Copy` type
+  --> src/implementation_issues.rs:9:29
+   |
+9  |       fn clone(&self) -> Self {
+   |  _____________________________^
+10 | |         Self(self.0)
+11 | |     }
+   | |_____^ help: change this to: `{ *self }`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#non_canonical_clone_impl
+   = note: `-W clippy::non-canonical-clone-impl` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::non_canonical_clone_impl)]`
+
+warning: this could be a `const fn`
+ --> src/inflexible_code.rs:2:1
+  |
+2 | pub fn run() {}
+  | ^^^^^^^^^^^^^^^
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+  = note: `-W clippy::missing-const-for-fn` implied by `-W clippy::nursery`
+  = help: to override `-W clippy::nursery` add `#[allow(clippy::missing_const_for_fn)]`
+help: make the function `const`
+  |
+2 | pub const fn run() {}
+  |     +++++
+
+warning: manual implementation of `midpoint` which can overflow
+ --> src/integer_overflow.rs:9:20
+  |
+9 |     let midpoint = (a + b) / 2; 
+  |                    ^^^^^^^^^^^ help: use `i32::midpoint` instead: `i32::midpoint(a, b)`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_midpoint
+  = note: `-W clippy::manual-midpoint` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::manual_midpoint)]`
+
+warning: `as` casting between raw pointers without changing their constness
+  --> src/invalid_pointer_casting.rs:14:13
+   |
+14 |     let _ = ptr as *const i32;
+   |             ^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `ptr.cast::<i32>()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+   = note: `-W clippy::ptr-as-ptr` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::ptr_as_ptr)]`
+
+warning: this `if` has the same function call as a previous `if`
+  --> src/logical_issue.rs:13:15
+   |
+13 |     } else if foo() == 1 {
+   |               ^^^^^^^^^^
+   |
+note: same as this
+  --> src/logical_issue.rs:11:8
+   |
+11 |     if foo() == 1 {
+   |        ^^^^^^^^^^
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#same_functions_in_if_condition
+   = note: `-W clippy::same-functions-in-if-condition` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::same_functions_in_if_condition)]`
+
+warning: casts from `u8` to `u64` can be expressed infallibly using `From`
+ --> src/misleading_code.rs:5:5
+  |
+5 |     x as u64
+  |     ^^^^^^^^
+  |
+  = help: an `as` cast can become silently lossy if the types change in the future
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+  = note: `-W clippy::cast-lossless` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::cast_lossless)]`
+help: use `u64::from` instead
+  |
+5 -     x as u64
+5 +     u64::from(x)
+  |
+
+warning: `panic` should not be present in production code
+ --> src/non_production_code.rs:6:5
+  |
+6 |     panic!("Even with a good reason");
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#panic
+note: the lint level is defined here
+ --> src/non_production_code.rs:3:8
+  |
+3 | #[warn(clippy::panic)]   // restriction group.
+  |        ^^^^^^^^^^^^^
+
+warning: using `contains()` instead of `iter().any()` is more efficient
+ --> src/performance.rs:6:5
+  |
+6 |     values.iter().any(|&v| v == 10)
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `values.contains(&10)`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_contains
+  = note: `-W clippy::manual-contains` implied by `-W clippy::all`
+  = help: to override `-W clippy::all` add `#[allow(clippy::manual_contains)]`
+
+warning: call to `core::mem::swap` with a parameter derived from a raw pointer
+  --> src/pointer_aliasing.rs:13:9
+   |
+13 |         core::mem::swap(&mut *x, &mut *y);
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: use ptr::swap: `core::ptr::swap(x, y)`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#swap_ptr_to_ref
+   = note: `-W clippy::swap-ptr-to-ref` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::swap_ptr_to_ref)]`
+
+warning: use of a disallowed macro `std::dbg`
+  --> src/policy_violation.rs:10:5
+   |
+10 |     dbg!(x);
+   |     ^^^^^^^
+   |
+   = note: Avoid leaving debug code in production
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#disallowed_macros
+   = note: `-W clippy::disallowed-macros` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::disallowed_macros)]`
+
+warning: casting `u64` to `f64` causes a loss of precision (`u64` is 64 bits wide, but `f64`'s mantissa is only 52 bits wide)
+ --> src/precision_issues.rs:4:13
+  |
+4 |     let y = x as f64;
+  |             ^^^^^^^^
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_precision_loss
+  = note: `-W clippy::cast-precision-loss` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::cast_precision_loss)]`
+
+warning: using `.iter().next()` on a Slice without end index
+ --> src/readabillity_issues.rs:6:17
+  |
+6 |     let first = array[2..].iter().next();
+  |                 ^^^^^^^^^^^^^^^^^^^^^^^^ help: try calling: `array.get(2)`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#iter_next_slice
+  = note: `-W clippy::iter-next-slice` implied by `-W clippy::all`
+  = help: to override `-W clippy::all` add `#[allow(clippy::iter_next_slice)]`
+
+warning: this function has a `#[must_use]` attribute with no message, but returns a type already marked as `#[must_use]`
+ --> src/redundant_code.rs:8:1
+  |
+8 | fn double_must_use() -> Result<(), ()> {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = help: either add some descriptive message or remove the attribute
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#double_must_use
+  = note: `-W clippy::double-must-use` implied by `-W clippy::all`
+  = help: to override `-W clippy::all` add `#[allow(clippy::double_must_use)]`
+
+warning: spawned process is never `wait()`ed on
+ --> src/resource_leak.rs:7:18
+  |
+7 |       let _child = Command::new("ls")
+  |  __________________^
+8 | |         .spawn()
+9 | |         .expect("failed to execute child");
+  | |__________________________________________^
+  |
+  = help: consider calling `.wait()`
+  = note: not doing so might leave behind zombie processes
+  = note: see https://doc.rust-lang.org/stable/std/process/struct.Child.html#warning
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#zombie_processes
+  = note: `-W clippy::zombie-processes` implied by `-W clippy::all`
+  = help: to override `-W clippy::all` add `#[allow(clippy::zombie_processes)]`
+
+warning: this binding can be a slice pattern to avoid indexing
+  --> src/run_time_panic_risks.rs:12:17
+   |
+12 |     if let Some(slice) = slice {
+   |                 ^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#index_refutable_slice
+   = note: `-W clippy::index-refutable-slice` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::index_refutable_slice)]`
+help: replace the binding and indexed access with a slice pattern
+   |
+12 ~     if let Some([slice_0, ..]) = slice {
+13 ~         println!("Risky access: {}", slice_0);
+   |
+
+warning: use of / has been disallowed in this context
+ --> src/security.rs:9:18
+  |
+9 |     let my_div = 10 / 2;
+  |                  ^^^^^^
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#integer_division_remainder_used
+note: the lint level is defined here
+ --> src/security.rs:6:8
+  |
+6 | #[warn(clippy::integer_division_remainder_used)]
+  |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: allocating a local array larger than 16384 bytes
+ --> src/stack_overflow.rs:8:13
+  |
+8 |     let a = [0u32; 1_000_000];
+  |             ^^^^^^^^^^^^^^^^^
+  |
+  = help: consider allocating on the heap with `vec![0u32; 1_000_000].into_boxed_slice()`
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#large_stack_arrays
+  = note: `-W clippy::large-stack-arrays` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::large_stack_arrays)]`
+
+warning: usage of an `Arc` that is not `Send` and `Sync`
+  --> src/thread_safety.rs:16:13
+   |
+16 |     let b = Arc::new(RefCell::new(42));
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `Arc<RefCell<i32>>` is not `Send` and `Sync` as `RefCell<i32>` is not `Sync`
+   = help: if the `Arc` will not used be across threads replace it with an `Rc`
+   = help: otherwise make `RefCell<i32>` `Send` and `Sync` or consider a wrapper type such as `Mutex`
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#arc_with_non_send_sync
+   = note: `-W clippy::arc-with-non-send-sync` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::arc_with_non_send_sync)]`
+
+warning: consider using `NonZeroU64::from()` for more efficient and type-safe conversion
+  --> src/type_safety.rs:11:18
+   |
+11 |     let r1 = x / u64::from(y.get());
+   |                  ^^^^^^^^^^^^^^^^^^ help: replace with: `NonZeroU64::from(y)`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#non_zero_suggestions
+note: the lint level is defined here
+  --> src/type_safety.rs:6:9
+   |
+6  | #![warn(clippy::non_zero_suggestions)]
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unchecked subtraction of a 'Duration' from an 'Instant'
+ --> src/underflow_issues.rs:9:23
+  |
+9 |     let time_passed = Instant::now() - Duration::from_secs(5);
+  |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `Instant::now().checked_sub(Duration::from_secs(5)).unwrap()`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unchecked_duration_subtraction
+  = note: `-W clippy::unchecked-duration-subtraction` implied by `-W clippy::pedantic`
+  = help: to override `-W clippy::pedantic` add `#[allow(clippy::unchecked_duration_subtraction)]`
+
+warning: `NonZeroUsize::new()` and `Option::unwrap()` can be safely used in a `const` context
+ --> src/unnecessary_unsafe.rs:9:42
+  |
+9 |     const PLAYERS_UNSAFE: NonZeroUsize = unsafe { NonZeroUsize::new_unchecked(3) };
+  |                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: use instead: `NonZeroUsize::new(3).unwrap()`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_nonzero_new_unchecked
+  = note: `-W clippy::useless-nonzero-new-unchecked` implied by `-W clippy::all`
+  = help: to override `-W clippy::all` add `#[allow(clippy::useless_nonzero_new_unchecked)]`
+
+warning: this call for this type may be undefined behavior
+ --> src/unsafe_initialization.rs:8:29
+  |
+8 |     let _: usize = unsafe { MaybeUninit::uninit().assume_init() };
+  |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninit_assumed_init
+  = note: `-W clippy::uninit-assumed-init` implied by `-W clippy::all`
+  = help: to override `-W clippy::all` add `#[allow(clippy::uninit_assumed_init)]`
+
+warning: transmute from a `u8` to a `bool`
+  --> src/unsafe_transmute.rs:11:28
+   |
+11 |     let b: bool = unsafe { std::mem::transmute(x) };
+   |                            ^^^^^^^^^^^^^^^^^^^^^^ help: consider using: `x != 0`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#transmute_int_to_bool
+   = note: `-W clippy::transmute-int-to-bool` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::transmute_int_to_bool)]`
+
+warning: the type `usize` does not permit being left uninitialized
+ --> src/unsafe_initialization.rs:8:29
+  |
+8 |     let _: usize = unsafe { MaybeUninit::uninit().assume_init() };
+  |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |                             |
+  |                             this code causes undefined behavior when executed
+  |                             help: use `MaybeUninit<T>` instead, and only call `assume_init` after initialization is done
+  |
+  = note: integers must be initialized
+  = note: `#[warn(invalid_value)]` on by default
+
+warning: this lint expectation is unfulfilled
+ --> src/error_handling_issues.rs:2:11
+  |
+2 | #![expect(clippy::unnecessary_literal_unwrap, reason="Focus on important lints")]
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: Focus on important lints
+  = note: `#[warn(unfulfilled_lint_expectations)]` on by default
+
+warning: this lint expectation is unfulfilled
+ --> src/invalid_pointer_casting.rs:5:11
+  |
+5 | #![expect(clippy::fn_to_numeric_cast, reason="Focus on important lints")]
+  |           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: Focus on important lints
+
+warning: `sanity_main` (bin "sanity_main") generated 55 warnings (run `cargo clippy --fix --bin "sanity_main"` to apply 11 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 5.14s

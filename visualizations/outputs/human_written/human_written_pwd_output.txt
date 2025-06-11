@@ -1,0 +1,744 @@
+warning: package `uucore` is missing `package.readme` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+  = note: `-W clippy::cargo-common-metadata` implied by `-W clippy::cargo`
+  = help: to override `-W clippy::cargo` add `#[allow(clippy::cargo_common_metadata)]`
+
+warning: package `uucore_procs` is missing `package.readme` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `uucore_procs` is missing `package.categories` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `uuhelp_parser` is missing `package.readme` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `uuhelp_parser` is missing `package.keywords` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `uuhelp_parser` is missing `package.categories` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `uu_stdbuf_libstdbuf` is missing `package.readme` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `uutests` is missing `package.readme` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: this function could have a `#[must_use]` attribute
+  --> src/uuhelp_parser/src/lib.rs:31:1
+   |
+31 | pub fn parse_about(content: &str) -> String {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn parse_about(content: &str) -> String`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+   = note: `-W clippy::must-use-candidate` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::must_use_candidate)]`
+
+warning: this function could have a `#[must_use]` attribute
+  --> src/uuhelp_parser/src/lib.rs:50:1
+   |
+50 | pub fn parse_usage(content: &str) -> String {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn parse_usage(content: &str) -> String`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: this function could have a `#[must_use]` attribute
+  --> src/uuhelp_parser/src/lib.rs:73:1
+   |
+73 | pub fn parse_section(section: &str, content: &str) -> Option<String> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn parse_section(section: &str, content: &str) -> Option<String>`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: `uuhelp_parser` (lib) generated 11 warnings (run `cargo clippy --fix --lib -p uuhelp_parser` to apply 3 suggestions)
+warning: docs for function which may panic missing `# Panics` section
+  --> src/uucore_procs/src/lib.rs:70:1
+   |
+70 | pub fn help_about(input: TokenStream) -> TokenStream {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: first possible panic found here
+  --> src/uucore_procs/src/lib.rs:74:5
+   |
+74 | /     assert!(
+75 | |         !text.is_empty(),
+76 | |         "About text not found! Make sure the markdown format is correct"
+77 | |     );
+   | |_____^
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+   = note: `-W clippy::missing-panics-doc` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::missing_panics_doc)]`
+
+warning: docs for function which may panic missing `# Panics` section
+  --> src/uucore_procs/src/lib.rs:88:1
+   |
+88 | pub fn help_usage(input: TokenStream) -> TokenStream {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: first possible panic found here
+  --> src/uucore_procs/src/lib.rs:92:5
+   |
+92 | /     assert!(
+93 | |         !text.is_empty(),
+94 | |         "Usage text not found! Make sure the markdown format is correct"
+95 | |     );
+   | |_____^
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/uucore_procs/src/lib.rs:124:1
+    |
+124 | pub fn help_section(input: TokenStream) -> TokenStream {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+note: first possible panic found here
+   --> src/uucore_procs/src/lib.rs:133:9
+    |
+133 | /         panic!(
+134 | |             "The section '{section}' could not be found in the help file. Maybe it is spelled wrong?"
+135 | |         )
+    | |_________^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: use Option::map_or_else instead of an if let/else
+   --> src/uucore_procs/src/lib.rs:129:5
+    |
+129 | /     if let Some(text) = uuhelp_parser::parse_section(&section, &read_help(&filename)) {
+130 | |         let rendered = render_markdown(&text);
+131 | |         TokenTree::Literal(Literal::string(&rendered)).into()
+132 | |     } else {
+...   |
+136 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+    = note: `-W clippy::option-if-let-else` implied by `-W clippy::nursery`
+    = help: to override `-W clippy::nursery` add `#[allow(clippy::option_if_let_else)]`
+help: try
+    |
+129 ~     uuhelp_parser::parse_section(&section, &read_help(&filename)).map_or_else(|| panic!(
+130 +             "The section '{section}' could not be found in the help file. Maybe it is spelled wrong?"
+131 +         ), |text| {
+132 +         let rendered = render_markdown(&text);
+133 +         TokenTree::Literal(Literal::string(&rendered)).into()
+134 +     })
+    |
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/uucore_procs/src/lib.rs:143:1
+    |
+143 | fn get_argument(input: &[TokenTree], index: usize, name: &str) -> String {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+note: first possible panic found here
+   --> src/uucore_procs/src/lib.rs:147:20
+    |
+147 |         Some(_) => panic!("Argument {index} should be a string literal."),
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/uucore_procs/src/lib.rs:162:1
+    |
+162 | fn read_help(filename: &str) -> String {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+note: first possible panic found here
+   --> src/uucore_procs/src/lib.rs:165:34
+    |
+165 |     let mut path = PathBuf::from(std::env::var("CARGO_MANIFEST_DIR").unwrap());
+    |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: `uucore_procs` (lib) generated 14 warnings (8 duplicates)
+    Checking uucore v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uucore)
+warning: multiple versions for dependency `thiserror`: 1.0.69, 2.0.12
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+  = note: `-W clippy::multiple-crate-versions` implied by `-W clippy::cargo`
+  = help: to override `-W clippy::cargo` add `#[allow(clippy::multiple_crate_versions)]`
+
+warning: multiple versions for dependency `thiserror-impl`: 1.0.69, 2.0.12
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows-sys`: 0.48.0, 0.52.0, 0.59.0
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows-targets`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows_aarch64_gnullvm`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows_aarch64_msvc`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows_i686_gnu`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows_i686_msvc`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows_x86_64_gnu`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows_x86_64_gnullvm`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: multiple versions for dependency `windows_x86_64_msvc`: 0.48.5, 0.52.6
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
+
+warning: docs for function returning `Result` missing `# Errors` section
+  --> src/uucore/src/lib/mods/display.rs:49:1
+   |
+49 | pub fn println_verbatim<S: AsRef<OsStr>>(text: S) -> io::Result<()> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+   = note: `-W clippy::missing-errors-doc` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::missing_errors_doc)]`
+
+warning: docs for function returning `Result` missing `# Errors` section
+  --> src/uucore/src/lib/mods/display.rs:57:1
+   |
+57 | pub fn print_verbatim<S: AsRef<OsStr>>(text: S) -> io::Result<()> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: usage of wildcard import for enum variants
+   --> src/uucore/src/lib/mods/error.rs:408:13
+    |
+408 |         use std::io::ErrorKind::*;
+    |             ^^^^^^^^^^^^^^^^^^^^^ help: try: `std::io::ErrorKind::{AddrInUse, AddrNotAvailable, AlreadyExists, BrokenPipe, ConnectionAborted, ConnectionRefused, ConnectionReset, Interrupted, InvalidData, InvalidInput, NotConnected, NotFound, PermissionDenied, TimedOut, UnexpectedEof, WouldBlock, WriteZero}`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#enum_glob_use
+    = note: `-W clippy::enum-glob-use` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::enum_glob_use)]`
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/mods/error.rs:459:1
+    |
+459 | pub fn strip_errno(err: &std::io::Error) -> String {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn strip_errno(err: &std::io::Error) -> String`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+    = note: `-W clippy::must-use-candidate` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::must_use_candidate)]`
+
+warning: this method could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/mods/error.rs:655:5
+    |
+655 |     pub fn new(code: i32) -> Box<dyn UError> {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn new(code: i32) -> Box<dyn UError>`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: you are deriving `PartialEq` and can implement `Eq`
+  --> src/uucore/src/lib/mods/line_ending.rs:19:39
+   |
+19 | #[derive(Clone, Copy, Debug, Default, PartialEq)]
+   |                                       ^^^^^^^^^ help: consider deriving `Eq` as well: `PartialEq, Eq`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#derive_partial_eq_without_eq
+   = note: `-W clippy::derive-partial-eq-without-eq` implied by `-W clippy::nursery`
+   = help: to override `-W clippy::nursery` add `#[allow(clippy::derive_partial_eq_without_eq)]`
+
+warning: this method could have a `#[must_use]` attribute
+  --> src/uucore/src/lib/mods/line_ending.rs:49:5
+   |
+49 |     pub fn from_zero_flag(is_zero_terminated: bool) -> Self {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn from_zero_flag(is_zero_terminated: bool) -> Self`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: this could be a `const fn`
+  --> src/uucore/src/lib/mods/line_ending.rs:49:5
+   |
+49 | /     pub fn from_zero_flag(is_zero_terminated: bool) -> Self {
+50 | |         if is_zero_terminated {
+51 | |             Self::Nul
+52 | |         } else {
+...  |
+55 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+   = note: `-W clippy::missing-const-for-fn` implied by `-W clippy::nursery`
+   = help: to override `-W clippy::nursery` add `#[allow(clippy::missing_const_for_fn)]`
+help: make the function `const`
+   |
+49 |     pub const fn from_zero_flag(is_zero_terminated: bool) -> Self {
+   |         +++++
+
+warning: unnecessary structure name repetition
+  --> src/uucore/src/lib/mods/locale.rs:36:9
+   |
+36 |         LocalizationError::Io {
+   |         ^^^^^^^^^^^^^^^^^ help: use the applicable keyword: `Self`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+   = note: `-W clippy::use-self` implied by `-W clippy::nursery`
+   = help: to override `-W clippy::nursery` add `#[allow(clippy::use_self)]`
+
+warning: this could be a `const fn`
+  --> src/uucore/src/lib/mods/locale.rs:59:5
+   |
+59 | /     fn new(primary_bundle: FluentBundle<FluentResource>) -> Self {
+60 | |         Self {
+61 | |             primary_bundle,
+62 | |             fallback_bundle: None,
+63 | |         }
+64 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+help: make the function `const`
+   |
+59 |     const fn new(primary_bundle: FluentBundle<FluentResource>) -> Self {
+   |     +++++
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/uucore/src/lib/mods/locale.rs:102:1
+    |
+102 | / fn init_localization(
+103 | |     locale: &LanguageIdentifier,
+104 | |     locales_dir: &Path,
+105 | | ) -> Result<(), LocalizationError> {
+    | |__________________________________^
+    |
+note: first possible panic found here
+   --> src/uucore/src/lib/mods/locale.rs:106:21
+    |
+106 |       let en_locale = LanguageIdentifier::from_str(DEFAULT_LOCALE)
+    |  _____________________^
+107 | |         .expect("Default locale should always be valid");
+    | |________________________________________________________^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+    = note: `-W clippy::missing-panics-doc` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::missing_panics_doc)]`
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/mods/locale.rs:102:1
+    |
+102 | / fn init_localization(
+103 | |     locale: &LanguageIdentifier,
+104 | |     locales_dir: &Path,
+105 | | ) -> Result<(), LocalizationError> {
+    | |__________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/mods/locale.rs:132:1
+    |
+132 | / fn create_bundle(
+133 | |     locale: &LanguageIdentifier,
+134 | |     locales_dir: &Path,
+135 | | ) -> Result<FluentBundle<FluentResource>, LocalizationError> {
+    | |____________________________________________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: variables can be used directly in the `format!` string
+   --> src/uucore/src/lib/mods/locale.rs:154:35
+    |
+154 |           LocalizationError::Bundle(format!(
+    |  ___________________________________^
+155 | |             "Failed to add resource to bundle for {}: {:?}",
+156 | |             locale, errs
+157 | |         ))
+    | |_________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+    = note: `-W clippy::uninlined-format-args` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::uninlined_format_args)]`
+
+warning: this argument is passed by value, but not consumed in the function body
+   --> src/uucore/src/lib/mods/locale.rs:163:41
+    |
+163 | fn get_message_internal(id: &str, args: Option<FluentArgs>) -> String {
+    |                                         ^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_pass_by_value
+    = note: `-W clippy::needless-pass-by-value` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::needless_pass_by_value)]`
+help: consider taking a reference instead
+    |
+163 | fn get_message_internal(id: &str, args: Option<&FluentArgs>) -> String {
+    |                                                +
+
+warning: called `map(<f>).unwrap_or_else(<g>)` on an `Option` value
+   --> src/uucore/src/lib/mods/locale.rs:165:9
+    |
+165 | /         lock.get()
+166 | |             .map(|loc| loc.format(id, args.as_ref()))
+167 | |             .unwrap_or_else(|| id.to_string()) // Return the key ID if localizer not initialized
+    | |______________________________________________^ help: try: `lock.get().map_or_else(|| id.to_string(), |loc| loc.format(id, args.as_ref()))`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#map_unwrap_or
+    = note: `-W clippy::map-unwrap-or` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::map_unwrap_or)]`
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/mods/locale.rs:195:1
+    |
+195 | pub fn get_message(id: &str) -> String {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn get_message(id: &str) -> String`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/mods/locale.rs:230:1
+    |
+230 | pub fn get_message_with_args(id: &str, ftl_args: HashMap<String, String>) -> String {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn get_message_with_args(id: &str, ftl_args: HashMap<String, String>) -> String`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: parameter of type `HashMap` should be generalized over different hashers
+   --> src/uucore/src/lib/mods/locale.rs:230:50
+    |
+230 | pub fn get_message_with_args(id: &str, ftl_args: HashMap<String, String>) -> String {
+    |                                                  ^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#implicit_hasher
+    = note: `-W clippy::implicit-hasher` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::implicit_hasher)]`
+help: add a type parameter for `BuildHasher`
+    |
+230 | pub fn get_message_with_args<S: ::std::hash::BuildHasher>(id: &str, ftl_args: HashMap<String, String, S>) -> String {
+    |                             +++++++++++++++++++++++++++++                                           +++
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/mods/locale.rs:249:1
+    |
+249 | fn detect_system_locale() -> Result<LanguageIdentifier, LocalizationError> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: variables can be used directly in the `format!` string
+   --> src/uucore/src/lib/mods/locale.rs:258:47
+    |
+258 |         .map_err(|_| LocalizationError::Parse(format!("Failed to parse locale: {}", locale_str)))
+    |                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+help: change this to
+    |
+258 -         .map_err(|_| LocalizationError::Parse(format!("Failed to parse locale: {}", locale_str)))
+258 +         .map_err(|_| LocalizationError::Parse(format!("Failed to parse locale: {locale_str}")))
+    |
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/uucore/src/lib/mods/locale.rs:297:1
+    |
+297 | pub fn setup_localization(p: &str) -> Result<(), LocalizationError> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+note: first possible panic found here
+   --> src/uucore/src/lib/mods/locale.rs:299:9
+    |
+299 |         LanguageIdentifier::from_str(DEFAULT_LOCALE).expect("Default locale should always be valid")
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/mods/locale.rs:307:1
+    |
+307 | fn get_locales_dir(p: &str) -> Result<PathBuf, LocalizationError> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: this function could have a `#[must_use]` attribute
+  --> src/uucore/src/lib/mods/os.rs:11:1
+   |
+11 | pub fn is_wsl_1() -> bool {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn is_wsl_1() -> bool`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: this function could have a `#[must_use]` attribute
+  --> src/uucore/src/lib/mods/os.rs:28:1
+   |
+28 | pub fn is_wsl_2() -> bool {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn is_wsl_2() -> bool`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: this function could have a `#[must_use]` attribute
+  --> src/uucore/src/lib/mods/posix.rs:33:1
+   |
+33 | pub fn posix_version() -> Option<usize> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn posix_version() -> Option<usize>`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: first doc comment paragraph is too long
+   --> src/uucore/src/lib/lib.rs:129:1
+    |
+129 | / /// Disables the custom signal handlers installed by Rust for stack-overflow handling. With those custom signal handlers processes ignore...
+130 | | /// See <https://github.com/rust-lang/rust/blob/8ac1525e091d3db28e67adcbbd6db1e1deaa37fb/src/libstd/sys/unix/stack_overflow.rs#L71-L92> f...
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#too_long_first_doc_paragraph
+    = note: `-W clippy::too-long-first-doc-paragraph` implied by `-W clippy::nursery`
+    = help: to override `-W clippy::nursery` add `#[allow(clippy::too_long_first_doc_paragraph)]`
+help: add an empty line
+    |
+130 | /// Disables the custom signal handlers installed by Rust for stack-overflow handling. With those custom signal handlers processes ignore the first SIGBUS and SIGSEGV signal they receive.
+131 + ///
+    |
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/lib.rs:132:1
+    |
+132 | pub fn disable_rust_signal_handlers() -> Result<(), Errno> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/lib.rs:197:1
+    |
+197 | pub fn format_usage(s: &str) -> String {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn format_usage(s: &str) -> String`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/lib.rs:227:1
+    |
+227 | pub fn util_name() -> &'static str {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn util_name() -> &'static str`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/lib.rs:244:1
+    |
+244 | pub fn execution_phrase() -> &'static str {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn execution_phrase() -> &'static str`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: first doc comment paragraph is too long
+   --> src/uucore/src/lib/lib.rs:248:1
+    |
+248 | / /// Args contains arguments passed to the utility.
+249 | | /// It is a trait that extends `Iterator<Item = OsString>`.
+250 | | /// It provides utility functions to collect the arguments into a `Vec<String>`.
+251 | | /// The collected `Vec<String>` can be lossy or ignore invalid encoding.
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#too_long_first_doc_paragraph
+help: add an empty line
+    |
+249 | /// Args contains arguments passed to the utility.
+250 + ///
+    |
+
+warning: item in documentation is missing backticks
+   --> src/uucore/src/lib/lib.rs:267:5
+    |
+267 | /// args_os() can be expensive to call
+    |     ^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#doc_markdown
+    = note: `-W clippy::doc-markdown` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::doc_markdown)]`
+help: try
+    |
+267 - /// args_os() can be expensive to call
+267 + /// `args_os()` can be expensive to call
+    |
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/lib.rs:273:1
+    |
+273 | pub fn read_yes() -> bool {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn read_yes() -> bool`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/lib.rs:285:1
+    |
+285 | pub fn os_str_as_bytes(os_string: &OsStr) -> mods::error::UResult<&[u8]> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: this function's return value is unnecessarily wrapped by `Result`
+   --> src/uucore/src/lib/lib.rs:285:1
+    |
+285 | / pub fn os_str_as_bytes(os_string: &OsStr) -> mods::error::UResult<&[u8]> {
+286 | |     #[cfg(unix)]
+287 | |     let bytes = os_string.as_bytes();
+...   |
+297 | |     Ok(bytes)
+298 | | }
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_wraps
+    = note: `-W clippy::unnecessary-wraps` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::unnecessary_wraps)]`
+help: remove `Result` from the return type...
+    |
+285 - pub fn os_str_as_bytes(os_string: &OsStr) -> mods::error::UResult<&[u8]> {
+285 + pub fn os_str_as_bytes(os_string: &OsStr) -> &[u8] {
+    |
+help: ...and then change returning expressions
+    |
+297 -     Ok(bytes)
+297 +     bytes
+    |
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uucore/src/lib/lib.rs:304:1
+    |
+304 | pub fn os_str_as_bytes_lossy(os_string: &OsStr) -> Cow<[u8]> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn os_str_as_bytes_lossy(os_string: &OsStr) -> Cow<[u8]>`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/lib.rs:322:1
+    |
+322 | pub fn os_str_from_bytes(bytes: &[u8]) -> mods::error::UResult<Cow<'_, OsStr>> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: this function's return value is unnecessarily wrapped by `Result`
+   --> src/uucore/src/lib/lib.rs:322:1
+    |
+322 | / pub fn os_str_from_bytes(bytes: &[u8]) -> mods::error::UResult<Cow<'_, OsStr>> {
+323 | |     #[cfg(unix)]
+324 | |     let os_str = Cow::Borrowed(OsStr::from_bytes(bytes));
+325 | |     #[cfg(not(unix))]
+...   |
+330 | |     Ok(os_str)
+331 | | }
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_wraps
+help: remove `Result` from the return type...
+    |
+322 - pub fn os_str_from_bytes(bytes: &[u8]) -> mods::error::UResult<Cow<'_, OsStr>> {
+322 + pub fn os_str_from_bytes(bytes: &[u8]) -> std::borrow::Cow<'_, std::ffi::OsStr> {
+    |
+help: ...and then change returning expressions
+    |
+330 -     Ok(os_str)
+330 +     os_str
+    |
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uucore/src/lib/lib.rs:337:1
+    |
+337 | pub fn os_string_from_vec(vec: Vec<u8>) -> mods::error::UResult<OsString> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: this function's return value is unnecessarily wrapped by `Result`
+   --> src/uucore/src/lib/lib.rs:337:1
+    |
+337 | / pub fn os_string_from_vec(vec: Vec<u8>) -> mods::error::UResult<OsString> {
+338 | |     #[cfg(unix)]
+339 | |     let s = OsString::from_vec(vec);
+340 | |     #[cfg(not(unix))]
+...   |
+345 | |     Ok(s)
+346 | | }
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_wraps
+help: remove `Result` from the return type...
+    |
+337 - pub fn os_string_from_vec(vec: Vec<u8>) -> mods::error::UResult<OsString> {
+337 + pub fn os_string_from_vec(vec: Vec<u8>) -> std::ffi::OsString {
+    |
+help: ...and then change returning expressions
+    |
+345 -     Ok(s)
+345 +     s
+    |
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/uucore/src/lib/lib.rs:376:1
+    |
+376 | / pub fn read_os_string_lines<R: std::io::Read>(
+377 | |     buf_reader: BufReader<R>,
+378 | | ) -> impl Iterator<Item = OsString> {
+    | |___________________________________^
+    |
+note: first possible panic found here
+   --> src/uucore/src/lib/lib.rs:379:49
+    |
+379 |     read_byte_lines(buf_reader).map(|byte_line| os_string_from_vec(byte_line).expect("UTF-8 error"))
+    |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: `uucore` (lib) generated 61 warnings (8 duplicates) (run `cargo clippy --fix --lib -p uucore` to apply 24 suggestions)
+    Checking uu_pwd v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uu/pwd)
+warning: docs for function returning `Result` missing `# Errors` section
+  --> src/uu/pwd/src/pwd.rs:21:1
+   |
+21 | fn physical_path() -> io::Result<PathBuf> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+   = note: `-W clippy::missing-errors-doc` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::missing_errors_doc)]`
+
+warning: docs for function returning `Result` missing `# Errors` section
+  --> src/uu/pwd/src/pwd.rs:39:1
+   |
+39 | fn logical_path() -> io::Result<PathBuf> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: docs for function returning `Result` missing `# Errors` section
+   --> src/uu/pwd/src/pwd.rs:111:1
+    |
+111 | pub fn uumain(args: impl uucore::Args) -> UResult<()> {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_errors_doc
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/uu/pwd/src/pwd.rs:141:1
+    |
+141 | pub fn uu_app() -> Command {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn uu_app() -> Command`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+    = note: `-W clippy::must-use-candidate` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::must_use_candidate)]`
+
+warning: `uu_pwd` (lib) generated 23 warnings (19 duplicates) (run `cargo clippy --fix --lib -p uu_pwd` to apply 1 suggestion)
+warning: `uu_pwd` (bin "pwd") generated 8 warnings (8 duplicates)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 48.60s
