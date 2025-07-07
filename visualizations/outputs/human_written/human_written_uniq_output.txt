@@ -4518,7 +4518,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore` (lib) generated 318 warnings (8 duplicates) (run `cargo clippy --fix --lib -p uucore` to apply 60 suggestions)
-    Checking uu_uniq v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uu/uniq)
 warning: more than 3 bools in a struct
   --> src/uu/uniq/src/uniq.rs:48:1
    |
@@ -4766,4 +4765,4 @@ warning: docs for function returning `Result` missing `# Errors` section
 
 warning: `uu_uniq` (lib) generated 38 warnings (19 duplicates) (run `cargo clippy --fix --lib -p uu_uniq` to apply 4 suggestions)
 warning: `uu_uniq` (bin "uniq") generated 8 warnings (8 duplicates)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 43.88s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 20.58s

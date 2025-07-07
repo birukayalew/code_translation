@@ -159,7 +159,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore_procs` (lib) generated 14 warnings (8 duplicates)
-    Checking uucore v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uucore)
 warning: multiple versions for dependency `thiserror`: 1.0.69, 2.0.12
   |
   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
@@ -702,7 +701,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore` (lib) generated 61 warnings (8 duplicates) (run `cargo clippy --fix --lib -p uucore` to apply 24 suggestions)
-    Checking uu_pwd v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uu/pwd)
 warning: docs for function returning `Result` missing `# Errors` section
   --> src/uu/pwd/src/pwd.rs:21:1
    |
@@ -741,4 +739,4 @@ warning: this function could have a `#[must_use]` attribute
 
 warning: `uu_pwd` (lib) generated 23 warnings (19 duplicates) (run `cargo clippy --fix --lib -p uu_pwd` to apply 1 suggestion)
 warning: `uu_pwd` (bin "pwd") generated 8 warnings (8 duplicates)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 48.60s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.62s

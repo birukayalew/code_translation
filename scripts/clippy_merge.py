@@ -1,8 +1,8 @@
 import pandas as pd
 
-lint_excel_path = "../clippy_lints.xlsx"
-custom_excel_path = "../clippy_custom_categories.xlsx"
-output_excel_path = "../clippy_lints.xlsx"  
+lint_excel_path = "clippy_lints.xlsx"
+custom_excel_path = "clippy_custom_categories.xlsx"
+output_excel_path = "clippy_lints.xlsx"  
 
 df_main = pd.read_excel(lint_excel_path)
 
@@ -36,6 +36,32 @@ for sheet_name, df_sheet in custom_sheets.items():
 
 # Drop helper key.
 df_main.drop(columns="__lint_key", inplace=True)
+
+# Add additional lints at the end - from differnet versions of clippy.
+additional_lints = [
+    {
+        "Lint Name": "logic_bug",
+        "Group": "correctness",
+        "Severity": "deny",
+        "Custom Category": "Logical issues"
+    },
+    {
+        "Lint Name": "let_underscore_drop",
+        "Group": "pedantic",
+        "Severity": "allow",
+        "Custom Category": "Logical issues"
+    },
+    {
+        "Lint Name": "drop_copy",
+        "Group": "correctness",
+        "Severity": "deny",
+        "Custom Category": "Redundant"
+    },
+]
+
+# Create DataFrame for additional lints and append to main DataFrame.
+df_additional = pd.DataFrame(additional_lints)
+df_main = pd.concat([df_main, df_additional], ignore_index=True)
 
 # Save updated workbook.
 df_main.to_excel(output_excel_path, index=False)

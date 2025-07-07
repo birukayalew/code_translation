@@ -159,7 +159,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore_procs` (lib) generated 14 warnings (8 duplicates)
-    Checking uucore v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uucore)
 warning: multiple versions for dependency `thiserror`: 1.0.69, 2.0.12
   |
   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
@@ -4519,7 +4518,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore` (lib) generated 318 warnings (8 duplicates) (run `cargo clippy --fix --lib -p uucore` to apply 60 suggestions)
-    Checking uu_tail v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uu/tail)
 warning: redundant else block
    --> src/uu/tail/src/chunks.rs:585:10
     |
@@ -6152,4 +6150,4 @@ help: ... or use `try_from` and handle the error accordingly
 
 warning: `uu_tail` (lib) generated 155 warnings (18 duplicates) (run `cargo clippy --fix --lib -p uu_tail` to apply 58 suggestions)
 warning: `uu_tail` (bin "tail") generated 8 warnings (8 duplicates)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 16s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 22.90s

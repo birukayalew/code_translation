@@ -1,4 +1,4 @@
-   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/Research/c2saferrust/coreutils/src/uniq/rust_WIP)
+   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/c2saferrust/coreutils/src/uniq/rust_WIP)
 warning: literal with an empty format string
    --> src/version_etc.rs:321:9
     |
@@ -27430,4 +27430,4 @@ warning: getting the inner pointer of a temporary `CString`
      = help: for more information, see https://doc.rust-lang.org/reference/destructors.html
 
 warning: `rust` (bin "uniq") generated 535 warnings
-    Finished dev [unoptimized + debuginfo] target(s) in 22.29s
+    Finished dev [unoptimized + debuginfo] target(s) in 15.37s

@@ -23842,4 +23842,4 @@ warning: path statement with no effect
      |         ^^
 
 warning: `rust` (bin "head") generated 495 warnings
-    Finished dev [unoptimized + debuginfo] target(s) in 8.04s
+    Finished dev [unoptimized + debuginfo] target(s) in 7.94s

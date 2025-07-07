@@ -5,40 +5,40 @@ from  scripts.batch_runner_per_code_type import batch_runner
 
 # Uncomment this to normalize.
 
-# loc_df = pd.read_excel("loc_counts.xlsx")
-# loc_df.columns = [col.strip() for col in loc_df.columns]
-# loc_df["Code Type"] = loc_df["Code Type"].str.strip()
+loc_df = pd.read_excel("loc_counts.xlsx")
+loc_df.columns = [col.strip() for col in loc_df.columns]
+loc_df["Code Type"] = loc_df["Code Type"].str.strip()
 
-# target_code_type = "c2rust"
-# total_loc = loc_df[loc_df["Code Type"] == target_code_type]["Lines of Code"].sum()
+target_code_type = "c2rust"
+total_loc = loc_df[loc_df["Code Type"] == target_code_type]["Lines of Code"].sum()
 
-# if total_loc == 0:
-#     raise ValueError("Total lines of code is zero. Cannot normalize warnings.")
+if total_loc == 0:
+    raise ValueError("Total lines of code is zero. Cannot normalize warnings.")
 
 total_category_counts, total_severity_counts = batch_runner("c2rust", "visualizations/outputs/c2rust")
 
-# normalized_category_counts = {
-#     category: (count / total_loc) * 1000
-#     for category, count in total_category_counts.items()
-# }
+normalized_category_counts = {
+    category: (count / total_loc) * 1000
+    for category, count in total_category_counts.items()
+}
 
-# normalized_severity_counts = {
-#     category: {
-#         severity: (count / total_loc) * 1000
-#         for severity, count in sev_dict.items()
-#     }
-#     for category, sev_dict in total_severity_counts.items()
-# }
+normalized_severity_counts = {
+    category: {
+        severity: (count / total_loc) * 1000
+        for severity, count in sev_dict.items()
+    }
+    for category, sev_dict in total_severity_counts.items()
+}
 
 
 # Sort categories by total count (descending).
-categories = sorted(total_category_counts, key=total_category_counts.get, reverse=False)
+categories = sorted(normalized_category_counts, key=normalized_category_counts.get, reverse=False)
 
 # Extract severity counts (fill in missing severities as 0).
-deny_vals = [total_severity_counts[cat].get('deny', 0) for cat in categories]
-warn_vals = [total_severity_counts[cat].get('warn', 0) for cat in categories]
-allow_vals = [total_severity_counts[cat].get('allow', 0) for cat in categories]
-none_vals = [total_severity_counts[cat].get('none', 0) for cat in categories]
+deny_vals = [normalized_severity_counts[cat].get('deny', 0) for cat in categories]
+warn_vals = [normalized_severity_counts[cat].get('warn', 0) for cat in categories]
+allow_vals = [normalized_severity_counts[cat].get('allow', 0) for cat in categories]
+none_vals = [normalized_severity_counts[cat].get('none', 0) for cat in categories]
 
 # Convert to numpy arrays for stacking.
 deny_arr = np.array(deny_vals)
@@ -75,7 +75,7 @@ plt.tight_layout()
 # Annotate total count.
 for i, total in enumerate(total_arr):
     xpos = min(total * 1.05, max(total_arr) * 1.45)  # prevent overflow beyond axis limit.
-    plt.text(xpos, i, str(total), va='center', fontsize=9)
+    plt.text(xpos, i, f"{total:.2f}", va='center', fontsize=9)
 x_max = max(total_arr)
 plt.xlim(right=x_max * 2)
     # plt.text(total * 1.05, i, str(total), va='center', fontsize=9)

@@ -159,7 +159,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore_procs` (lib) generated 14 warnings (8 duplicates)
-    Checking uucore v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uucore)
 warning: multiple versions for dependency `thiserror`: 1.0.69, 2.0.12
   |
   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#multiple_crate_versions
@@ -5043,7 +5042,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore` (lib) generated 367 warnings (8 duplicates) (run `cargo clippy --fix --lib -p uucore` to apply 93 suggestions)
-    Checking uu_head v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uu/head)
 warning: this `continue` expression is redundant
   --> src/uu/head/src/parse.rs:29:17
    |
@@ -5734,4 +5732,4 @@ warning: docs for function returning `Result` missing `# Errors` section
 
 warning: `uu_head` (lib) generated 74 warnings (19 duplicates) (run `cargo clippy --fix --lib -p uu_head` to apply 16 suggestions)
 warning: `uu_head` (bin "head") generated 8 warnings (8 duplicates)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 02s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 22.87s

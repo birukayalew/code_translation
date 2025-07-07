@@ -1,4 +1,4 @@
-   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/Research/c2saferrust/coreutils/src/head/rust)
+   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/c2saferrust/coreutils/src/head/rust)
 warning: unused label
    --> src/xstrtoumax.rs:482:5
     |
@@ -29357,4 +29357,4 @@ warning: path statement with no effect
      |         ^^
 
 warning: `rust` (bin "head") generated 676 warnings
-    Finished dev [unoptimized + debuginfo] target(s) in 22.90s
+    Finished dev [unoptimized + debuginfo] target(s) in 12.76s

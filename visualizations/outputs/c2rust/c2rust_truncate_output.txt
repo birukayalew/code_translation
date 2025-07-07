@@ -1,5 +1,4 @@
-   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/Research/c2saferrust/coreutils/src/truncate/rust)
-   Compiling libc v0.2.158
+   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/c2saferrust/coreutils/src/truncate/rust)
 warning: unused label
    --> src/xstrtoimax.rs:433:5
     |
@@ -28568,4 +28567,4 @@ warning: path statement with no effect
      |         ^^^^^
 
 warning: `rust` (bin "truncate") generated 620 warnings
-    Finished dev [unoptimized + debuginfo] target(s) in 23.21s
+    Finished dev [unoptimized + debuginfo] target(s) in 13.15s

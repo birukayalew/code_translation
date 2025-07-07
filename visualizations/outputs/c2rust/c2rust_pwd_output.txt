@@ -1,4 +1,4 @@
-   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/Research/c2saferrust/coreutils/src/pwd/rust)
+   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/c2saferrust/coreutils/src/pwd/rust)
 warning: redundant else block
   --> src/c_strcasecmp.rs:42:12
    |
@@ -21181,4 +21181,4 @@ warning: path statement with no effect
      |         ^^
 
 warning: `rust` (bin "pwd") generated 262 warnings
-    Finished dev [unoptimized + debuginfo] target(s) in 22.33s
+    Finished dev [unoptimized + debuginfo] target(s) in 11.74s

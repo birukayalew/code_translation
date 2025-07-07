@@ -1,5 +1,4 @@
-   Compiling libc v0.2.158
-   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/Research/c2saferrust/coreutils/src/cat/rust_WIP)
+   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/c2saferrust/coreutils/src/cat/rust_WIP)
 error[E0554]: `#![feature]` may not be used on the stable release channel
  --> lib.rs:8:1
   |

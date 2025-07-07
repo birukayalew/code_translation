@@ -4518,7 +4518,6 @@ note: first possible panic found here
     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
 
 warning: `uucore` (lib) generated 318 warnings (8 duplicates) (run `cargo clippy --fix --lib -p uucore` to apply 60 suggestions)
-    Checking uu_truncate v0.1.0 (/mnt/c/Users/sebir/Documents/summer/Research/coreutils/src/uu/truncate)
 warning: docs for function which may panic missing `# Panics` section
   --> src/uu/truncate/src/truncate.rs:87:1
    |
@@ -4594,4 +4593,4 @@ warning: docs for function returning `Result` missing `# Errors` section
 
 warning: `uu_truncate` (lib) generated 25 warnings (19 duplicates) (run `cargo clippy --fix --lib -p uu_truncate` to apply 2 suggestions)
 warning: `uu_truncate` (bin "truncate") generated 8 warnings (8 duplicates)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 41.89s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 18.98s

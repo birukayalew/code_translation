@@ -1,4 +1,4 @@
-   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/Research/c2saferrust/coreutils/src/split/rust_WIP)
+   Compiling rust v0.0.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/c2saferrust/coreutils/src/split/rust_WIP)
 warning: literal with an empty format string
    --> src/version_etc.rs:317:9
     |
@@ -39929,4 +39929,4 @@ warning: path statement with no effect
      |                       ^^^^^^^
 
 warning: `rust` (bin "split") generated 1431 warnings
-    Finished dev [unoptimized + debuginfo] target(s) in 32.87s
+    Finished dev [unoptimized + debuginfo] target(s) in 16.49s
