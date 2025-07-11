@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from tqdm import tqdm
 from openai import OpenAI
 import time
+import re
 
 load_dotenv() 
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -35,6 +36,12 @@ def send_prompt(chunk_text):
     )
     return response.choices[0].message.content
 
+def extract_issues(llm_response):
+    # Extracts all <ISSUE category="..."> blocks.
+    issue_pattern = re.compile(r'<ISSUE category="(.*?)">(.*?)</ISSUE>', re.DOTALL)
+    matches = issue_pattern.findall(llm_response)
+    return [(category.strip(), detail.strip()) for category, detail in matches]
+
 def process_source(source_label):
     input_path = f"parsed_chunks/{source_label}_chunks.json"
     output_path = f"llm_results/{source_label}_results.json"
@@ -45,17 +52,31 @@ def process_source(source_label):
     responses_by_file = {}
 
     for file_key, chunks in all_chunks.items():
-        chunks = all_chunks[file_key]
+
         file_responses = []
 
         for i, chunk in enumerate(tqdm(chunks, desc=f"Processing {source_label}/{file_key}")):
             try:
-                result = send_prompt(chunk)
-                file_responses.append(result)
+                chunk_text = chunk["chunk"]
+                filename = chunk["file_name"]
+                response = send_prompt(chunk_text)
+                issues = extract_issues(response)
+
+                for category, detail in issues:
+                    file_responses.append({
+                        "filename": filename,
+                        "category": category,
+                        "details": detail
+                    })
+
                 time.sleep(60)  # delay to avoid rate limits.
             except Exception as e:
                 print(f"[ERROR] {file_key} chunk {i}: {e}")
-                file_responses.append(f"[ERROR] {str(e)}")
+                file_responses.append({
+                    "filename": filename,
+                    "category": "error",
+                    "details": str(e)
+                })
                 time.sleep(5)
 
         responses_by_file[file_key] = file_responses

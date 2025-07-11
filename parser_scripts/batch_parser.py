@@ -43,7 +43,12 @@ def parse_rs_files(directory):
                 
             file_path = os.path.join(root, file)
             try:
-                chunks.extend(extract_chunked_code(file_path, max_lines=300))
+                file_chunks = extract_chunked_code(file_path, max_lines=300)
+                for chunk in  file_chunks:
+                    chunks.append({
+                        "chunk": chunk,
+                        "file_name": file_path
+                    })
                 print(f"Parsed {file_path}")
             except Exception as e:
                 print(f"Failed to parse {file_path}: {e}")
