@@ -1,0 +1,303 @@
+   Compiling proc-macro2 v1.0.94
+   Compiling glob v0.3.2
+   Compiling unicode-ident v1.0.18
+   Compiling libc v0.2.170
+   Compiling prettyplease v0.2.30
+   Compiling memchr v2.7.4
+   Compiling regex-syntax v0.8.5
+   Compiling serde v1.0.219
+   Compiling minimal-lexical v0.2.1
+   Compiling cfg-if v1.0.0
+   Compiling clang-sys v1.8.1
+   Compiling libloading v0.8.6
+   Compiling regex-automata v0.4.9
+   Compiling nom v7.1.3
+   Compiling either v1.15.0
+   Compiling bindgen v0.71.1
+   Compiling serde_json v1.0.140
+   Compiling quote v1.0.39
+   Compiling itertools v0.13.0
+   Compiling syn v2.0.100
+   Compiling cexpr v0.6.0
+   Compiling regex v1.11.1
+   Compiling log v0.4.26
+   Compiling bitflags v2.9.0
+   Compiling shlex v1.3.0
+   Compiling ryu v1.0.20
+   Compiling itoa v1.0.15
+   Compiling rustc-hash v2.1.1
+   Compiling foo v0.1.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/truncate)
+warning: package `foo` is missing `package.description` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+  = note: `-W clippy::cargo-common-metadata` implied by `-W clippy::cargo`
+  = help: to override `-W clippy::cargo` add `#[allow(clippy::cargo_common_metadata)]`
+
+warning: package `foo` is missing `either package.license or package.license_file` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `foo` is missing `package.repository` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `foo` is missing `package.readme` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `foo` is missing `package.keywords` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: package `foo` is missing `package.categories` metadata
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
+
+warning: this function has too many lines (136/100)
+   --> build.rs:33:1
+    |
+33  | / fn main() {
+34  | |     let cargo_manifest_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
+35  | |     let c_build_path = env::var("C_BUILD_PATH").expect("C_BUILD_PATH not set");
+...   |
+218 | |         .expect("Couldn't write bindings!");
+219 | | }
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#too_many_lines
+    = note: `-W clippy::too-many-lines` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::too_many_lines)]`
+
+warning: variables can be used directly in the `format!` string
+  --> build.rs:38:47
+   |
+38 |     let compile_commands_path = PathBuf::from(format!("{}/compile_commands.json", c_build_path));
+   |                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+   = note: `-W clippy::uninlined-format-args` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::uninlined_format_args)]`
+help: change this to
+   |
+38 -     let compile_commands_path = PathBuf::from(format!("{}/compile_commands.json", c_build_path));
+38 +     let compile_commands_path = PathBuf::from(format!("{c_build_path}/compile_commands.json"));
+   |
+
+warning: avoid using `collect()` when not needed
+  --> build.rs:58:8
+   |
+58 |     }).collect::<Vec<_>>();
+   |        ^^^^^^^
+...
+67 |     if source_paths.is_empty() {
+   |        ----------------------- the iterator could be used here instead
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_collect
+   = note: `-W clippy::needless-collect` implied by `-W clippy::nursery`
+   = help: to override `-W clippy::nursery` add `#[allow(clippy::needless_collect)]`
+help: check if the original Iterator has anything instead of collecting it and seeing if it's empty
+   |
+44 ~     
+45 |
+...
+52 |
+53 ~     if files.iter().map(|file| {
+54 +         let file = file.as_object().expect("Expected an object");
+55 +         let directory = file.get("directory").expect("Expected a directory").as_str().expect("Expected a string");
+56 +         let file_path = file.get("file").expect("Expected a file path").as_str().expect("Expected a string");
+57 +         // Check if the file path is absolute or relative
+58 +         // If it's relative, make it absolute by joining with the directory
+59 +         // If it's absolute, just use it as is
+60 +         // Create a PathBuf depending on whether the path is absolute
+61 +         let full_path = if Path::new(file_path).is_absolute() {
+62 +             PathBuf::from(file_path)
+63 +         } else {
+64 +             Path::new(directory).join(file_path)
+65 +         };
+66 +         full_path
+67 ~     }).next().is_none() {
+   |
+
+warning: only a `panic!` in `if`-then statement
+  --> build.rs:67:5
+   |
+67 | /     if source_paths.is_empty() {
+68 | |         panic!("No .c files found in compile_commands.json");
+69 | |     }
+   | |_____^ help: try instead: `assert!(!source_paths.is_empty(), "No .c files found in compile_commands.json");`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_assert
+   = note: `-W clippy::manual-assert` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::manual_assert)]`
+
+warning: casting `i64` to `i32` may truncate the value
+  --> build.rs:94:29
+   |
+94 |             main_num_args = function.get("num_args").expect("Expected a num_args").as_i64().expect("Expected an integer") as i32;
+   |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: if this is intentional allow the lint with `#[allow(clippy::cast_possible_truncation)]` ...
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_truncation
+   = note: `-W clippy::cast-possible-truncation` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::cast_possible_truncation)]`
+help: ... or use `try_from` and handle the error accordingly
+   |
+94 |             main_num_args = i32::try_from(function.get("num_args").expect("Expected a num_args").as_i64().expect("Expected an integer"));
+   |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: variables can be used directly in the `format!` string
+  --> build.rs:99:5
+   |
+99 |     println!("cargo::rustc-link-search=native={}", c_build_path);
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+help: change this to
+   |
+99 -     println!("cargo::rustc-link-search=native={}", c_build_path);
+99 +     println!("cargo::rustc-link-search=native={c_build_path}");
+   |
+
+warning: stripping a prefix manually
+   --> build.rs:132:40
+    |
+132 |                     let include_path = arg[2..].trim_start().to_string();
+    |                                        ^^^^^^^^
+    |
+note: the prefix was tested here
+   --> build.rs:131:17
+    |
+131 |                 if arg.starts_with("-I") {
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_strip
+    = note: `-W clippy::manual-strip` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::manual_strip)]`
+help: try using the `strip_prefix` method
+    |
+131 ~                 if let Some(<stripped>) = arg.strip_prefix("-I") {
+132 ~                     let include_path = <stripped>.trim_start().to_string();
+    |
+
+warning: variables can be used directly in the `format!` string
+   --> build.rs:151:39
+    |
+151 |         bindings = bindings.clang_arg(format!("-I{}", include_path));
+    |                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+help: change this to
+    |
+151 -         bindings = bindings.clang_arg(format!("-I{}", include_path));
+151 +         bindings = bindings.clang_arg(format!("-I{include_path}"));
+    |
+
+warning: use Option::map_or_else instead of an if let/else
+   --> build.rs:156:34
+    |
+156 |       let blocklist: Vec<String> = match std::fs::read_to_string("bindgen_blocklist.txt") {
+    |  __________________________________^
+157 | |         Ok(blocklist) => {
+158 | |             blocklist.lines().map(String::from).collect()
+159 | |         },
+160 | |         Err(_) => Vec::new(),
+161 | |     };
+    | |_____^ help: try: `std::fs::read_to_string("bindgen_blocklist.txt").map_or_else(Vec::new, |blocklist| blocklist.lines().map(String::from).collect())`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+    = note: `-W clippy::option-if-let-else` implied by `-W clippy::nursery`
+    = help: to override `-W clippy::nursery` add `#[allow(clippy::option_if_let_else)]`
+
+warning: variables can be used directly in the `format!` string
+   --> build.rs:179:35
+    |
+179 |     let main_file = PathBuf::from(format!("{}/src/main_func.rs", cargo_manifest_dir));
+    |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+help: change this to
+    |
+179 -     let main_file = PathBuf::from(format!("{}/src/main_func.rs", cargo_manifest_dir));
+179 +     let main_file = PathBuf::from(format!("{cargo_manifest_dir}/src/main_func.rs"));
+    |
+
+warning: useless use of `format!`
+   --> build.rs:181:9
+    |
+181 | /         format!(r#"
+182 | | pub fn main() {{
+183 | |     let mut args: Vec<*mut libc::c_char> = Vec::new();
+184 | |     for arg in ::std::env::args() {{
+...   |
+197 | |     }}
+198 | | }}"#)
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_format
+    = note: `-W clippy::useless-format` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::useless_format)]`
+help: consider using `.to_string()`
+    |
+181 ~         r#"
+182 + pub fn main() {
+183 +     let mut args: Vec<*mut libc::c_char> = Vec::new();
+184 +     for arg in ::std::env::args() {
+185 +         args.push(
+186 +             (::std::ffi::CString::new(arg))
+187 +                 .expect("Failed to convert argument into CString.")
+188 +                 .into_raw(),
+189 +         );
+190 +     }
+191 +     args.push(::core::ptr::null_mut());
+192 +     unsafe {
+193 +         ::std::process::exit(main_0(
+194 +             (args.len() - 1) as libc::c_int,
+195 +             args.as_mut_ptr() as *mut *mut libc::c_char,
+196 +         ) as i32)
+197 +     }
+198 + }"#.to_string()
+    |
+
+warning: useless use of `format!`
+   --> build.rs:200:9
+    |
+200 | /         format!(r#"
+201 | | pub fn main() {{
+202 | |     unsafe {{
+203 | |         ::std::process::exit(main_0() as i32)
+204 | |     }}
+205 | | }}"#)
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_format
+help: consider using `.to_string()`
+    |
+200 ~         r#"
+201 + pub fn main() {
+202 +     unsafe {
+203 +         ::std::process::exit(main_0() as i32)
+204 +     }
+205 + }"#.to_string()
+    |
+
+warning: variables can be used directly in the `format!` string
+   --> build.rs:208:9
+    |
+208 |         panic!("main_0 has {} arguments, expected 0 or 2", main_num_args);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+help: change this to
+    |
+208 -         panic!("main_0 has {} arguments, expected 0 or 2", main_num_args);
+208 +         panic!("main_0 has {main_num_args} arguments, expected 0 or 2");
+    |
+
+warning: `foo` (build script) generated 19 warnings
+error: failed to run custom build command for `foo v0.1.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/truncate)`
+
+Caused by:
+  process didn't exit successfully: `/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/truncate/target/debug/build/foo-ba362c4eee983d49/build-script-build` (exit status: 101)
+  --- stderr
+  thread 'main' panicked at build.rs:35:49:
+  C_BUILD_PATH not set: NotPresent
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
