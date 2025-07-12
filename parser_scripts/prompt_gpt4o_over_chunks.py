@@ -69,7 +69,7 @@ def process_source(source_label):
                         "details": detail
                     })
 
-                time.sleep(60)  # delay to avoid rate limits.
+                time.sleep(20)  # delay to avoid rate limits.
             except Exception as e:
                 print(f"[ERROR] {file_key} chunk {i}: {e}")
                 file_responses.append({

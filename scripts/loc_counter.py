@@ -5,6 +5,7 @@ import pandas as pd
 base_paths = {
     "c2rust": "c2saferrust/coreutils/src",
     "c2saferust": "c2saferrust/coreutils/src",
+    "c2saferustv2": "translation_gym/output",
     "human_written": "coreutils/src/uu"
 }
 
@@ -44,6 +45,8 @@ for code_type, root_path in base_paths.items():
         elif code_type == "c2saferust":
             full_path = os.path.join(root_path, program, "rust_WIP")
         elif code_type == "human_written":
+            full_path = os.path.join(root_path, program)
+        elif code_type == "c2saferustv2":
             full_path = os.path.join(root_path, program)
         else:
             continue
