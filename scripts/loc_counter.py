@@ -12,12 +12,12 @@ base_paths = {
 # Define the 7 target programs.
 target_programs = ["cat", "head", "pwd", "split", "tail", "truncate", "uniq"]
 
-# Shared dependency paths (used by human-written programs).
-shared_deps = [
-    "coreutils/src/uucore",
-    "coreutils/src/uucore_procs",
-    "coreutils/src/uuhelp_parser"
-]
+# # Shared dependency paths (used by human-written programs).
+# shared_deps = [
+#     "coreutils/src/uucore",
+#     "coreutils/src/uucore_procs",
+#     "coreutils/src/uuhelp_parser"
+# ]
 
 # Helper function to count lines in all .rs files under a directory.
 def count_rs_lines(start_path):
@@ -33,7 +33,7 @@ def count_rs_lines(start_path):
     return total_lines
 
 # Precompute shared dependency LOC.
-shared_loc = sum(count_rs_lines(dep) for dep in shared_deps)
+# shared_loc = sum(count_rs_lines(dep) for dep in shared_deps)
 
 results = []
 
@@ -53,8 +53,8 @@ for code_type, root_path in base_paths.items():
 
         loc = count_rs_lines(full_path)
         # Add shared LOC for human-written programs.
-        if code_type == "human_written":
-            loc += shared_loc
+        # if code_type == "human_written":
+        #     loc += shared_loc
         results.append({
             "Code Type": code_type,
             "Program": program,

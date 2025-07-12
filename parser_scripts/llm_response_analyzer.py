@@ -82,7 +82,7 @@ def plot_category_comparison(df):
     # Scale index with the full group height
     index = np.arange(len(df.index)) * group_height
     print("Index positions:", index)
-    fig, ax = plt.subplots(figsize=(15, 12))  # Increased vertical size to 12
+    fig, ax = plt.subplots(figsize=(15, 20))  # Increased vertical size to 12
 
     colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
 

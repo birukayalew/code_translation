@@ -9,7 +9,7 @@ def get_code_lines(code, node):
     snippet = code[node.start_byte:node.end_byte]
     return snippet.splitlines()
 
-def extract_chunked_code(filepath, max_lines=500):
+def extract_chunked_code(filepath, max_lines=300):
     with open(filepath, "r", encoding="utf-8") as f:
         code = f.read()
 

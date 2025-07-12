@@ -26,11 +26,11 @@ sources = [
         "label": "human_written",
         "base_dir": "coreutils/src/uu",
         "subfolder": "",
-        "shared_deps": [  # Source-specific dependencies.
-            "coreutils/src/uucore",
-            "coreutils/src/uucore_procs",
-            "coreutils/src/uuhelp_parser"
-        ]
+        # "shared_deps": [  # Source-specific dependencies.
+        #     "coreutils/src/uucore",
+        #     "coreutils/src/uucore_procs",
+        #     "coreutils/src/uuhelp_parser"
+        # ]
     },
 ]
 
@@ -76,13 +76,13 @@ def main():
 
             source_chunks[program].extend(parse_rs_files(program_path))
 
-        # Process shared dependencies (if any).
-        if "shared_deps" in source:
-            for dep_path in source["shared_deps"]:
-                print(f"Processing dependency: {dep_path}...")
-                dep_chunks = parse_rs_files(dep_path)
-                for program in programs:
-                    source_chunks[program].extend(dep_chunks)
+        # # Process shared dependencies (if any).
+        # if "shared_deps" in source:
+        #     for dep_path in source["shared_deps"]:
+        #         print(f"Processing dependency: {dep_path}...")
+        #         dep_chunks = parse_rs_files(dep_path)
+        #         for program in programs:
+        #             source_chunks[program].extend(dep_chunks)
 
 
         # Save this source's chunked data.
