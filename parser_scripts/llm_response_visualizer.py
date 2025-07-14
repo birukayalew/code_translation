@@ -6,19 +6,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 all_categories = {"arithmetic_issues":"Arithmetic issues","attribute_issues":"Attribute issues", 
-                  "compatibility_issues":"Compatibility issues","convention_violation":"Convention_violation", 
-                  "documentation_issues":"Documentation_issues", "error_handling_issues":"Error handling issues",
+                  "compatibility_issues":"Compatibility issues","convention_violation":"Convention violation", 
+                  "documentation_issues":"Documentation issues", "error_handling_issues":"Error handling issues",
                   "inflexible_code":"Inflexible code", "logical_issues":"Logical issues", "memory_safety":"Memory safety",
                 "misleading_code":"Misleading code", "non_idiomatic":"Non-idiomatic", "non_production_code":"Non-production code",
                 "performance":"Performance","readability_issues":"Readability issues","redundant":"Redundant",
                 "panic_risks":"Runtime panic risks","thread_safety":"Thread safety", "type_safety":"Type safety"}
 
-json_files = {
+json_files = {  
     "c2rust": "llm_results/c2rust_results.json",
-    "c2saferust": "llm_results/c2saferust_results.json",
-    "c2saferustv2": "llm_results/translation_gym_results.json",
+    "c2saferrust": "llm_results/c2saferrust_results.json",
+    "c2saferrustv2": "llm_results/translation_gym_results.json",
     "human_written": "llm_results/human_written_results.json"
 }
+
+
 
 # Load LOC data
 loc_df = pd.read_excel("loc_counts.xlsx")
@@ -33,13 +35,17 @@ def total_loc(tool):
 # Function to extract category counts per tool.
 def extract_category_counts(filepath):
     category_totals = defaultdict(int)
+
     with open(filepath, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     for program_chunks in data.values():
         for entry in program_chunks:
             category = entry["category"]
-            category_totals[all_categories[category]] += 1
+            if category in all_categories:
+                category_totals[all_categories[category]] += 1
+            else:
+                print(f"Category not found: {category}")
             
 
     return category_totals
@@ -50,16 +56,20 @@ all_category_counts = {}
 for tool, path in json_files.items():
     if os.path.exists(path):
         tool_counts = extract_category_counts(path)
+        # print(tool, tool_counts)
         all_category_counts[tool] = tool_counts
 
     else:
         print(f"⚠️ File not found: {path}")
+
+print(all_category_counts)
 
 # Normalize.
 for tool, categories in all_category_counts.items():
     for cat in categories:
         count = all_category_counts[tool][cat]
         all_category_counts[tool][cat] = (count / total_loc(tool)) * 1000
+
 
 
 category_labels = list(all_categories.values())
@@ -72,21 +82,22 @@ for tool, counts in all_category_counts.items():
 
 df = df.fillna(0)
 df = df[::-1]
+# df = df[df.columns[::-1]]
 
 # Visualize using grouped bar chart.
 def plot_category_comparison(df):
-    bar_height = 0.8  # Increased to 0.6 for testing
-    padding = 2
+    bar_height = 4  # Increased to 0.6 for testing
+    padding = 4
     # Total height for each category group including padding
     group_height = bar_height * len(df.columns) + padding
     # Scale index with the full group height
     index = np.arange(len(df.index)) * group_height
-    print("Index positions:", index)
-    fig, ax = plt.subplots(figsize=(15, 20))  # Increased vertical size to 12
+    fig, ax = plt.subplots(figsize=(15, 10))  # Increased vertical size to 12
 
-    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+    colors = ['#d62728', '#ff7f0e', '#2ca02c', '#1f77b4']
 
     for i, tool in enumerate(df.columns):
+        # print(i, tool)
         ax.barh(
             index + i * bar_height,
             df[tool],
@@ -95,7 +106,7 @@ def plot_category_comparison(df):
             color=colors[i % len(colors)]
         )
 
-    # Center y-ticks within each group of bars
+    # Center y-ticks within each group of bars.
     ax.set_yticks(index + bar_height * (len(df.columns) - 1) / 2)
     ax.set_yticklabels(df.index)
     ax.set_xlabel("Warnings per 1000 LOC (log scale)")
