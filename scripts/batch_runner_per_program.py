@@ -6,7 +6,7 @@ def batch_runner_per_program():
     base_path = "visualizations/outputs"
     all_data = defaultdict(lambda: defaultdict(Counter))
 
-    for code_type in ["c2rust", "c2saferust", "human_written"]:
+    for code_type in ["c2rust", "c2saferust", "c2saferustv2", "human_written"]:
         code_type_path = os.path.join(base_path, code_type)
 
         for filename in os.listdir(code_type_path):

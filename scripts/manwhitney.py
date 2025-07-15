@@ -10,7 +10,8 @@ def load_and_normalize(skiprows):
 
 c2rust_norm = load_and_normalize(2)
 c2saferust_norm = load_and_normalize(14)
-human_written_norm = load_and_normalize(26)
+c2saferustv2_norm = load_and_normalize(26)
+human_written_norm = load_and_normalize(38)
 
 # Perform pairwise tests for each category.
 results = []
@@ -19,13 +20,17 @@ categories = c2rust_norm.columns
 for category in categories:
     data_c2rust = c2rust_norm[category]
     data_c2safe = c2saferust_norm[category]
+    data_c2safev2 = c2saferustv2_norm[category]
     data_human = human_written_norm[category]
 
     # Mann-Whitney U tests.
     pairs = [
         ('C2Rust', 'C2SafeRust', data_c2rust, data_c2safe),
         ('C2Rust', 'HumanWritten', data_c2rust, data_human),
+        ('C2Rust', 'C2SafeRustV2', data_c2rust, data_c2safev2),
         ('C2SafeRust', 'HumanWritten', data_c2safe, data_human),
+        ('C2SafeRust', 'C2SafeRustV2', data_c2safe, data_c2safev2),
+        ('C2SafeRustV2', 'HumanWritten', data_c2safev2, data_human),
     ]
 
     for grp1, grp2, d1, d2 in pairs:

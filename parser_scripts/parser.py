@@ -6,7 +6,8 @@ parser = get_parser('rust')
 
 def get_code_lines(code, node):
     """Return list of code lines for the given node."""
-    snippet = code[node.start_byte:node.end_byte]
+    code = code.encode("utf8")
+    snippet = code[node.start_byte:node.end_byte].decode("utf8", errors="replace")
     return snippet.splitlines()
 
 def extract_chunked_code(filepath, max_lines=300):
@@ -19,7 +20,7 @@ def extract_chunked_code(filepath, max_lines=300):
     all_chunks = []
     current_chunk = []
     current_line_count = 0
-
+    count = 0
     for child in root.children:
         lines = get_code_lines(code, child)
         line_count = len(lines)
@@ -58,7 +59,7 @@ def extract_chunked_code(filepath, max_lines=300):
 
 if __name__ == "__main__":
     test_file = os.path.join("example_code", "non_idiomatic.rs")
-    chunks = extract_chunked_code(test_file, max_lines=500)
+    chunks = extract_chunked_code(test_file, max_lines=300)
     print(chunks)
 
     # output_path = os.path.join(os.path.dirname(__file__), "chunked_output.json")

@@ -17,8 +17,8 @@ all_categories = {"arithmetic_issues":"Arithmetic issues","attribute_issues":"At
                 "panic_risks":"Runtime panic risks","thread_safety":"Thread safety", "type_safety":"Type safety"}
 
 
-_, _, _corresponding_categories = mapper()
-_corresponding_categories.remove("Build configuration issues")
+_, _, corresponding_categories = mapper()
+corresponding_categories.remove("Build configuration issues")
 json_files = {
     "c2rust": "llm_results/c2rust_results.json",
     "c2saferrust": "llm_results/c2saferrust_results.json",
@@ -108,4 +108,4 @@ def save_to_excel(data, all_categories, output_file="llm_warnings_per_program.xl
 if __name__ == "__main__":
     all_data = data()
     print(all_data)
-    save_to_excel(all_data, _corresponding_categories)
+    save_to_excel(all_data, corresponding_categories)

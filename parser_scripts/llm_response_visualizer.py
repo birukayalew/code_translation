@@ -120,6 +120,6 @@ def plot_category_comparison(df):
     ax.set_ylim(-bar_height, max_bar_top + padding)
     plt.tight_layout()
     plt.show()
-# 🧮 Step 5: Display and plot
+
 print(df)
 plot_category_comparison(df)

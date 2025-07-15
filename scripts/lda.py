@@ -11,7 +11,7 @@ def lda():
     all_data = defaultdict(lambda: defaultdict(Counter))
     _, _, all_categories = mapper()
 
-    for code_type in ["c2rust", "c2saferust", "human_written"]:
+    for code_type in ["c2rust", "c2saferust", "c2saferustv2","human_written"]:
         code_type_path = os.path.join(base_path, code_type)
         for filename in os.listdir(code_type_path):
             if filename.endswith(".txt"):
@@ -32,7 +32,7 @@ def save_to_excel(data, all_categories, output_file="warnings_per_program.xlsx")
     with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
         row_offset = 0                        # where the next block should start
 
-        for code_type in ["c2rust", "c2saferust", "human_written"]:
+        for code_type in ["c2rust", "c2saferust", "c2saferustv2","human_written"]:
             program_data  = data[code_type]
             program_names = sorted(program_data.keys())
 
