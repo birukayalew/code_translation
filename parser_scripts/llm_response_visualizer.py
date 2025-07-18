@@ -15,8 +15,8 @@ all_categories = {"arithmetic_issues":"Arithmetic issues","attribute_issues":"At
 
 json_files = {  
     "c2rust": "llm_results/c2rust_results.json",
-    "c2saferrust": "llm_results/c2saferrust_results.json",
-    "c2saferrustv2": "llm_results/translation_gym_results.json",
+    "c2saferust": "llm_results/c2saferrust_results.json",
+    "c2saferustv2": "llm_results/translation_gym_results.json",
     "human_written": "llm_results/human_written_results.json"
 }
 
@@ -85,41 +85,68 @@ df = df[::-1]
 # df = df[df.columns[::-1]]
 
 # Visualize using grouped bar chart.
-def plot_category_comparison(df):
-    bar_height = 4  # Increased to 0.6 for testing
+# ... [previous code remains the same until the plot_category_comparison function] ...
+
+def plot_category_comparison(df, linter):
+    bar_height = 4
     padding = 4
-    # Total height for each category group including padding
     group_height = bar_height * len(df.columns) + padding
-    # Scale index with the full group height
     index = np.arange(len(df.index)) * group_height
-    fig, ax = plt.subplots(figsize=(15, 10))  # Increased vertical size to 12
+    fig, ax = plt.subplots(figsize=(15, 10))
 
     colors = ['#d62728', '#ff7f0e', '#2ca02c', '#1f77b4']
 
-    for i, tool in enumerate(df.columns):
-        # print(i, tool)
-        ax.barh(
-            index + i * bar_height,
-            df[tool],
-            height=bar_height,
-            label=tool,
-            color=colors[i % len(colors)]
-        )
+    # Create a copy for plotting (replace 0 with a small value for log scale)
+    plot_df = df.replace(0, 0.001)
 
-    # Center y-ticks within each group of bars.
+    for i, tool in enumerate(plot_df.columns):
+        # Plot all bars (including zeros as small values)
+        bars = ax.barh(
+            index + i * bar_height,
+            plot_df[tool],
+            height=bar_height,
+            color=colors[i % len(colors)],
+            label=tool
+        )
+        
+        # Modify zero bars to appear as faint lines
+        for j, bar in enumerate(bars):
+            if df[tool].iloc[j] == 0:  # Check original zero values.
+                bar.set_color('lightgray')
+                bar.set_edgecolor('dimgray')
+                bar.set_alpha(0.7)
+                bar.set_hatch('//////')  # Diagonal hatch pattern.
+                bar.set_linewidth(0.5)
+
+    # Add legend entry for zero values.
+    zero_patch = plt.Rectangle(
+        (0,0), 1, 1, 
+        fc='lightgray', 
+        ec='dimgray',
+        alpha=0.7,
+        hatch='//////',
+        linewidth=0.5
+    )
+    handles, labels = ax.get_legend_handles_labels()
+    handles.append(zero_patch)
+    labels.append("Zero (no warnings)")
+
+    # Configure plot appearance
     ax.set_yticks(index + bar_height * (len(df.columns) - 1) / 2)
     ax.set_yticklabels(df.index)
     ax.set_xlabel("Warnings per 1000 LOC (log scale)")
     ax.set_ylabel("Warning Categories")
-    ax.set_title("LLM-Based Warnings by Category and Tool (Normalized)")
+    ax.set_title(f"{linter}-Based Warnings by Category and Tool (Normalized)")
     ax.set_xscale("log")
-    ax.legend(loc="upper right")
+    ax.set_xlim(0.0005, df.max().max() * 10)  # Adjust scale to show faint lines
+    ax.legend(handles, labels, loc="lower right")
     ax.grid(axis='x', linestyle='--', alpha=0.7)
-    # Adjust y-axis limits to fully include the tallest bars
     max_bar_top = index[-1] + (len(df.columns) - 1) * bar_height
     ax.set_ylim(-bar_height, max_bar_top + padding)
+    
     plt.tight_layout()
     plt.show()
 
+
 print(df)
-plot_category_comparison(df)
+plot_category_comparison(df, "LLM")

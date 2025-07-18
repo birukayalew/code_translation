@@ -26,7 +26,9 @@ def get_category_counts_from_file(code_type, filepath):
         category = lint_to_custom_category.get(lint, "Uncategorized")
         severity = lint_to_severity.get(lint, "none")
         if category == "Uncategorized":
-            print(f"[!] Uncategorized lint found: {lint}")  
+            print(f"[!] Uncategorized lint found: {lint}") 
+        if category.lower() == "build configuration issues" or 'deprecated' in category.lower():
+            continue 
         custom_category_counts[category] += count
         severity_counts[category][severity] += count
     return custom_category_counts, severity_counts, all_categories

@@ -1,32 +1,3 @@
-   Compiling proc-macro2 v1.0.94
-   Compiling glob v0.3.2
-   Compiling unicode-ident v1.0.18
-   Compiling libc v0.2.170
-   Compiling prettyplease v0.2.30
-   Compiling memchr v2.7.4
-   Compiling regex-syntax v0.8.5
-   Compiling serde v1.0.219
-   Compiling minimal-lexical v0.2.1
-   Compiling cfg-if v1.0.0
-   Compiling clang-sys v1.8.1
-   Compiling libloading v0.8.6
-   Compiling regex-automata v0.4.9
-   Compiling nom v7.1.3
-   Compiling either v1.15.0
-   Compiling bindgen v0.71.1
-   Compiling serde_json v1.0.140
-   Compiling quote v1.0.39
-   Compiling itertools v0.13.0
-   Compiling syn v2.0.100
-   Compiling cexpr v0.6.0
-   Compiling regex v1.11.1
-   Compiling log v0.4.26
-   Compiling bitflags v2.9.0
-   Compiling shlex v1.3.0
-   Compiling ryu v1.0.20
-   Compiling itoa v1.0.15
-   Compiling rustc-hash v2.1.1
-   Compiling foo v0.1.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/truncate)
 warning: package `foo` is missing `package.description` metadata
   |
   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
@@ -293,11 +264,3864 @@ help: change this to
     |
 
 warning: `foo` (build script) generated 19 warnings
-error: failed to run custom build command for `foo v0.1.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/truncate)`
+   Compiling foo v0.1.0 (/app/output/truncate_adYpBGmMEG)
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:591:1
+    |
+591 | / #[no_mangle]
+592 | |
+593 | | /// Reallocates an array with growth handling.
+594 | | ///
+...   |
+605 | | /// A box containing the reallocated array
+606 | | fn xpalloc_rust<T>(
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+    = note: `-W clippy::empty-line-after-outer-attr` implied by `-W clippy::nursery`
+    = help: to override `-W clippy::nursery` add `#[allow(clippy::empty_line_after_outer_attr)]`
 
-Caused by:
-  process didn't exit successfully: `/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/truncate/target/debug/build/foo-ba362c4eee983d49/build-script-build` (exit status: 101)
-  --- stderr
-  thread 'main' panicked at build.rs:35:49:
-  C_BUILD_PATH not set: NotPresent
-  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:775:1
+    |
+775 | / #[no_mangle]
+776 | |
+777 | | fn c_tolower_rust(c: i32) -> i32 {
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:787:1
+    |
+787 | / #[no_mangle]
+788 | |
+789 | | fn c_strcasecmp_rust(s1: &str, s2: &str) -> i32 {
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:841:1
+    |
+841 | / #[no_mangle]
+842 | |
+843 | | /// Represents different quoting styles
+844 | | #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+845 | | pub enum QuotingStyle {
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:1260:1
+     |
+1260 | / #[no_mangle]
+1261 | |
+1262 | | fn version_etc_rust(
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:1356:1
+     |
+1356 | / #[no_mangle]
+1357 | |
+1358 | | fn quotearg_style_rust(s: u32, arg: &str) -> String {
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: unused imports: `AtomicBool`, `AtomicI32`, `AtomicPtr`, `Once`, `Ordering`, `OsString`, `ffi::OsStringExt`, `fs::FileTypeExt`, `fs::Metadata`, `min`, `self`, and `time::Duration`
+  --> src/main.rs:8:16
+   |
+8  |     cmp::{max, min},
+   |                ^^^
+...
+11 |     ffi::{CStr, CString, OsString},
+   |                          ^^^^^^^^
+12 |     fs::Metadata,
+   |     ^^^^^^^^^^^^
+13 |     io::{self, Write},
+   |          ^^^^
+...
+17 |         unix::{ffi::OsStringExt, fs::FileTypeExt},
+   |                ^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^
+...
+22 |         atomic::{AtomicBool, AtomicI32, AtomicPtr, Ordering},
+   |                  ^^^^^^^^^^  ^^^^^^^^^  ^^^^^^^^^  ^^^^^^^^
+23 |         Once,
+   |         ^^^^
+24 |     },
+25 |     time::Duration,
+   |     ^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: long literal lacking separators
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:6764:42
+     |
+6764 | pub const O_PATHSEARCH: _bindgen_ty_16 = 2097152;
+     |                                          ^^^^^^^ help: consider: `2_097_152`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+     = note: `-W clippy::unreadable-literal` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::unreadable_literal)]`
+
+warning: long literal lacking separators
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:7061:41
+     |
+7061 | pub const TIMESPEC_HZ: _bindgen_ty_19 = 1000000000;
+     |                                         ^^^^^^^^^^ help: consider: `1_000_000_000`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: long literal lacking separators
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:7065:49
+     |
+7065 | pub const TIMESPEC_RESOLUTION: _bindgen_ty_21 = 1000000000;
+     |                                                 ^^^^^^^^^^ help: consider: `1_000_000_000`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: long literal lacking separators
+   --> src/main.rs:834:25
+    |
+834 |     if (127 * 2 + 1) <= 2147483647 {
+    |                         ^^^^^^^^^^ help: consider: `2_147_483_647`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: attribute should be applied to a free function, impl method or static
+   --> src/main.rs:841:1
+    |
+841 |   #[no_mangle]
+    |   ^^^^^^^^^^^^
+...
+845 | / pub enum QuotingStyle {
+846 | |     CLocale,
+847 | |     Other,
+848 | | }
+    | |_- not a free function, impl method or static
+    |
+    = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+    = note: `#[warn(unused_attributes)]` on by default
+
+warning: unreachable statement
+   --> src/main.rs:126:9
+    |
+125 |         libc::abort();
+    |         ------------- any code following this expression is unreachable
+126 |         return;
+    |         ^^^^^^^ unreachable statement
+    |
+    = note: `#[warn(unreachable_code)]` on by default
+
+warning: unreachable statement
+   --> src/main.rs:135:13
+    |
+134 |             libc::abort();
+    |             ------------- any code following this expression is unreachable
+135 |             return;
+    |             ^^^^^^^ unreachable statement
+
+warning: unused import: `Write`
+  --> src/main.rs:13:16
+   |
+13 |     io::{self, Write},
+   |                ^^^^^
+
+warning: unused variable: `valid_chars`
+   --> src/main.rs:280:17
+    |
+280 |             let valid_chars = match strtol_base {
+    |                 ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_valid_chars`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `valid_chars`
+   --> src/main.rs:335:25
+    |
+335 |                     let valid_chars = match strtol_base {
+    |                         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_valid_chars`
+
+warning: value assigned to `overflow` is never read
+   --> src/main.rs:409:21
+    |
+409 |             let mut overflow = StrtolError::Ok;
+    |                     ^^^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `new_layout`
+   --> src/main.rs:549:25
+    |
+549 |                     let new_layout = Layout::from_size_align(new_size, layout.align())
+    |                         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_new_layout`
+
+warning: unused variable: `n`
+    --> src/main.rs:1032:17
+     |
+1032 | fn quote_n_rust(n: i32, arg: &str) -> String {
+     |                 ^ help: if this is intentional, prefix it with an underscore: `_n`
+
+warning: unnecessary `unsafe` block
+    --> src/main.rs:1273:5
+     |
+1273 |     unsafe {
+     |     ^^^^^^ unnecessary `unsafe` block
+     |
+     = note: `#[warn(unused_unsafe)]` on by default
+
+warning: unused variable: `n`
+    --> src/main.rs:1346:26
+     |
+1346 | fn quotearg_n_style_rust(n: i32, s: u32, arg: &str) -> String {
+     |                          ^ help: if this is intentional, prefix it with an underscore: `_n`
+
+warning: unused variable: `metadata`
+    --> src/main.rs:1389:9
+     |
+1389 |     let metadata = std::fs::metadata("/").unwrap(); // Just to get a valid Metadata object
+     |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_metadata`
+
+warning: field `val` is never read
+   --> src/main.rs:524:5
+    |
+523 | pub struct ExitFailureWrapper {
+    |            ------------------ field in this struct
+524 |     val: i32,
+    |     ^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: field `val` is never read
+    --> src/main.rs:1009:5
+     |
+1008 | pub struct QuoteQuotingOptionsWrapper {
+     |            -------------------------- field in this struct
+1009 |     val: QuotingOptionsData,
+     |     ^^^
+
+warning: field `val` is never read
+    --> src/main.rs:1182:5
+     |
+1181 | pub struct VersionEtcCopyrightWrapper {
+     |            -------------------------- field in this struct
+1182 |     val: String,
+     |     ^^^
+
+warning: associated function `get_global` is never used
+    --> src/main.rs:1193:8
+     |
+1185 | impl VersionEtcCopyrightWrapper {
+     | ------------------------------- associated function in this implementation
+...
+1193 |     fn get_global() -> String {
+     |        ^^^^^^^^^^
+
+warning: field `val` is never read
+    --> src/main.rs:1419:5
+     |
+1418 | pub struct VersionWrapper {
+     |            -------------- field in this struct
+1419 |     val: String,
+     |     ^^^
+
+warning: field `val` is never read
+    --> src/main.rs:1428:5
+     |
+1427 | pub struct RefFileWrapper {
+     |            -------------- field in this struct
+1428 |     val: Option<String>,
+     |     ^^^
+
+warning: field `val` is never read
+    --> src/main.rs:1439:5
+     |
+1438 | pub struct NoCreateWrapper {
+     |            --------------- field in this struct
+1439 |     val: bool,
+     |     ^^^
+
+warning: field `val` is never read
+    --> src/main.rs:1455:5
+     |
+1454 | pub struct LongoptsWrapper {
+     |            --------------- field in this struct
+1455 |     val: Vec<LongOption>,
+     |     ^^^
+
+warning: this could be a `const fn`
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:19:5
+   |
+19 | /     fn extract_bit(byte: u8, index: usize) -> bool {
+20 | |         let bit_index = if cfg!(target_endian = "big") {
+21 | |             7 - (index % 8)
+22 | |         } else {
+...  |
+26 | |         byte & mask == mask
+27 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+   = note: `-W clippy::missing-const-for-fn` implied by `-W clippy::nursery`
+   = help: to override `-W clippy::nursery` add `#[allow(clippy::missing_const_for_fn)]`
+help: make the function `const`
+   |
+19 |     const fn extract_bit(byte: u8, index: usize) -> bool {
+   |     +++++
+
+warning: unsafe function's docs are missing a `# Safety` section
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:36:5
+   |
+36 |     pub unsafe fn raw_get_bit(this: *const Self, index: usize) -> bool {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+   = note: `-W clippy::missing-safety-doc` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::missing_safety_doc)]`
+
+warning: use of `offset` with a `usize` casted to an `isize`
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:39:21
+   |
+39 |         let byte = *(core::ptr::addr_of!((*this).storage) as *const u8).offset(byte_index as isize);
+   |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `(core::ptr::addr_of!((*this).storage) as *const u8).add(byte_index)`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_offset_with_cast
+   = note: `-W clippy::ptr-offset-with-cast` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::ptr_offset_with_cast)]`
+
+warning: `as` casting between raw pointers without changing their constness
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:39:21
+   |
+39 |         let byte = *(core::ptr::addr_of!((*this).storage) as *const u8).offset(byte_index as isize);
+   |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `_.cast::<u8>()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+   = note: `-W clippy::ptr-as-ptr` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::ptr_as_ptr)]`
+
+warning: casting `usize` to `isize` may wrap around the value
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:39:80
+   |
+39 |         let byte = *(core::ptr::addr_of!((*this).storage) as *const u8).offset(byte_index as isize);
+   |                                                                                ^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_wrap
+   = note: `-W clippy::cast-possible-wrap` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::cast_possible_wrap)]`
+
+warning: this could be a `const fn`
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:43:5
+   |
+43 | /     fn change_bit(byte: u8, index: usize, val: bool) -> u8 {
+44 | |         let bit_index = if cfg!(target_endian = "big") {
+45 | |             7 - (index % 8)
+46 | |         } else {
+...  |
+54 | |         }
+55 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+help: make the function `const`
+   |
+43 |     const fn change_bit(byte: u8, index: usize, val: bool) -> u8 {
+   |     +++++
+
+warning: unsafe function's docs are missing a `# Safety` section
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:64:5
+   |
+64 |     pub unsafe fn raw_set_bit(this: *mut Self, index: usize, val: bool) {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: use of `offset` with a `usize` casted to an `isize`
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:68:13
+   |
+68 |             (core::ptr::addr_of_mut!((*this).storage) as *mut u8).offset(byte_index as isize);
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `(core::ptr::addr_of_mut!((*this).storage) as *mut u8).add(byte_index)`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_offset_with_cast
+
+warning: `as` casting between raw pointers without changing their constness
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:68:13
+   |
+68 |             (core::ptr::addr_of_mut!((*this).storage) as *mut u8).offset(byte_index as isize);
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `_.cast::<u8>()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: casting `usize` to `isize` may wrap around the value
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:68:74
+   |
+68 |             (core::ptr::addr_of_mut!((*this).storage) as *mut u8).offset(byte_index as isize);
+   |                                                                          ^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_wrap
+
+warning: unsafe function's docs are missing a `# Safety` section
+  --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:90:5
+   |
+90 |     pub unsafe fn raw_get(this: *const Self, bit_offset: usize, bit_width: u8) -> u64 {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:124:5
+    |
+124 |     pub unsafe fn raw_set(this: *mut Self, bit_offset: usize, bit_width: u8, val: u64) {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: this method could have a `#[must_use]` attribute
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:145:5
+    |
+145 |     pub const fn new() -> Self {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub const fn new() -> Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+    = note: `-W clippy::must-use-candidate` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::must_use_candidate)]`
+
+warning: unnecessary structure name repetition
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:146:9
+    |
+146 |         __IncompleteArrayField(::std::marker::PhantomData, [])
+    |         ^^^^^^^^^^^^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+    = note: `-W clippy::use-self` implied by `-W clippy::nursery`
+    = help: to override `-W clippy::nursery` add `#[allow(clippy::use_self)]`
+
+warning: this could be a `const fn`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:149:5
+    |
+149 | /     pub fn as_ptr(&self) -> *const T {
+150 | |         self as *const _ as *const T
+151 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+help: make the function `const`
+    |
+149 |     pub const fn as_ptr(&self) -> *const T {
+    |         +++++
+
+warning: `as` casting between raw pointers without changing their constness
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:150:9
+    |
+150 |         self as *const _ as *const T
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `(self as *const _).cast::<T>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: reference as raw pointer
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:150:9
+    |
+150 |         self as *const _ as *const T
+    |         ^^^^^^^^^^^^^^^^ help: try: `std::ptr::from_ref(self)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ref_as_ptr
+    = note: `-W clippy::ref-as-ptr` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::ref_as_ptr)]`
+
+warning: `as` casting between raw pointers without changing their constness
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:154:9
+    |
+154 |         self as *mut _ as *mut T
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `(self as *mut _).cast::<T>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: reference as raw pointer
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:154:9
+    |
+154 |         self as *mut _ as *mut T
+    |         ^^^^^^^^^^^^^^ help: try: `std::ptr::from_mut(self)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ref_as_ptr
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:157:5
+    |
+157 |     pub unsafe fn as_slice(&self, len: usize) -> &[T] {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:161:5
+    |
+161 |     pub unsafe fn as_mut_slice(&mut self, len: usize) -> &mut [T] {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:233:5
+    |
+233 |     pub __val: [::std::os::raw::c_int; 2usize],
+    |     ^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+    = note: `-W clippy::pub-underscore-fields` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::pub_underscore_fields)]`
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:375:5
+    |
+375 |     pub __locales: [*mut __locale_data; 13usize],
+    |     ^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:376:5
+    |
+376 |     pub __ctype_b: *const ::std::os::raw::c_ushort,
+    |     ^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:377:5
+    |
+377 |     pub __ctype_tolower: *const ::std::os::raw::c_int,
+    |     ^^^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:378:5
+    |
+378 |     pub __ctype_toupper: *const ::std::os::raw::c_int,
+    |     ^^^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:379:5
+    |
+379 |     pub __names: [*const ::std::os::raw::c_char; 13usize],
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:467:5
+    |
+467 |     pub __count: ::std::os::raw::c_int,
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:468:5
+    |
+468 |     pub __value: __mbstate_t__bindgen_ty_1,
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:499:5
+    |
+499 |     pub __pos: __off_t,
+    |     ^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:500:5
+    |
+500 |     pub __state: __mbstate_t,
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:513:5
+    |
+513 |     pub __pos: __off64_t,
+    |     ^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:514:5
+    |
+514 |     pub __state: __mbstate_t,
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:546:5
+    |
+546 |     pub _flags: ::std::os::raw::c_int,
+    |     ^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:547:5
+    |
+547 |     pub _IO_read_ptr: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:548:5
+    |
+548 |     pub _IO_read_end: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:549:5
+    |
+549 |     pub _IO_read_base: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:550:5
+    |
+550 |     pub _IO_write_base: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:551:5
+    |
+551 |     pub _IO_write_ptr: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:552:5
+    |
+552 |     pub _IO_write_end: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:553:5
+    |
+553 |     pub _IO_buf_base: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:554:5
+    |
+554 |     pub _IO_buf_end: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:555:5
+    |
+555 |     pub _IO_save_base: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:556:5
+    |
+556 |     pub _IO_backup_base: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:557:5
+    |
+557 |     pub _IO_save_end: *mut ::std::os::raw::c_char,
+    |     ^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:558:5
+    |
+558 |     pub _markers: *mut _IO_marker,
+    |     ^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:559:5
+    |
+559 |     pub _chain: *mut _IO_FILE,
+    |     ^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:560:5
+    |
+560 |     pub _fileno: ::std::os::raw::c_int,
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:561:5
+    |
+561 |     pub _flags2: ::std::os::raw::c_int,
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:562:5
+    |
+562 |     pub _old_offset: __off_t,
+    |     ^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:563:5
+    |
+563 |     pub _cur_column: ::std::os::raw::c_ushort,
+    |     ^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:564:5
+    |
+564 |     pub _vtable_offset: ::std::os::raw::c_schar,
+    |     ^^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:565:5
+    |
+565 |     pub _shortbuf: [::std::os::raw::c_char; 1usize],
+    |     ^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:566:5
+    |
+566 |     pub _lock: *mut _IO_lock_t,
+    |     ^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:567:5
+    |
+567 |     pub _offset: __off64_t,
+    |     ^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:568:5
+    |
+568 |     pub _codecvt: *mut _IO_codecvt,
+    |     ^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:569:5
+    |
+569 |     pub _wide_data: *mut _IO_wide_data,
+    |     ^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:570:5
+    |
+570 |     pub _freeres_list: *mut _IO_FILE,
+    |     ^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:571:5
+    |
+571 |     pub _freeres_buf: *mut ::std::os::raw::c_void,
+    |     ^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:572:5
+    |
+572 |     pub __pad5: usize,
+    |     ^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:573:5
+    |
+573 |     pub _mode: ::std::os::raw::c_int,
+    |     ^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:574:5
+    |
+574 |     pub _unused2: [::std::os::raw::c_char; 20usize],
+    |     ^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1355:5
+     |
+1355 |     pub __clang_max_align_nonce1: ::std::os::raw::c_longlong,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1356:5
+     |
+1356 |     pub __bindgen_padding_0: u64,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1357:5
+     |
+1357 |     pub __clang_max_align_nonce2: u128,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1405:5
+     |
+1405 |     pub __val: [::std::os::raw::c_ulong; 16usize],
+     |     ^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1488:5
+     |
+1488 |     pub __prev: *mut __pthread_internal_list,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1489:5
+     |
+1489 |     pub __next: *mut __pthread_internal_list,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1505:5
+     |
+1505 |     pub __next: *mut __pthread_internal_slist,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1520:5
+     |
+1520 |     pub __lock: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1521:5
+     |
+1521 |     pub __count: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1522:5
+     |
+1522 |     pub __owner: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1523:5
+     |
+1523 |     pub __nusers: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1524:5
+     |
+1524 |     pub __kind: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1525:5
+     |
+1525 |     pub __spins: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1526:5
+     |
+1526 |     pub __list: __pthread_list_t,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1550:5
+     |
+1550 |     pub __readers: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1551:5
+     |
+1551 |     pub __writers: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1552:5
+     |
+1552 |     pub __wrphase_futex: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1553:5
+     |
+1553 |     pub __writers_futex: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1554:5
+     |
+1554 |     pub __pad3: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1555:5
+     |
+1555 |     pub __pad4: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1556:5
+     |
+1556 |     pub __cur_writer: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1557:5
+     |
+1557 |     pub __shared: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1558:5
+     |
+1558 |     pub __pad1: ::std::os::raw::c_ulong,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1559:5
+     |
+1559 |     pub __pad2: ::std::os::raw::c_ulong,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1560:5
+     |
+1560 |     pub __flags: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1593:5
+     |
+1593 |     pub __bindgen_anon_1: __pthread_cond_s__bindgen_ty_1,
+     |     ^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1594:5
+     |
+1594 |     pub __bindgen_anon_2: __pthread_cond_s__bindgen_ty_2,
+     |     ^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1595:5
+     |
+1595 |     pub __g_refs: [::std::os::raw::c_uint; 2usize],
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1596:5
+     |
+1596 |     pub __g_size: [::std::os::raw::c_uint; 2usize],
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1597:5
+     |
+1597 |     pub __g1_orig_size: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1598:5
+     |
+1598 |     pub __wrefs: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1599:5
+     |
+1599 |     pub __g_signals: [::std::os::raw::c_uint; 2usize],
+     |     ^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1610:5
+     |
+1610 |     pub __low: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1611:5
+     |
+1611 |     pub __high: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1644:5
+     |
+1644 |     pub __low: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1645:5
+     |
+1645 |     pub __high: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1983:5
+     |
+1983 |     pub _bitfield_align_1: [u8; 0],
+     |     ^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:1984:5
+     |
+1984 |     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 44usize]>,
+     |     ^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2278:5
+     |
+2278 |     pub _bitfield_align_1: [u8; 0],
+     |     ^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2279:5
+     |
+2279 |     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+     |     ^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2280:5
+     |
+2280 |     pub __bindgen_padding_0: [u8; 3usize],
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: this method could have a `#[must_use]` attribute
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2291:5
+     |
+2291 |     pub fn __floating_time_t_unsupported(&self) -> ::std::os::raw::c_uint {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn __floating_time_t_unsupported(&self) -> ::std::os::raw::c_uint`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: transmute from a type (`u32`) to itself
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2292:18
+     |
+2292 |         unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+     |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_transmute
+     = note: `-W clippy::useless-transmute` implied by `-W clippy::all`
+     = help: to override `-W clippy::all` add `#[allow(clippy::useless_transmute)]`
+
+warning: casting `u64` to `u32` may truncate the value
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2292:40
+     |
+2292 |         unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: if this is intentional allow the lint with `#[allow(clippy::cast_possible_truncation)]` ...
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_truncation
+     = note: `-W clippy::cast-possible-truncation` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::cast_possible_truncation)]`
+help: ... or use `try_from` and handle the error accordingly
+     |
+2292 |         unsafe { ::std::mem::transmute(u32::try_from(self._bitfield_1.get(0usize, 1u8))) }
+     |                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: used binding `_bitfield_1` which is prefixed with an underscore. A leading underscore signals that a binding will not be used
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2292:40
+     |
+2292 |         unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+     |                                        ^^^^^^^^^^^^^^^^
+     |
+note: `_bitfield_1` is defined here
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2279:5
+     |
+2279 |     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#used_underscore_binding
+     = note: `-W clippy::used-underscore-binding` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::used_underscore_binding)]`
+
+warning: consider adding a `;` to the last statement for consistent formatting
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2298:13
+     |
+2298 |             self._bitfield_1.set(0usize, 1u8, val as u64)
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add a `;` here: `self._bitfield_1.set(0usize, 1u8, val as u64);`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#semicolon_if_nothing_returned
+     = note: `-W clippy::semicolon-if-nothing-returned` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::semicolon_if_nothing_returned)]`
+
+warning: transmute from a type (`u32`) to itself
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2297:28
+     |
+2297 |             let val: u32 = ::std::mem::transmute(val);
+     |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_transmute
+
+warning: used binding `_bitfield_1` which is prefixed with an underscore. A leading underscore signals that a binding will not be used
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2298:13
+     |
+2298 |             self._bitfield_1.set(0usize, 1u8, val as u64)
+     |             ^^^^^^^^^^^^^^^^
+     |
+note: `_bitfield_1` is defined here
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2279:5
+     |
+2279 |     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#used_underscore_binding
+
+warning: casts from `u32` to `u64` can be expressed infallibly using `From`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2298:47
+     |
+2298 |             self._bitfield_1.set(0usize, 1u8, val as u64)
+     |                                               ^^^^^^^^^^
+     |
+     = help: an `as` cast can become silently lossy if the types change in the future
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+     = note: `-W clippy::cast-lossless` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::cast_lossless)]`
+help: use `u64::from` instead
+     |
+2298 |             self._bitfield_1.set(0usize, 1u8, u64::from(val))
+     |                                               ~~~~~~~~~~~~~~
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2302:5
+     |
+2302 |     pub unsafe fn __floating_time_t_unsupported_raw(this: *const Self) -> ::std::os::raw::c_uint {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: this method could have a `#[must_use]` attribute
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2302:5
+     |
+2302 |     pub unsafe fn __floating_time_t_unsupported_raw(this: *const Self) -> ::std::os::raw::c_uint {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub unsafe fn __floating_time_t_unsupported_raw(this: *const Self) -> ::std::os::raw::c_uint`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: transmute from a type (`u32`) to itself
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2304:13
+     |
+2304 | /             ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 1usize]>>::raw_get(
+2305 | |                 ::std::ptr::addr_of!((*this)._bitfield_1),
+2306 | |                 0usize,
+2307 | |                 1u8,
+2308 | |             ) as u32)
+     | |_____________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_transmute
+
+warning: casting `u64` to `u32` may truncate the value
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2304:35
+     |
+2304 |               ::std::mem::transmute(<__BindgenBitfieldUnit<[u8; 1usize]>>::raw_get(
+     |  ___________________________________^
+2305 | |                 ::std::ptr::addr_of!((*this)._bitfield_1),
+2306 | |                 0usize,
+2307 | |                 1u8,
+2308 | |             ) as u32)
+     | |____________________^
+     |
+     = help: if this is intentional allow the lint with `#[allow(clippy::cast_possible_truncation)]` ...
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_truncation
+help: ... or use `try_from` and handle the error accordingly
+     |
+2304 ~             ::std::mem::transmute(u32::try_from(<__BindgenBitfieldUnit<[u8; 1usize]>>::raw_get(
+2305 +                 ::std::ptr::addr_of!((*this)._bitfield_1),
+2306 +                 0usize,
+2307 +                 1u8,
+2308 ~             )))
+     |
+
+warning: used binding `_bitfield_1` which is prefixed with an underscore. A leading underscore signals that a binding will not be used
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2305:38
+     |
+2305 |                 ::std::ptr::addr_of!((*this)._bitfield_1),
+     |                                      ^^^^^^^^^^^^^^^^^^^
+     |
+note: `_bitfield_1` is defined here
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2279:5
+     |
+2279 |     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#used_underscore_binding
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2312:5
+     |
+2312 | /     pub unsafe fn set___floating_time_t_unsupported_raw(
+2313 | |         this: *mut Self,
+2314 | |         val: ::std::os::raw::c_uint,
+2315 | |     ) {
+     | |_____^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: consider adding a `;` to the last statement for consistent formatting
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2318:13
+     |
+2318 | /             <__BindgenBitfieldUnit<[u8; 1usize]>>::raw_set(
+2319 | |                 ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+2320 | |                 0usize,
+2321 | |                 1u8,
+2322 | |                 val as u64,
+2323 | |             )
+     | |_____________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#semicolon_if_nothing_returned
+help: add a `;` here
+     |
+2318 ~             <__BindgenBitfieldUnit<[u8; 1usize]>>::raw_set(
+2319 +                 ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+2320 +                 0usize,
+2321 +                 1u8,
+2322 +                 val as u64,
+2323 +             );
+     |
+
+warning: transmute from a type (`u32`) to itself
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2317:28
+     |
+2317 |             let val: u32 = ::std::mem::transmute(val);
+     |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_transmute
+
+warning: used binding `_bitfield_1` which is prefixed with an underscore. A leading underscore signals that a binding will not be used
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2319:42
+     |
+2319 |                 ::std::ptr::addr_of_mut!((*this)._bitfield_1),
+     |                                          ^^^^^^^^^^^^^^^^^^^
+     |
+note: `_bitfield_1` is defined here
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2279:5
+     |
+2279 |     pub _bitfield_1: __BindgenBitfieldUnit<[u8; 1usize]>,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#used_underscore_binding
+
+warning: casts from `u32` to `u64` can be expressed infallibly using `From`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2322:17
+     |
+2322 |                 val as u64,
+     |                 ^^^^^^^^^^
+     |
+     = help: an `as` cast can become silently lossy if the types change in the future
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `u64::from` instead
+     |
+2322 |                 u64::from(val),
+     |                 ~~~~~~~~~~~~~~
+
+warning: this method could have a `#[must_use]` attribute
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2327:5
+     |
+2327 | /     pub fn new_bitfield_1(
+2328 | |         __floating_time_t_unsupported: ::std::os::raw::c_uint,
+2329 | |     ) -> __BindgenBitfieldUnit<[u8; 1usize]> {
+     | |____________________________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+help: add the attribute
+     |
+2327 ~     #[must_use] pub fn new_bitfield_1(
+2328 +         __floating_time_t_unsupported: ::std::os::raw::c_uint,
+2329 ~     ) -> __BindgenBitfieldUnit<[u8; 1usize]> {
+     |
+
+warning: calling `__BindgenBitfieldUnit::default()` is more clear than this expression
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2330:80
+     |
+2330 |         let mut __bindgen_bitfield_unit: __BindgenBitfieldUnit<[u8; 1usize]> = Default::default();
+     |                                                                                ^^^^^^^^^^^^^^^^^^ help: try: `__BindgenBitfieldUnit::default()`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#default_trait_access
+     = note: `-W clippy::default-trait-access` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::default_trait_access)]`
+
+warning: transmute from a type (`u32`) to itself
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2333:26
+     |
+2333 |                 unsafe { ::std::mem::transmute(__floating_time_t_unsupported) };
+     |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_transmute
+
+warning: casts from `u32` to `u64` can be expressed infallibly using `From`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2334:13
+     |
+2334 |             __floating_time_t_unsupported as u64
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: an `as` cast can become silently lossy if the types change in the future
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `u64::from` instead
+     |
+2334 |             u64::from(__floating_time_t_unsupported)
+     |
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2387:5
+     |
+2387 |     pub __pad1: __dev_t,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2390:5
+     |
+2390 |     pub __pad2: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2395:5
+     |
+2395 |     pub __glibc_reserved: [::std::os::raw::c_int; 2usize],
+     |     ^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2429:5
+     |
+2429 |     pub __pad1: __dev_t,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2432:5
+     |
+2432 |     pub __pad2: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2437:5
+     |
+2437 |     pub __glibc_reserved: [::std::os::raw::c_int; 2usize],
+     |     ^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2761:5
+     |
+2761 |     pub __reserved: __s32,
+     |     ^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2784:5
+     |
+2784 |     pub __spare0: [__u16; 1usize],
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2797:5
+     |
+2797 |     pub __spare2: [__u64; 14usize],
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2862:5
+     |
+2862 |     pub __pad0: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2863:5
+     |
+2863 |     pub _sifields: siginfo_t__bindgen_ty_1,
+     |     ^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2965:5
+     |
+2965 |     pub _bounds: siginfo_t__bindgen_ty_1__bindgen_ty_5__bindgen_ty_1,
+     |     ^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2976:5
+     |
+2976 |     pub _lower: *mut ::std::os::raw::c_void,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:2977:5
+     |
+2977 |     pub _upper: *mut ::std::os::raw::c_void,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3038:5
+     |
+3038 |     pub _call_addr: *mut ::std::os::raw::c_void,
+     |     ^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3039:5
+     |
+3039 |     pub _syscall: ::std::os::raw::c_int,
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3040:5
+     |
+3040 |     pub _arch: ::std::os::raw::c_uint,
+     |     ^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3162:5
+     |
+3162 |     pub _sigev_un: sigevent__bindgen_ty_1,
+     |     ^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3174:5
+     |
+3174 |     pub _function: ::std::option::Option<unsafe extern "C" fn(arg1: __sigval_t)>,
+     |     ^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3175:5
+     |
+3175 |     pub _attribute: *mut pthread_attr_t,
+     |     ^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3326:5
+     |
+3326 |     pub __sigaction_handler: sigaction__bindgen_ty_1,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3433:5
+     |
+3433 |     pub __bindgen_padding_0: [u8; 8usize],
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3434:5
+     |
+3434 |     pub __reserved: [__u8; 4096usize],
+     |     ^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3503:5
+     |
+3503 |     pub __reserved: [__u32; 3usize],
+     |     ^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3521:5
+     |
+3521 |     pub __reserved: [__u16; 3usize],
+     |     ^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3820:5
+     |
+3820 |     pub __bindgen_padding_0: [u8; 8usize],
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3821:5
+     |
+3821 |     pub __reserved: [::std::os::raw::c_uchar; 4096usize],
+     |     ^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:3844:5
+     |
+3844 |     pub __bindgen_padding_0: u64,
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5957:5
+     |
+5957 |     pub __x: [::std::os::raw::c_ushort; 3usize],
+     |     ^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5958:5
+     |
+5958 |     pub __old_x: [::std::os::raw::c_ushort; 3usize],
+     |     ^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5959:5
+     |
+5959 |     pub __c: ::std::os::raw::c_ushort,
+     |     ^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5960:5
+     |
+5960 |     pub __init: ::std::os::raw::c_ushort,
+     |     ^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5961:5
+     |
+5961 |     pub __a: ::std::os::raw::c_ulonglong,
+     |     ^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:7934:5
+     |
+7934 |     pub _address: u8,
+     |     ^^^^^^^^^^^^
+     |
+     = help: consider removing the underscore, or making the field private
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: casting raw pointers to the same type and constness is unnecessary (`*mut *mut i8` -> `*mut *mut i8`)
+  --> src/main_func.rs:15:13
+   |
+15 |             args.as_mut_ptr() as *mut *mut libc::c_char,
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `args.as_mut_ptr()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_cast
+   = note: `-W clippy::unnecessary-cast` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::unnecessary_cast)]`
+
+warning: `as` casting between raw pointers without changing their constness
+  --> src/main_func.rs:15:13
+   |
+15 |             args.as_mut_ptr() as *mut *mut libc::c_char,
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `args.as_mut_ptr().cast::<*mut libc::c_char>()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: you should consider adding a `Default` implementation for `ProgramNameWrapper`
+  --> src/main.rs:34:5
+   |
+34 | /     pub fn new() -> Self {
+35 | |         Self {
+36 | |             val: Self::read_global(),
+37 | |         }
+38 | |     }
+   | |_____^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#new_without_default
+   = note: `-W clippy::new-without-default` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::new_without_default)]`
+help: try adding this
+   |
+33 + impl Default for ProgramNameWrapper {
+34 +     fn default() -> Self {
+35 +         Self::new()
+36 +     }
+37 + }
+   |
+
+warning: this method could have a `#[must_use]` attribute
+  --> src/main.rs:34:5
+   |
+34 |     pub fn new() -> Self {
+   |     ^^^^^^^^^^^^^^^^^^^^ help: add the attribute: `#[must_use] pub fn new() -> Self`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+
+warning: docs for function which may panic missing `# Panics` section
+  --> src/main.rs:41:5
+   |
+41 |     pub fn set(&mut self, val: Option<String>) {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: first possible panic found here
+  --> src/main.rs:48:29
+   |
+48 |                 let c_str = std::ffi::CString::new(s.as_bytes()).unwrap();
+   |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+   = note: `-W clippy::missing-panics-doc` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::missing_panics_doc)]`
+
+warning: this argument is passed by value, but not consumed in the function body
+  --> src/main.rs:41:32
+   |
+41 |     pub fn set(&mut self, val: Option<String>) {
+   |                                ^^^^^^^^^^^^^^ help: consider taking a reference instead: `&Option<String>`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_pass_by_value
+   = note: `-W clippy::needless-pass-by-value` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::needless_pass_by_value)]`
+
+warning: assigning the result of `Clone::clone()` may be inefficient
+  --> src/main.rs:42:9
+   |
+42 |         self.val = val.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^ help: use `clone_from()`: `self.val.clone_from(&val)`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#assigning_clones
+   = note: `-W clippy::assigning-clones` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::assigning_clones)]`
+
+warning: use Option::map_or instead of an if let/else
+  --> src/main.rs:79:16
+   |
+79 |       let base = match argv0.rfind('/') {
+   |  ________________^
+80 | |         Some(pos) => &argv0[pos + 1..],
+81 | |         None => argv0,
+82 | |     };
+   | |_____^ help: try: `argv0.rfind('/').map_or(argv0, |pos| &argv0[pos + 1..])`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+   = note: `-W clippy::option-if-let-else` implied by `-W clippy::nursery`
+   = help: to override `-W clippy::nursery` add `#[allow(clippy::option_if_let_else)]`
+
+warning: stripping a prefix manually
+  --> src/main.rs:91:32
+   |
+91 |                 let new_base = &base[3..];
+   |                                ^^^^^^^^^^
+   |
+note: the prefix was tested here
+  --> src/main.rs:89:13
+   |
+89 |             if base.starts_with("lt-") {
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_strip
+   = note: `-W clippy::manual-strip` implied by `-W clippy::all`
+   = help: to override `-W clippy::all` add `#[allow(clippy::manual_strip)]`
+help: try using the `strip_prefix` method
+   |
+89 ~             if let Some(<stripped>) = base.strip_prefix("lt-") {
+90 |                 // On glibc systems, remove the "lt-" prefix from program_invocation_short_name
+91 ~                 let new_base = <stripped>;
+   |
+
+warning: `as` casting between raw pointers while changing only its constness
+  --> src/main.rs:97:53
+   |
+97 |                     program_invocation_short_name = c_str.as_ptr() as *mut c_char;
+   |                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast_mut`, a safer alternative: `c_str.as_ptr().cast_mut()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_cast_constness
+   = note: `-W clippy::ptr-cast-constness` implied by `-W clippy::pedantic`
+   = help: to override `-W clippy::pedantic` add `#[allow(clippy::ptr_cast_constness)]`
+
+warning: casting the result of `as_ptr` to *mut i8
+  --> src/main.rs:97:53
+   |
+97 |                     program_invocation_short_name = c_str.as_ptr() as *mut c_char;
+   |                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: replace with: `c_str.as_mut_ptr()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#as_ptr_cast_mut
+   = note: `-W clippy::as-ptr-cast-mut` implied by `-W clippy::nursery`
+   = help: to override `-W clippy::nursery` add `#[allow(clippy::as_ptr_cast_mut)]`
+
+warning: `as` casting between raw pointers while changing only its constness
+   --> src/main.rs:117:35
+    |
+117 |         program_invocation_name = c_str.as_ptr() as *mut c_char;
+    |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast_mut`, a safer alternative: `c_str.as_ptr().cast_mut()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_cast_constness
+
+warning: casting the result of `as_ptr` to *mut i8
+   --> src/main.rs:117:35
+    |
+117 |         program_invocation_name = c_str.as_ptr() as *mut c_char;
+    |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: replace with: `c_str.as_mut_ptr()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#as_ptr_cast_mut
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:121:1
+    |
+121 | pub unsafe extern "C" fn set_program_name(argv0: *const c_char) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/main.rs:121:1
+    |
+121 | pub unsafe extern "C" fn set_program_name(argv0: *const c_char) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+note: first possible panic found here
+   --> src/main.rs:148:41
+    |
+148 |     let _ = std::mem::ManuallyDrop::new(CString::new(argv0_str).unwrap());
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: this could be rewritten as `let...else`
+   --> src/main.rs:130:5
+    |
+130 | /     let argv0_str = match CStr::from_ptr(argv0).to_str() {
+131 | |         Ok(s) => s,
+132 | |         Err(_) => {
+133 | |             eprintln!("Invalid UTF-8 in argv[0].");
+...   |
+136 | |         }
+137 | |     };
+    | |______^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_let_else
+    = note: `-W clippy::manual-let-else` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::manual_let_else)]`
+help: consider writing
+    |
+130 ~     let Ok(argv0_str) = CStr::from_ptr(argv0).to_str() else {
+131 +             eprintln!("Invalid UTF-8 in argv[0].");
+132 +             libc::abort();
+133 +             return;
+134 +         };
+    |
+
+warning: you seem to be trying to use `match` for destructuring a single pattern. Consider using `if let`
+   --> src/main.rs:130:21
+    |
+130 |       let argv0_str = match CStr::from_ptr(argv0).to_str() {
+    |  _____________________^
+131 | |         Ok(s) => s,
+132 | |         Err(_) => {
+133 | |             eprintln!("Invalid UTF-8 in argv[0].");
+...   |
+136 | |         }
+137 | |     };
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#single_match_else
+    = note: `-W clippy::single-match-else` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::single_match_else)]`
+help: try
+    |
+130 ~     let argv0_str = if let Ok(s) = CStr::from_ptr(argv0).to_str() { s } else {
+131 +         eprintln!("Invalid UTF-8 in argv[0].");
+132 +         libc::abort();
+133 +         return;
+134 ~     };
+    |
+
+warning: this could be a `const fn`
+   --> src/main.rs:153:1
+    |
+153 | / fn to_uchar_rust(ch: c_char) -> u8 {
+154 | |     // Convert c_char to u8 safely
+155 | |     ch as u8
+156 | | }
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+help: make the function `const`
+    |
+153 | const fn to_uchar_rust(ch: c_char) -> u8 {
+    | +++++
+
+warning: casting `i8` to `u8` may lose the sign of the value
+   --> src/main.rs:155:5
+    |
+155 |     ch as u8
+    |     ^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_sign_loss
+    = note: `-W clippy::cast-sign-loss` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::cast_sign_loss)]`
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:158:1
+    |
+158 | pub unsafe extern "C" fn to_uchar(ch: c_char) -> u8 {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: this could be a `const fn`
+   --> src/main.rs:173:5
+    |
+173 | /     fn combine(self, other: StrtolError) -> StrtolError {
+174 | |         let combined = (self as i32) | (other as i32);
+175 | |         match combined {
+176 | |             0 => StrtolError::Ok,
+...   |
+183 | |         }
+184 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+help: make the function `const`
+    |
+173 |     const fn combine(self, other: StrtolError) -> StrtolError {
+    |     +++++
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:173:29
+    |
+173 |     fn combine(self, other: StrtolError) -> StrtolError {
+    |                             ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:173:45
+    |
+173 |     fn combine(self, other: StrtolError) -> StrtolError {
+    |                                             ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: this match arm has an identical body to another arm
+   --> src/main.rs:179:13
+    |
+179 |             4 => StrtolError::InvalidSuffixChar,
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: try changing either arm body
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_same_arms
+    = note: `-W clippy::match-same-arms` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::match_same_arms)]`
+help: or try merging the arm patterns
+    |
+179 |             4 | 5 => StrtolError::InvalidSuffixChar,
+    |             ~~~~~
+help: and remove this obsolete arm
+    |
+180 -             5 => StrtolError::InvalidSuffixChar, // Overflow | InvalidSuffixChar
+180 +             // Overflow | InvalidSuffixChar
+    |
+
+warning: this match arm has an identical body to another arm
+   --> src/main.rs:179:13
+    |
+179 |             4 => StrtolError::InvalidSuffixChar,
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: try changing either arm body
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_same_arms
+help: or try merging the arm patterns
+    |
+179 |             4 | 6 => StrtolError::InvalidSuffixChar,
+    |             ~~~~~
+help: and remove this obsolete arm
+    |
+181 -             6 => StrtolError::InvalidSuffixChar, // Invalid | InvalidSuffixChar
+181 +             // Invalid | InvalidSuffixChar
+    |
+
+warning: this match arm has an identical body to another arm
+   --> src/main.rs:180:13
+    |
+180 |             5 => StrtolError::InvalidSuffixChar, // Overflow | InvalidSuffixChar
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: try changing either arm body
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_same_arms
+help: or try merging the arm patterns
+    |
+180 |             5 | 6 => StrtolError::InvalidSuffixChar, // Overflow | InvalidSuffixChar
+    |             ~~~~~
+help: and remove this obsolete arm
+    |
+181 -             6 => StrtolError::InvalidSuffixChar, // Invalid | InvalidSuffixChar
+181 +             // Invalid | InvalidSuffixChar
+    |
+
+warning: this match arm has an identical body to the `_` wildcard arm
+   --> src/main.rs:178:13
+    |
+178 | /             2 => StrtolError::Invalid,
+179 | |             4 => StrtolError::InvalidSuffixChar,
+    | |____________^ help: try removing the arm
+    |
+    = help: or try changing either arm body
+note: `_` wildcard arm here
+   --> src/main.rs:182:13
+    |
+182 |             _ => StrtolError::Invalid,
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_same_arms
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:176:18
+    |
+176 |             0 => StrtolError::Ok,
+    |                  ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:177:18
+    |
+177 |             1 => StrtolError::Overflow,
+    |                  ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:178:18
+    |
+178 |             2 => StrtolError::Invalid,
+    |                  ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:179:18
+    |
+179 |             4 => StrtolError::InvalidSuffixChar,
+    |                  ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:180:18
+    |
+180 |             5 => StrtolError::InvalidSuffixChar, // Overflow | InvalidSuffixChar
+    |                  ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:181:18
+    |
+181 |             6 => StrtolError::InvalidSuffixChar, // Invalid | InvalidSuffixChar
+    |                  ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unnecessary structure name repetition
+   --> src/main.rs:182:18
+    |
+182 |             _ => StrtolError::Invalid,
+    |                  ^^^^^^^^^^^ help: use the applicable keyword: `Self`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:199:5
+    |
+199 | /     match val.checked_mul(factor) {
+200 | |         Some(result) => {
+201 | |             *val = result;
+202 | |             StrtolError::Ok
+203 | |         }
+204 | |         None => StrtolError::Overflow,
+205 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+help: try
+    |
+199 ~     val.checked_mul(factor).map_or(StrtolError::Overflow, |result| {
+200 +             *val = result;
+201 +             StrtolError::Ok
+202 +         })
+    |
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:210:5
+    |
+210 | /     match val.checked_mul(factor) {
+211 | |         Some(result) => {
+212 | |             *val = result;
+213 | |             StrtolError::Ok
+214 | |         }
+215 | |         None => StrtolError::Overflow,
+216 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+help: try
+    |
+210 ~     val.checked_mul(factor).map_or(StrtolError::Overflow, |result| {
+211 +             *val = result;
+212 +             StrtolError::Ok
+213 +         })
+    |
+
+warning: item in documentation is missing backticks
+   --> src/main.rs:219:28
+    |
+219 | /// Convert a string to an intmax_t with suffix handling
+    |                            ^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#doc_markdown
+    = note: `-W clippy::doc-markdown` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::doc_markdown)]`
+help: try
+    |
+219 | /// Convert a string to an `intmax_t` with suffix handling
+    |                            ~~~~~~~~~~
+
+warning: docs for function which may panic missing `# Panics` section
+   --> src/main.rs:229:1
+    |
+229 | / pub fn xstrtoimax_rust(
+230 | |     s: &str,
+231 | |     mut ptr: Option<&mut usize>,
+232 | |     strtol_base: i32,
+233 | |     valid_suffixes: Option<&str>,
+234 | | ) -> (i128, StrtolError) {
+    | |________________________^
+    |
+note: first possible panic found here
+   --> src/main.rs:236:5
+    |
+236 | /     assert!(
+237 | |         (0 <= strtol_base && strtol_base <= 36),
+238 | |         "0 <= strtol_base && strtol_base <= 36"
+239 | |     );
+    | |_____^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: this function could have a `#[must_use]` attribute
+   --> src/main.rs:229:1
+    |
+229 | / pub fn xstrtoimax_rust(
+230 | |     s: &str,
+231 | |     mut ptr: Option<&mut usize>,
+232 | |     strtol_base: i32,
+233 | |     valid_suffixes: Option<&str>,
+234 | | ) -> (i128, StrtolError) {
+    | |________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#must_use_candidate
+help: add the attribute
+    |
+229 + #[must_use] pub fn xstrtoimax_rust(
+230 +     s: &str,
+231 +     mut ptr: Option<&mut usize>,
+232 +     strtol_base: i32,
+233 +     valid_suffixes: Option<&str>,
+234 ~ ) -> (i128, StrtolError) {
+    |
+
+warning: the function has a cognitive complexity of (33/25)
+   --> src/main.rs:229:8
+    |
+229 | pub fn xstrtoimax_rust(
+    |        ^^^^^^^^^^^^^^^
+    |
+    = help: you could split it up into multiple smaller functions
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cognitive_complexity
+    = note: `-W clippy::cognitive-complexity` implied by `-W clippy::nursery`
+    = help: to override `-W clippy::nursery` add `#[allow(clippy::cognitive_complexity)]`
+
+warning: this function has too many lines (173/100)
+   --> src/main.rs:229:1
+    |
+229 | / pub fn xstrtoimax_rust(
+230 | |     s: &str,
+231 | |     mut ptr: Option<&mut usize>,
+232 | |     strtol_base: i32,
+...   |
+461 | |     (tmp, err)
+462 | | }
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#too_many_lines
+    = note: `-W clippy::too-many-lines` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::too_many_lines)]`
+
+warning: manual `RangeInclusive::contains` implementation
+   --> src/main.rs:237:9
+    |
+237 |         (0 <= strtol_base && strtol_base <= 36),
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: use: `(0..=36).contains(&strtol_base)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_range_contains
+    = note: `-W clippy::manual-range-contains` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::manual_range_contains)]`
+
+warning: casting `i32` to `u32` may lose the sign of the value
+   --> src/main.rs:260:41
+    |
+260 |         i128::from_str_radix(s_trimmed, strtol_base as u32)
+    |                                         ^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_sign_loss
+
+warning: casting `i32` to `u8` may truncate the value
+   --> src/main.rs:301:32
+    |
+301 |                 if digit_val < strtol_base as u8 {
+    |                                ^^^^^^^^^^^^^^^^^
+    |
+    = help: if this is intentional allow the lint with `#[allow(clippy::cast_possible_truncation)]` ...
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_truncation
+help: ... or use `try_from` and handle the error accordingly
+    |
+301 |                 if digit_val < u8::try_from(strtol_base) {
+    |                                ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: casting `i32` to `u8` may lose the sign of the value
+   --> src/main.rs:301:32
+    |
+301 |                 if digit_val < strtol_base as u8 {
+    |                                ^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_sign_loss
+
+warning: this match arm has an identical body to another arm
+   --> src/main.rs:340:25
+    |
+340 |                         10 => "0123456789",
+    |                         ^^^^^^^^^^^^^^^^^^
+    |
+    = help: try changing either arm body
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_same_arms
+help: or try merging the arm patterns
+    |
+340 |                         10 | 0 => "0123456789",
+    |                         ~~~~~~
+help: and remove this obsolete arm
+    |
+336 -                         0 => "0123456789",
+    |
+
+warning: casting `i32` to `u8` may truncate the value
+   --> src/main.rs:356:40
+    |
+356 |                         if digit_val < strtol_base as u8 {
+    |                                        ^^^^^^^^^^^^^^^^^
+    |
+    = help: if this is intentional allow the lint with `#[allow(clippy::cast_possible_truncation)]` ...
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_truncation
+help: ... or use `try_from` and handle the error accordingly
+    |
+356 |                         if digit_val < u8::try_from(strtol_base) {
+    |                                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: casting `i32` to `u8` may lose the sign of the value
+   --> src/main.rs:356:40
+    |
+356 |                         if digit_val < strtol_base as u8 {
+    |                                        ^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_sign_loss
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:464:1
+    |
+464 | / pub unsafe extern "C" fn xstrtoimax(
+465 | |     s: *const c_char,
+466 | |     ptr: *mut *mut c_char,
+467 | |     strtol_base: c_int,
+468 | |     val: *mut libc::intmax_t,
+469 | |     valid_suffixes: *const c_char,
+470 | | ) -> c_int {
+    | |__________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: unnecessary boolean `not` operation
+   --> src/main.rs:472:17
+    |
+472 |       let s_str = if !s.is_null() {
+    |  _________________^
+473 | |         CStr::from_ptr(s).to_string_lossy().to_string()
+474 | |     } else {
+475 | |         return StrtolError::Invalid as c_int;
+476 | |     };
+    | |_____^
+    |
+    = help: remove the `!` and swap the blocks of the `if`/`else`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#if_not_else
+    = note: `-W clippy::if-not-else` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::if_not_else)]`
+
+warning: unnecessary boolean `not` operation
+   --> src/main.rs:478:30
+    |
+478 |       let valid_suffixes_opt = if !valid_suffixes.is_null() {
+    |  ______________________________^
+479 | |         Some(CStr::from_ptr(valid_suffixes).to_string_lossy().to_string())
+480 | |     } else {
+481 | |         None
+482 | |     };
+    | |_____^
+    |
+    = help: remove the `!` and swap the blocks of the `if`/`else`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#if_not_else
+
+warning: unnecessary boolean `not` operation
+   --> src/main.rs:486:19
+    |
+486 |     let pos_ptr = if !ptr.is_null() { Some(&mut pos) } else { None };
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: remove the `!` and swap the blocks of the `if`/`else`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#if_not_else
+
+warning: casts from `i64` to `i128` can be expressed infallibly using `From`
+   --> src/main.rs:495:21
+    |
+495 |         if result > libc::intmax_t::MAX as i128 || result < libc::intmax_t::MIN as i128 {
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i128::from` instead
+    |
+495 |         if result > i128::from(libc::intmax_t::MAX) || result < libc::intmax_t::MIN as i128 {
+    |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: casts from `i64` to `i128` can be expressed infallibly using `From`
+   --> src/main.rs:495:61
+    |
+495 |         if result > libc::intmax_t::MAX as i128 || result < libc::intmax_t::MIN as i128 {
+    |                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i128::from` instead
+    |
+495 |         if result > libc::intmax_t::MAX as i128 || result < i128::from(libc::intmax_t::MIN) {
+    |                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: casting `i128` to `i64` may truncate the value
+   --> src/main.rs:504:20
+    |
+504 |             *val = result as libc::intmax_t;
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: if this is intentional allow the lint with `#[allow(clippy::cast_possible_truncation)]` ...
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_truncation
+help: ... or use `try_from` and handle the error accordingly
+    |
+504 |             *val = libc::intmax_t::try_from(result);
+    |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: `as` casting between raw pointers while changing only its constness
+   --> src/main.rs:512:20
+    |
+512 |             *ptr = s.add(pos) as *mut c_char;
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast_mut`, a safer alternative: `s.add(pos).cast_mut()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_cast_constness
+
+warning: `as` casting between raw pointers while changing only its constness
+   --> src/main.rs:515:20
+    |
+515 |             *ptr = s.add(s_str.len()) as *mut c_char;
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast_mut`, a safer alternative: `s.add(s_str.len()).cast_mut()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_cast_constness
+
+warning: boxed return of the sized type `T`
+   --> src/main.rs:532:62
+    |
+532 | fn xrealloc_rust<T>(ptr: Option<Box<T>>, new_size: usize) -> Box<T> {
+    |                                                              ^^^^^^ help: try: `T`
+    |
+    = help: changing this also requires a change to the return expressions in this function
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_box_returns
+    = note: `-W clippy::unnecessary-box-returns` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::unnecessary_box_returns)]`
+
+warning: only a `panic!` in `if`-then statement
+   --> src/main.rs:534:5
+    |
+534 | /     if new_size == 0 {
+535 | |         // In Rust, we can't create a zero-sized Box, so we'll panic
+536 | |         // This matches the C behavior where xalloc_die() is called
+537 | |         panic!("Memory allocation failed");
+538 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_assert
+    = note: `-W clippy::manual-assert` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::manual_assert)]`
+help: try instead
+    |
+534 |     assert!(!(new_size == 0), "Memory allocation failed");
+    |
+
+warning: you seem to be trying to use `match` for destructuring a single pattern. Consider using `if let`
+   --> src/main.rs:540:5
+    |
+540 | /     match ptr {
+541 | |         Some(old_box) => {
+542 | |             // For resizing an existing allocation
+543 | |             let old_ptr = Box::into_raw(old_box);
+...   |
+588 | |         }
+589 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#single_match_else
+help: try
+    |
+540 ~     if let Some(old_box) = ptr {
+541 +         // For resizing an existing allocation
+542 +         let old_ptr = Box::into_raw(old_box);
+543 + 
+544 +         // Safety: We're manually managing memory here, similar to realloc in C
+545 +         unsafe {
+546 +             let new_ptr = if new_size > 0 {
+547 +                 let layout = Layout::for_value(&*old_ptr);
+548 +                 let new_layout = Layout::from_size_align(new_size, layout.align())
+549 +                     .unwrap_or_else(|_| {
+550 +                         panic!("Memory allocation failed");
+551 +                     });
+552 + 
+553 +                 let new_ptr = alloc::realloc(old_ptr as *mut u8, layout, new_size);
+554 +                 if new_ptr.is_null() {
+555 +                     panic!("Memory allocation failed");
+556 +                 }
+557 +                 new_ptr as *mut T
+558 +             } else {
+559 +                 alloc::dealloc(old_ptr as *mut u8, Layout::for_value(&*old_ptr));
+560 +                 std::ptr::null_mut()
+561 +             };
+562 + 
+563 +             if new_ptr.is_null() {
+564 +                 panic!("Memory allocation failed");
+565 +             }
+566 + 
+567 +             Box::from_raw(new_ptr)
+568 +         }
+569 +     } else {
+570 +         // For a new allocation (equivalent to malloc)
+571 +         let layout = Layout::array::<u8>(new_size).unwrap_or_else(|_| {
+572 +             panic!("Memory allocation failed");
+573 +         });
+574 + 
+575 +         unsafe {
+576 +             let ptr = alloc::alloc(layout);
+577 +             if ptr.is_null() {
+578 +                 panic!("Memory allocation failed");
+579 +             }
+580 + 
+581 +             // Initialize memory to zero, as realloc would do
+582 +             ptr::write_bytes(ptr, 0, new_size);
+583 + 
+584 +             Box::from_raw(ptr as *mut T)
+585 +         }
+586 +     }
+    |
+
+warning: use Option::map_or_else instead of an if let/else
+   --> src/main.rs:540:5
+    |
+540 | /     match ptr {
+541 | |         Some(old_box) => {
+542 | |             // For resizing an existing allocation
+543 | |             let old_ptr = Box::into_raw(old_box);
+...   |
+588 | |         }
+589 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+help: try
+    |
+540 ~     ptr.map_or_else(|| {
+541 +             // For a new allocation (equivalent to malloc)
+542 +             let layout = Layout::array::<u8>(new_size).unwrap_or_else(|_| {
+543 +                 panic!("Memory allocation failed");
+544 +             });
+545 + 
+546 +             unsafe {
+547 +                 let ptr = alloc::alloc(layout);
+548 +                 if ptr.is_null() {
+549 +                     panic!("Memory allocation failed");
+550 +                 }
+551 + 
+552 +                 // Initialize memory to zero, as realloc would do
+553 +                 ptr::write_bytes(ptr, 0, new_size);
+554 + 
+555 +                 Box::from_raw(ptr as *mut T)
+556 +             }
+557 +         }, |old_box| {
+558 +             // For resizing an existing allocation
+559 +             let old_ptr = Box::into_raw(old_box);
+560 + 
+561 +             // Safety: We're manually managing memory here, similar to realloc in C
+562 +             unsafe {
+563 +                 let new_ptr = if new_size > 0 {
+564 +                     let layout = Layout::for_value(&*old_ptr);
+565 +                     let new_layout = Layout::from_size_align(new_size, layout.align())
+566 +                         .unwrap_or_else(|_| {
+567 +                             panic!("Memory allocation failed");
+568 +                         });
+569 + 
+570 +                     let new_ptr = alloc::realloc(old_ptr as *mut u8, layout, new_size);
+571 +                     if new_ptr.is_null() {
+572 +                         panic!("Memory allocation failed");
+573 +                     }
+574 +                     new_ptr as *mut T
+575 +                 } else {
+576 +                     alloc::dealloc(old_ptr as *mut u8, Layout::for_value(&*old_ptr));
+577 +                     std::ptr::null_mut()
+578 +                 };
+579 + 
+580 +                 if new_ptr.is_null() {
+581 +                     panic!("Memory allocation failed");
+582 +                 }
+583 + 
+584 +                 Box::from_raw(new_ptr)
+585 +             }
+586 +         })
+    |
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:554:50
+    |
+554 |                     let new_ptr = alloc::realloc(old_ptr as *mut u8, layout, new_size);
+    |                                                  ^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `old_ptr.cast::<u8>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: only a `panic!` in `if`-then statement
+   --> src/main.rs:555:21
+    |
+555 | /                     if new_ptr.is_null() {
+556 | |                         panic!("Memory allocation failed");
+557 | |                     }
+    | |_____________________^ help: try instead: `assert!(!new_ptr.is_null(), "Memory allocation failed");`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_assert
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:558:21
+    |
+558 |                     new_ptr as *mut T
+    |                     ^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `new_ptr.cast::<T>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:560:36
+    |
+560 |                     alloc::dealloc(old_ptr as *mut u8, Layout::for_value(&*old_ptr));
+    |                                    ^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `old_ptr.cast::<u8>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: only a `panic!` in `if`-then statement
+   --> src/main.rs:564:17
+    |
+564 | /                 if new_ptr.is_null() {
+565 | |                     panic!("Memory allocation failed");
+566 | |                 }
+    | |_________________^ help: try instead: `assert!(!new_ptr.is_null(), "Memory allocation failed");`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_assert
+
+warning: only a `panic!` in `if`-then statement
+   --> src/main.rs:579:17
+    |
+579 | /                 if ptr.is_null() {
+580 | |                     panic!("Memory allocation failed");
+581 | |                 }
+    | |_________________^ help: try instead: `assert!(!ptr.is_null(), "Memory allocation failed");`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_assert
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:586:31
+    |
+586 |                 Box::from_raw(ptr as *mut T)
+    |                               ^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `ptr.cast::<T>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: `#[no_mangle]` set on a function with the default (`Rust`) ABI
+   --> src/main.rs:606:1
+    |
+606 | / fn xpalloc_rust<T>(
+607 | |     pa: Option<Box<T>>,
+608 | |     pn: &mut i64,
+609 | |     n_incr_min: i64,
+610 | |     n_max: i64,
+611 | |     s: i64,
+612 | | ) -> Box<T> {
+    | |___________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#no_mangle_with_rust_abi
+    = note: `-W clippy::no-mangle-with-rust-abi` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::no_mangle_with_rust_abi)]`
+help: set an ABI
+    |
+606 | extern "C" fn xpalloc_rust<T>(
+    | ++++++++++
+help: or explicitly set the default
+    |
+606 | extern "Rust" fn xpalloc_rust<T>(
+    | +++++++++++++
+
+warning: boxed return of the sized type `T`
+   --> src/main.rs:612:6
+    |
+612 | ) -> Box<T> {
+    |      ^^^^^^ help: try: `T`
+    |
+    = help: changing this also requires a change to the return expressions in this function
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_box_returns
+
+warning: adding items after statements is confusing, since items exist from the start of the scope
+   --> src/main.rs:617:5
+    |
+617 |     const DEFAULT_MXFAST: i64 = 64 * std::mem::size_of::<usize>() as i64 / 4;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#items_after_statements
+    = note: `-W clippy::items-after-statements` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::items_after_statements)]`
+
+warning: casting `usize` to `i64` may wrap around the value on targets with 64-bit wide pointers
+   --> src/main.rs:617:38
+    |
+617 |     const DEFAULT_MXFAST: i64 = 64 * std::mem::size_of::<usize>() as i64 / 4;
+    |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_possible_wrap
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:625:17
+    |
+625 |       let mut n = match n0.checked_add(n0 / 2) {
+    |  _________________^
+626 | |         Some(val) => val,
+627 | |         None => i64::MAX,
+628 | |     };
+    | |_____^ help: try: `n0.checked_add(n0 / 2).map_or(i64::MAX, |val| val)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:636:22
+    |
+636 |       let mut nbytes = match n.checked_mul(s) {
+    |  ______________________^
+637 | |         Some(val) => val,
+638 | |         None => i64::MAX,
+639 | |     };
+    | |_____^ help: try: `n.checked_mul(s).map_or(i64::MAX, |val| val)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: this could be rewritten as `let...else`
+   --> src/main.rs:680:5
+    |
+680 | /     let nbytes_usize = match usize::try_from(nbytes) {
+681 | |         Ok(val) => val,
+682 | |         Err(_) => unsafe {
+683 | |             xalloc_die();
+684 | |             unreachable!()
+685 | |         },
+686 | |     };
+    | |______^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_let_else
+help: consider writing
+    |
+680 ~     let Ok(nbytes_usize) = usize::try_from(nbytes) else unsafe {
+681 +             xalloc_die();
+682 +             unreachable!()
+683 +         };
+    |
+
+warning: you seem to be trying to use `match` for destructuring a single pattern. Consider using `if let`
+   --> src/main.rs:680:24
+    |
+680 |       let nbytes_usize = match usize::try_from(nbytes) {
+    |  ________________________^
+681 | |         Ok(val) => val,
+682 | |         Err(_) => unsafe {
+683 | |             xalloc_die();
+684 | |             unreachable!()
+685 | |         },
+686 | |     };
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#single_match_else
+help: try
+    |
+680 ~     let nbytes_usize = if let Ok(val) = usize::try_from(nbytes) { val } else { unsafe {
+681 +         xalloc_die();
+682 +         unreachable!()
+683 ~     } };
+    |
+
+warning: use Option::map_or_else instead of an if let/else
+   --> src/main.rs:680:24
+    |
+680 |       let nbytes_usize = match usize::try_from(nbytes) {
+    |  ________________________^
+681 | |         Ok(val) => val,
+682 | |         Err(_) => unsafe {
+683 | |             xalloc_die();
+684 | |             unreachable!()
+685 | |         },
+686 | |     };
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+help: try
+    |
+680 ~     let nbytes_usize = usize::try_from(nbytes).map_or_else(|_| unsafe {
+681 +             xalloc_die();
+682 +             unreachable!()
+683 ~         }, |val| val);
+    |
+
+warning: you seem to be trying to use `match` for destructuring a single pattern. Consider using `if let`
+   --> src/main.rs:688:18
+    |
+688 |       let result = match pa {
+    |  __________________^
+689 | |         Some(old_box) => unsafe {
+690 | |             let ptr = Box::into_raw(old_box);
+691 | |             let new_box = xrealloc_rust(Some(Box::from_raw(ptr)), nbytes_usize);
+...   |
+706 | |         },
+707 | |     };
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#single_match_else
+help: try
+    |
+688 ~     let result = if let Some(old_box) = pa { unsafe {
+689 +         let ptr = Box::into_raw(old_box);
+690 +         let new_box = xrealloc_rust(Some(Box::from_raw(ptr)), nbytes_usize);
+691 +         new_box
+692 +     } } else { unsafe {
+693 +         // Allocate new memory
+694 +         let layout = Layout::from_size_align_unchecked(
+695 +             max(nbytes_usize, 1), // Ensure at least 1 byte
+696 +             std::mem::align_of::<T>(),
+697 +         );
+698 +         let ptr = alloc::alloc(layout) as *mut T;
+699 +         if ptr.is_null() {
+700 +             xalloc_die();
+701 +             unreachable!();
+702 +         }
+703 +         Box::from_raw(ptr)
+704 ~     } };
+    |
+
+warning: use Option::map_or_else instead of an if let/else
+   --> src/main.rs:688:18
+    |
+688 |       let result = match pa {
+    |  __________________^
+689 | |         Some(old_box) => unsafe {
+690 | |             let ptr = Box::into_raw(old_box);
+691 | |             let new_box = xrealloc_rust(Some(Box::from_raw(ptr)), nbytes_usize);
+...   |
+706 | |         },
+707 | |     };
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+help: try
+    |
+688 ~     let result = pa.map_or_else(|| unsafe {
+689 +             // Allocate new memory
+690 +             let layout = Layout::from_size_align_unchecked(
+691 +                 max(nbytes_usize, 1), // Ensure at least 1 byte
+692 +                 std::mem::align_of::<T>(),
+693 +             );
+694 +             let ptr = alloc::alloc(layout) as *mut T;
+695 +             if ptr.is_null() {
+696 +                 xalloc_die();
+697 +                 unreachable!();
+698 +             }
+699 +             Box::from_raw(ptr)
+700 +         }, |old_box| unsafe {
+701 +             let ptr = Box::into_raw(old_box);
+702 +             let new_box = xrealloc_rust(Some(Box::from_raw(ptr)), nbytes_usize);
+703 +             new_box
+704 ~         });
+    |
+
+warning: returning the result of a `let` binding from a block
+   --> src/main.rs:692:13
+    |
+691 |             let new_box = xrealloc_rust(Some(Box::from_raw(ptr)), nbytes_usize);
+    |             -------------------------------------------------------------------- unnecessary `let` binding
+692 |             new_box
+    |             ^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#let_and_return
+    = note: `-W clippy::let-and-return` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::let_and_return)]`
+help: return the expression directly
+    |
+691 ~             
+692 ~             xrealloc_rust(Some(Box::from_raw(ptr)), nbytes_usize)
+    |
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:700:23
+    |
+700 |             let ptr = alloc::alloc(layout) as *mut T;
+    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `alloc::alloc(layout).cast::<T>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:715:1
+    |
+715 | / pub unsafe extern "C" fn xpalloc(
+716 | |     pa: *mut libc::c_void,
+717 | |     pn: *mut libc::c_long,
+718 | |     n_incr_min: libc::c_long,
+719 | |     n_max: libc::ptrdiff_t,
+720 | |     s: libc::c_long,
+721 | | ) -> *mut libc::c_void {
+    | |______________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: returning the result of a `let` binding from a block
+   --> src/main.rs:754:5
+    |
+752 |     let result_ptr = Box::into_raw(result) as *mut libc::c_void;
+    |     ------------------------------------------------------------ unnecessary `let` binding
+753 |
+754 |     result_ptr
+    |     ^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#let_and_return
+help: return the expression directly
+    |
+752 ~     
+753 |
+754 ~     Box::into_raw(result) as *mut libc::c_void
+    |
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:726:28
+    |
+726 |         Some(Box::from_raw(pa as *mut u8))
+    |                            ^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `pa.cast::<u8>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:733:26
+    |
+733 |       let n_max_i64: i64 = match n_max.try_into() {
+    |  __________________________^
+734 | |         Ok(val) => val,
+735 | |         Err(_) => {
+736 | |             // If conversion fails, use i64::MAX as a fallback
+...   |
+742 | |         }
+743 | |     };
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+help: try
+    |
+733 ~     let n_max_i64: i64 = n_max.try_into().map_or(if n_max < 0 {
+734 +                 -1 // Preserve negative sign to indicate no maximum
+735 +             } else {
+736 +                 i64::MAX
+737 ~             }, |val| val);
+    |
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:752:22
+    |
+752 |     let result_ptr = Box::into_raw(result) as *mut libc::c_void;
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `Box::into_raw(result).cast::<libc::c_void>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: `#[no_mangle]` set on a function with the default (`Rust`) ABI
+   --> src/main.rs:777:1
+    |
+777 | fn c_tolower_rust(c: i32) -> i32 {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#no_mangle_with_rust_abi
+help: set an ABI
+    |
+777 | extern "C" fn c_tolower_rust(c: i32) -> i32 {
+    | ++++++++++
+help: or explicitly set the default
+    |
+777 | extern "Rust" fn c_tolower_rust(c: i32) -> i32 {
+    | +++++++++++++
+
+warning: this could be a `const fn`
+   --> src/main.rs:777:1
+    |
+777 | / fn c_tolower_rust(c: i32) -> i32 {
+778 | |     // Check if c is an uppercase ASCII letter
+779 | |     if c >= 'A' as i32 && c <= 'Z' as i32 {
+780 | |         // Convert to lowercase by adding the difference between lowercase and uppercase
+...   |
+785 | |     }
+786 | | }
+    | |_^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_const_for_fn
+help: make the function `const`
+    |
+777 | const fn c_tolower_rust(c: i32) -> i32 {
+    | +++++
+
+warning: `#[no_mangle]` set on a function with the default (`Rust`) ABI
+   --> src/main.rs:789:1
+    |
+789 | fn c_strcasecmp_rust(s1: &str, s2: &str) -> i32 {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#no_mangle_with_rust_abi
+help: set an ABI
+    |
+789 | extern "C" fn c_strcasecmp_rust(s1: &str, s2: &str) -> i32 {
+    | ++++++++++
+help: or explicitly set the default
+    |
+789 | extern "Rust" fn c_strcasecmp_rust(s1: &str, s2: &str) -> i32 {
+    | +++++++++++++
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:801:18
+    |
+801 |           let c1 = match iter1.next() {
+    |  __________________^
+802 | |             Some(c) => c_tolower_rust(c as i32),
+803 | |             None => 0, // End of string
+804 | |         };
+    | |_________^ help: try: `iter1.next().map_or(0, |c| c_tolower_rust(c as i32))`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: casts from `u8` to `i32` can be expressed infallibly using `From`
+   --> src/main.rs:802:39
+    |
+802 |             Some(c) => c_tolower_rust(c as i32),
+    |                                       ^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i32::from` instead
+    |
+802 |             Some(c) => c_tolower_rust(i32::from(c)),
+    |                                       ~~~~~~~~~~~~
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:806:18
+    |
+806 |           let c2 = match iter2.next() {
+    |  __________________^
+807 | |             Some(c) => c_tolower_rust(c as i32),
+808 | |             None => 0, // End of string
+809 | |         };
+    | |_________^ help: try: `iter2.next().map_or(0, |c| c_tolower_rust(c as i32))`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: casts from `u8` to `i32` can be expressed infallibly using `From`
+   --> src/main.rs:807:39
+    |
+807 |             Some(c) => c_tolower_rust(c as i32),
+    |                                       ^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i32::from` instead
+    |
+807 |             Some(c) => c_tolower_rust(i32::from(c)),
+    |                                       ~~~~~~~~~~~~
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:823:14
+    |
+823 |       let c1 = match iter1.next() {
+    |  ______________^
+824 | |         Some(c) => c_tolower_rust(c as i32),
+825 | |         None => 0,
+826 | |     };
+    | |_____^ help: try: `iter1.next().map_or(0, |c| c_tolower_rust(c as i32))`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: casts from `u8` to `i32` can be expressed infallibly using `From`
+   --> src/main.rs:824:35
+    |
+824 |         Some(c) => c_tolower_rust(c as i32),
+    |                                   ^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i32::from` instead
+    |
+824 |         Some(c) => c_tolower_rust(i32::from(c)),
+    |                                   ~~~~~~~~~~~~
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:828:14
+    |
+828 |       let c2 = match iter2.next() {
+    |  ______________^
+829 | |         Some(c) => c_tolower_rust(c as i32),
+830 | |         None => 0,
+831 | |     };
+    | |_____^ help: try: `iter2.next().map_or(0, |c| c_tolower_rust(c as i32))`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: casts from `u8` to `i32` can be expressed infallibly using `From`
+   --> src/main.rs:829:35
+    |
+829 |         Some(c) => c_tolower_rust(c as i32),
+    |                                   ^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i32::from` instead
+    |
+829 |         Some(c) => c_tolower_rust(i32::from(c)),
+    |                                   ~~~~~~~~~~~~
+
+warning: this comparison involving the minimum or maximum element for this type contains a case that is always true or always false
+   --> src/main.rs:834:8
+    |
+834 |     if (127 * 2 + 1) <= 2147483647 {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: because `2147483647` is the maximum value for this type, this comparison is always true
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#absurd_extreme_comparisons
+    = note: `-W clippy::absurd-extreme-comparisons` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::absurd_extreme_comparisons)]`
+
+warning: casts from `bool` to `i32` can be expressed infallibly using `From`
+   --> src/main.rs:838:9
+    |
+838 |         ((c1 > c2) as i32) - ((c1 < c2) as i32)
+    |         ^^^^^^^^^^^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i32::from` instead
+    |
+838 |         i32::from(c1 > c2) - ((c1 < c2) as i32)
+    |         ~~~~~~~~~~~~~~~~~~
+
+warning: casts from `bool` to `i32` can be expressed infallibly using `From`
+   --> src/main.rs:838:30
+    |
+838 |         ((c1 > c2) as i32) - ((c1 < c2) as i32)
+    |                              ^^^^^^^^^^^^^^^^^^
+    |
+    = help: an `as` cast can become silently lossy if the types change in the future
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+help: use `i32::from` instead
+    |
+838 |         ((c1 > c2) as i32) - i32::from(c1 < c2)
+    |                              ~~~~~~~~~~~~~~~~~~
+
+warning: use Option::map_or_else instead of an if let/else
+   --> src/main.rs:860:9
+    |
+860 | /         match result.to_str() {
+861 | |             Ok(s) => s.to_string(),
+862 | |             Err(_) => msgid.to_string(),
+863 | |         }
+    | |_________^ help: try: `result.to_str().map_or_else(|_| msgid.to_string(), |s| s.to_string())`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: wildcard matches only a single variant and will also match any future added variants
+   --> src/main.rs:894:9
+    |
+894 |         _ => "'".to_string(),
+    |         ^ help: try: `QuotingStyle::Other`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_wildcard_for_single_variants
+    = note: `-W clippy::match-wildcard-for-single-variants` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::match_wildcard_for_single_variants)]`
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:898:1
+    |
+898 | pub unsafe extern "C" fn gettext_quote(msgid: *const c_char, s: libc::c_int) -> *mut c_char {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: this pattern reimplements `Result::unwrap_or`
+   --> src/main.rs:903:9
+    |
+903 | /         match CStr::from_ptr(msgid).to_str() {
+904 | |             Ok(s) => s,
+905 | |             Err(_) => "",
+906 | |         }
+    | |_________^ help: replace with: `CStr::from_ptr(msgid).to_str().unwrap_or("")`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_unwrap_or
+    = note: `-W clippy::manual-unwrap-or` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::manual_unwrap_or)]`
+
+warning: use Option::map_or instead of an if let/else
+   --> src/main.rs:903:9
+    |
+903 | /         match CStr::from_ptr(msgid).to_str() {
+904 | |             Ok(s) => s,
+905 | |             Err(_) => "",
+906 | |         }
+    | |_________^ help: try: `CStr::from_ptr(msgid).to_str().map_or("", |s| s)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+
+warning: match can be simplified with `.unwrap_or_default()`
+   --> src/main.rs:903:9
+    |
+903 | /         match CStr::from_ptr(msgid).to_str() {
+904 | |             Ok(s) => s,
+905 | |             Err(_) => "",
+906 | |         }
+    | |_________^ help: replace it with: `CStr::from_ptr(msgid).to_str().unwrap_or_default()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_unwrap_or_default
+    = note: `-W clippy::manual-unwrap-or-default` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::manual_unwrap_or_default)]`
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> src/main.rs:928:5
+    |
+928 |     pub __clang_max_align_nonce1: i64,
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: field marked as public but also inferred as unused because it's prefixed with `_`
+   --> src/main.rs:929:5
+    |
+929 |     pub __clang_max_align_nonce2: f64,
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: consider removing the underscore, or making the field private
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#pub_underscore_fields
+
+warning: use Option::map_or_else instead of an if let/else
+   --> src/main.rs:938:5
+    |
+938 | /     match p {
+939 | |         Some(value) => value,
+940 | |         None => {
+941 | |             // Instead of calling the C xalloc_die function, we use Rust's panic
+...   |
+944 | |         }
+945 | |     }
+    | |_____^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#option_if_let_else
+help: try
+    |
+938 ~     p.map_or_else(|| {
+939 +             // Instead of calling the C xalloc_die function, we use Rust's panic
+940 +             // which is more idiomatic and provides better error handling
+941 +             panic!("Memory allocation failed");
+942 +         }, |value| value)
+    |
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:948:1
+    |
+948 | pub unsafe extern "C" fn check_nonnull(p: *mut libc::c_void) -> *mut libc::c_void {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: this could be rewritten as `let...else`
+   --> src/main.rs:962:5
+    |
+962 | /     let layout = match Layout::from_size_align(size, std::mem::align_of::<usize>()) {
+963 | |         Ok(layout) => layout,
+964 | |         Err(_) => return ptr::null_mut(),
+965 | |     };
+    | |______^ help: consider writing: `let Ok(layout) = Layout::from_size_align(size, std::mem::align_of::<usize>()) else { return ptr::null_mut() };`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_let_else
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:975:1
+    |
+975 | pub unsafe extern "C" fn xmalloc(s: libc::size_t) -> *mut libc::c_void {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: `as` casting between raw pointers without changing their constness
+   --> src/main.rs:976:5
+    |
+976 |     xmalloc_rust(s as usize) as *mut libc::c_void
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `xmalloc_rust(s as usize).cast::<libc::c_void>()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: casting to the same type is unnecessary (`usize` -> `usize`)
+   --> src/main.rs:976:18
+    |
+976 |     xmalloc_rust(s as usize) as *mut libc::c_void
+    |                  ^^^^^^^^^^ help: try: `s`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unnecessary_cast
+
+warning: slow zero-filling initialization
+   --> src/main.rs:984:5
+    |
+982 |     let mut buffer = Vec::with_capacity(n);
+    |                      --------------------- help: consider replacing this with: `vec![0; n]`
+983 |     // Ensure the vector has the requested size
+984 |     buffer.resize(n, 0);
+    |     ^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#slow_vector_initialization
+    = note: `-W clippy::slow-vector-initialization` implied by `-W clippy::all`
+    = help: to override `-W clippy::all` add `#[allow(clippy::slow_vector_initialization)]`
+
+warning: unsafe function's docs are missing a `# Safety` section
+   --> src/main.rs:988:1
+    |
+988 | pub unsafe extern "C" fn xcharalloc(n: libc::size_t) -> *mut libc::c_char {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: casting the result of `as_ptr` to *mut i8
+   --> src/main.rs:994:15
+    |
+994 |     let ptr = buffer.as_ptr() as *mut libc::c_char;
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: replace with: `buffer.as_mut_ptr()`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#as_ptr_cast_mut
+
+warning: unnecessary structure name repetition
+    --> src/main.rs:1024:9
+     |
+1024 |         QuotingOptionsData {
+     |         ^^^^^^^^^^^^^^^^^^ help: use the applicable keyword: `Self`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#use_self
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> src/main.rs:1054:1
+     |
+1054 | pub unsafe extern "C" fn quote_n(n: c_int, arg: *const c_char) -> *const c_char {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: this could be rewritten as `let...else`
+    --> src/main.rs:1060:5
+     |
+1060 | /     let arg_str = match CStr::from_ptr(arg).to_str() {
+1061 | |         Ok(s) => s,
+1062 | |         Err(_) => return ptr::null(),
+1063 | |     };
+     | |______^ help: consider writing: `let Ok(arg_str) = CStr::from_ptr(arg).to_str() else { return ptr::null() };`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_let_else
+
+warning: this could be rewritten as `let...else`
+    --> src/main.rs:1071:5
+     |
+1071 | /     let c_result = match CString::new(result) {
+1072 | |         Ok(s) => s,
+1073 | |         Err(_) => return ptr::null(),
+1074 | |     };
+     | |______^ help: consider writing: `let Ok(c_result) = CString::new(result) else { return ptr::null() };`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_let_else
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> src/main.rs:1086:1
+     |
+1086 | pub unsafe extern "C" fn quote(arg: *const c_char) -> *const c_char {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: `as` casting between raw pointers while changing only its constness
+    --> src/main.rs:1106:5
+     |
+1106 |     c_result as *const c_char
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast_const`, a safer alternative: `c_result.cast_const()`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_cast_constness
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> src/main.rs:1144:1
+     |
+1144 | / pub unsafe extern "C" fn proper_name_lite(
+1145 | |     name_ascii: *const libc::c_char,
+1146 | |     name_utf8: *const libc::c_char,
+1147 | | ) -> *const libc::c_char {
+     | |________________________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: docs for function which may panic missing `# Panics` section
+    --> src/main.rs:1144:1
+     |
+1144 | / pub unsafe extern "C" fn proper_name_lite(
+1145 | |     name_ascii: *const libc::c_char,
+1146 | |     name_utf8: *const libc::c_char,
+1147 | | ) -> *const libc::c_char {
+     | |________________________^
+     |
+note: first possible panic found here
+    --> src/main.rs:1173:60
+     |
+1173 |     let c_result = CString::new(result).unwrap_or_else(|_| CString::new("").unwrap());
+     |                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: `as` casting between raw pointers without changing their constness
+    --> src/main.rs:1178:5
+     |
+1178 |     ptr as *const libc::c_char
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try `pointer::cast`, a safer alternative: `ptr.cast::<libc::c_char>()`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_as_ptr
+
+warning: item in documentation is missing backticks
+    --> src/main.rs:1209:35
+     |
+1209 | /// A safe Rust implementation of version_etc_va
+     |                                   ^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#doc_markdown
+help: try
+     |
+1209 | /// A safe Rust implementation of `version_etc_va`
+     |                                   ~~~~~~~~~~~~~~~~
+
+warning: item in documentation is missing backticks
+    --> src/main.rs:1212:20
+     |
+1212 | /// passes them to version_etc_arn.
+     |                    ^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#doc_markdown
+help: try
+     |
+1212 | /// passes them to `version_etc_arn`.
+     |                    ~~~~~~~~~~~~~~~~~
+
+warning: adding items after statements is confusing, since items exist from the start of the scope
+    --> src/main.rs:1235:9
+     |
+1235 | /         extern "C" {
+1236 | |             fn version_etc_arn(
+1237 | |                 stream: *mut libc::FILE,
+1238 | |                 command_name: *const libc::c_char,
+...    |
+1243 | |             );
+1244 | |         }
+     | |_________^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#items_after_statements
+
+warning: the loop variable `i` is used to index `author_ptrs`
+    --> src/main.rs:1225:18
+     |
+1225 |         for i in 0..10 {
+     |                  ^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_range_loop
+     = note: `-W clippy::needless-range-loop` implied by `-W clippy::all`
+     = help: to override `-W clippy::all` add `#[allow(clippy::needless_range_loop)]`
+help: consider using an iterator and enumerate()
+     |
+1225 |         for (i, <item>) in author_ptrs.iter_mut().enumerate() {
+     |             ~~~~~~~~~~~    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+warning: `#[no_mangle]` set on a function with the default (`Rust`) ABI
+    --> src/main.rs:1262:1
+     |
+1262 | / fn version_etc_rust(
+1263 | |     stream: *mut libc::FILE,
+1264 | |     command_name: *const c_char,
+1265 | |     package: *const c_char,
+1266 | |     version: *const c_char,
+1267 | |     authors: &[*const c_char],
+1268 | | ) {
+     | |_^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#no_mangle_with_rust_abi
+help: set an ABI
+     |
+1262 | extern "C" fn version_etc_rust(
+     | ++++++++++
+help: or explicitly set the default
+     |
+1262 | extern "Rust" fn version_etc_rust(
+     | +++++++++++++
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> src/main.rs:1278:1
+     |
+1278 | / pub unsafe extern "C" fn version_etc(
+1279 | |     stream: *mut libc::FILE,
+1280 | |     command_name: *const c_char,
+1281 | |     package: *const c_char,
+1282 | |     version: *const c_char,
+1283 | |     /* const char *author1, ... */
+1284 | | ) {
+     | |_^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: reference as raw pointer
+    --> src/main.rs:1290:45
+     |
+1290 |     let mut current_author = std::ptr::read((&version as *const *const c_char).add(1));
+     |                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `std::ptr::from_ref::<*const c_char>(&version)`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ref_as_ptr
+
+warning: reference as raw pointer
+    --> src/main.rs:1297:41
+     |
+1297 |         current_author = std::ptr::read((&version as *const *const c_char).add(i));
+     |                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `std::ptr::from_ref::<*const c_char>(&version)`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ref_as_ptr
+
+warning: this match could be replaced by its body itself
+    --> src/main.rs:1351:5
+     |
+1351 | /     match s {
+1352 | |         // For error messages, we need to use single quotes around the filename
+1353 | |         _ => format!("'{}'", arg),
+1354 | |     }
+     | |_____^ help: consider using the match body instead: `format!("'{}'", arg)`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#match_single_binding
+     = note: `-W clippy::match-single-binding` implied by `-W clippy::all`
+     = help: to override `-W clippy::all` add `#[allow(clippy::match_single_binding)]`
+
+warning: variables can be used directly in the `format!` string
+    --> src/main.rs:1353:14
+     |
+1353 |         _ => format!("'{}'", arg),
+     |              ^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+     = note: `-W clippy::uninlined-format-args` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::uninlined_format_args)]`
+help: change this to
+     |
+1353 -         _ => format!("'{}'", arg),
+1353 +         _ => format!("'{arg}'"),
+     |
+
+warning: `#[no_mangle]` set on a function with the default (`Rust`) ABI
+    --> src/main.rs:1358:1
+     |
+1358 | fn quotearg_style_rust(s: u32, arg: &str) -> String {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#no_mangle_with_rust_abi
+help: set an ABI
+     |
+1358 | extern "C" fn quotearg_style_rust(s: u32, arg: &str) -> String {
+     | ++++++++++
+help: or explicitly set the default
+     |
+1358 | extern "Rust" fn quotearg_style_rust(s: u32, arg: &str) -> String {
+     | +++++++++++++
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> src/main.rs:1362:1
+     |
+1362 | pub unsafe extern "C" fn quotearg_style(s: c_uint, arg: *const c_char) -> *mut c_char {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: item in documentation is missing backticks
+    --> src/main.rs:1377:23
+     |
+1377 | /// Determines if the st_size field of a file's metadata is usable.
+     |                       ^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#doc_markdown
+help: try
+     |
+1377 | /// Determines if the `st_size` field of a file's metadata is usable.
+     |                       ~~~~~~~~~
+
+warning: unsafe function's docs are missing a `# Safety` section
+    --> src/main.rs:1383:1
+     |
+1383 | pub unsafe extern "C" fn usable_st_size(sb: *const libc::stat) -> libc::c_int {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_safety_doc
+
+warning: docs for function which may panic missing `# Panics` section
+    --> src/main.rs:1383:1
+     |
+1383 | pub unsafe extern "C" fn usable_st_size(sb: *const libc::stat) -> libc::c_int {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+note: first possible panic found here
+    --> src/main.rs:1389:20
+     |
+1389 |     let metadata = std::fs::metadata("/").unwrap(); // Just to get a valid Metadata object
+     |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#missing_panics_doc
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5567:10
+     |
+5567 |     ) -> u128;
+     |          ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+     = note: `#[warn(improper_ctypes)]` on by default
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5588:10
+     |
+5588 |     ) -> _Float128;
+     |          ^^^^^^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5602:10
+     |
+5602 |     ) -> _Float64x;
+     |          ^^^^^^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5676:14
+     |
+5676 |         __f: u128,
+     |              ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5703:14
+     |
+5703 |         __f: _Float128,
+     |              ^^^^^^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5721:14
+     |
+5721 |         __f: _Float64x,
+     |              ^^^^^^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5782:10
+     |
+5782 |     ) -> u128;
+     |          ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5806:10
+     |
+5806 |     ) -> _Float128;
+     |          ^^^^^^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:5822:10
+     |
+5822 |     ) -> _Float64x;
+     |          ^^^^^^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:6322:18
+     |
+6322 |         __value: u128,
+     |                  ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:6331:18
+     |
+6331 |         __value: u128,
+     |                  ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:6340:18
+     |
+6340 |         __value: u128,
+     |                  ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:6370:18
+     |
+6370 |         __value: u128,
+     |                  ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: `extern` block uses type `u128`, which is not FFI-safe
+    --> /app/output/truncate_adYpBGmMEG/target/debug/build/foo-231262516476aec2/out/bindings.rs:6381:18
+     |
+6381 |         __value: u128,
+     |                  ^^^^ not FFI-safe
+     |
+     = note: 128-bit integers don't currently have a known stable ABI
+
+warning: functions generic over types or consts must be mangled
+   --> src/main.rs:606:1
+    |
+591 |   #[no_mangle]
+    |   ------------ help: remove this attribute
+...
+606 | / fn xpalloc_rust<T>(
+607 | |     pa: Option<Box<T>>,
+608 | |     pn: &mut i64,
+609 | |     n_incr_min: i64,
+...   |
+712 | |     result
+713 | | }
+    | |_^
+    |
+    = note: `#[warn(no_mangle_generic_items)]` on by default
+
+warning: comparison is useless due to type limits
+   --> src/main.rs:834:8
+    |
+834 |     if (127 * 2 + 1) <= 2147483647 {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(unused_comparisons)]` on by default
+
+warning: returned pointer of `as_ptr` call is never null, so checking it for null will always return false
+    --> src/main.rs:1197:16
+     |
+1197 |             if version_etc_copyright.as_ptr().is_null() {
+     |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(useless_ptr_null_checks)]` on by default
+
+warning: `foo` (bin "truncate") generated 354 warnings (6 duplicates) (run `cargo clippy --fix --bin "truncate"` to apply 85 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 7.81s

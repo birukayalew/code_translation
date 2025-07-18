@@ -1,32 +1,6 @@
-   Compiling proc-macro2 v1.0.94
-   Compiling glob v0.3.2
-   Compiling unicode-ident v1.0.18
-   Compiling libc v0.2.170
-   Compiling memchr v2.7.4
-   Compiling prettyplease v0.2.30
-   Compiling regex-syntax v0.8.5
-   Compiling cfg-if v1.0.0
-   Compiling serde v1.0.219
-   Compiling minimal-lexical v0.2.1
-   Compiling clang-sys v1.8.1
-   Compiling nom v7.1.3
-   Compiling libloading v0.8.6
-   Compiling regex-automata v0.4.9
-   Compiling serde_json v1.0.140
-   Compiling either v1.15.0
-   Compiling quote v1.0.39
-   Compiling syn v2.0.100
-   Compiling bindgen v0.71.1
-   Compiling cexpr v0.6.0
-   Compiling regex v1.11.1
-   Compiling itertools v0.13.0
-   Compiling itoa v1.0.15
-   Compiling bitflags v2.9.0
-   Compiling rustc-hash v2.1.1
-   Compiling log v0.4.26
-   Compiling ryu v1.0.20
-   Compiling shlex v1.3.0
-   Compiling foo v0.1.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/split)
+STDOUT:
+
+STDERR:
 warning: package `foo` is missing `package.description` metadata
   |
   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cargo_common_metadata
@@ -293,11 +267,582 @@ help: change this to
     |
 
 warning: `foo` (build script) generated 19 warnings
-error: failed to run custom build command for `foo v0.1.0 (/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/split)`
+   Compiling foo v0.1.0 (/app/output/split_d9CWM4VQVp)
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:568:1
+    |
+568 | / #[no_mangle]
+569 | |
+570 | | /// Converts an uppercase ASCII character to lowercase.
+571 | | /// If the character is not an uppercase ASCII letter, it is returned unchanged.
+572 | | fn c_tolower_rust(c: i32) -> i32 {
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+    = note: `-W clippy::empty-line-after-outer-attr` implied by `-W clippy::nursery`
+    = help: to override `-W clippy::nursery` add `#[allow(clippy::empty_line_after_outer_attr)]`
 
-Caused by:
-  process didn't exit successfully: `/mnt/c/Users/sebir/Documents/summer/code_translation/translation_gym/output/split/target/debug/build/foo-ba362c4eee983d49/build-script-build` (exit status: 101)
-  --- stderr
-  thread 'main' panicked at build.rs:35:49:
-  C_BUILD_PATH not set: NotPresent
-  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:582:1
+    |
+582 | / #[no_mangle]
+583 | |
+584 | | fn c_strcasecmp_rust(s1: &str, s2: &str) -> i32 {
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:638:1
+    |
+638 | / #[no_mangle]
+639 | |
+640 | | fn gettext_quote_rust(msgid: &str, style: i32) -> String {
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+   --> src/main.rs:864:1
+    |
+864 | / #[no_mangle]
+865 | |
+866 | | fn quote_rust(arg: &CStr) -> *const c_char {
+    | |_
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:2143:1
+     |
+2143 | / #[no_mangle]
+2144 | |
+2145 | | fn quotearg_style_rust(s: i32, arg: &str) -> String {
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:2281:1
+     |
+2281 | / #[no_mangle]
+2282 | |
+2283 | | /// Allocates memory with the specified alignment and size.
+2284 | | /// Returns a non-null pointer to the allocated memory.
+2285 | | /// Panics if the allocation fails.
+2286 | | fn xalignalloc_rust(alignment: usize, size: usize) -> NonNull<u8> {
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:2448:1
+     |
+2448 | / #[no_mangle]
+2449 | |
+2450 | | /// Closes a file stream with additional error handling.
+2451 | | ///
+2452 | | /// This is a Rust reimplementation of the C `rpl_fclose` function.
+2453 | | fn rpl_fclose_rust(fp: *mut libc::FILE) -> io::Result<()> {
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:2748:1
+     |
+2748 | / #[no_mangle]
+2749 | |
+2750 | | fn xirealloc_rust(p: Option<NonNull<u8>>, size: usize) -> NonNull<u8> {
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:2813:1
+     |
+2813 | / #[no_mangle]
+2814 | |
+2815 | | fn xicalloc_rust(n: usize, s: usize) -> *mut u8 {
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: found an empty line after an outer attribute. Perhaps you forgot to add a `!` to make it an inner attribute?
+    --> src/main.rs:3662:1
+     |
+3662 | / #[no_mangle]
+3663 | |
+3664 | | fn xireallocarray_rust(p: Option<NonNull<u8>>, n: usize, s: usize) -> NonNull<u8> {
+     | |_
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#empty_line_after_outer_attr
+
+warning: unused imports: `EINTR` and `ssize_t`
+ --> src/main.rs:5:43
+  |
+5 | use libc::{c_char, c_int, c_void, size_t, ssize_t, EDOM, EINTR, EINVAL, ERANGE, SEEK_CUR};
+  |                                           ^^^^^^^        ^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `AtomicPtr`, `AtomicUsize`, `ErrorKind`, `Error`, `FileTypeExt`, `Once`, `OsString`, `cell::UnsafeCell`, `convert::TryInto`, `ffi::OsStringExt`, `max`, `min`, `null_mut`, `num::Wrapping`, and `process::Child`
+  --> src/main.rs:8:5
+   |
+8  |     cell::UnsafeCell,
+   |     ^^^^^^^^^^^^^^^^
+9  |     cmp::{max, min},
+   |           ^^^  ^^^
+10 |     convert::TryInto,
+   |     ^^^^^^^^^^^^^^^^
+11 |     ffi::{CStr, CString, OsString},
+   |                          ^^^^^^^^
+12 |     fs::{File, Metadata, OpenOptions, Permissions},
+13 |     io::{self, Error, ErrorKind, Read, Seek, SeekFrom, Write},
+   |                ^^^^^  ^^^^^^^^^
+14 |     num::Wrapping,
+   |     ^^^^^^^^^^^^^
+...
+17 |         ffi::OsStringExt,
+   |         ^^^^^^^^^^^^^^^^
+18 |         fs::{FileTypeExt, MetadataExt, OpenOptionsExt, PermissionsExt},
+   |              ^^^^^^^^^^^
+...
+23 |     process::Child,
+   |     ^^^^^^^^^^^^^^
+24 |     ptr,
+25 |     ptr::{null_mut, NonNull},
+   |           ^^^^^^^^
+26 |     sync::{
+27 |         atomic::{AtomicBool, AtomicI32, AtomicPtr, AtomicUsize, Ordering},
+   |                                         ^^^^^^^^^  ^^^^^^^^^^^
+28 |         Mutex, Once, OnceLock,
+   |                ^^^^
+
+warning: long literal lacking separators
+    --> /app/output/split_d9CWM4VQVp/target/debug/build/foo-231262516476aec2/out/bindings.rs:6799:42
+     |
+6799 | pub const O_PATHSEARCH: _bindgen_ty_16 = 2097152;
+     |                                          ^^^^^^^ help: consider: `2_097_152`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+     = note: `-W clippy::unreadable-literal` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::unreadable_literal)]`
+
+warning: long literal lacking separators
+    --> /app/output/split_d9CWM4VQVp/target/debug/build/foo-231262516476aec2/out/bindings.rs:7096:41
+     |
+7096 | pub const TIMESPEC_HZ: _bindgen_ty_19 = 1000000000;
+     |                                         ^^^^^^^^^^ help: consider: `1_000_000_000`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: long literal lacking separators
+    --> /app/output/split_d9CWM4VQVp/target/debug/build/foo-231262516476aec2/out/bindings.rs:7100:49
+     |
+7100 | pub const TIMESPEC_RESOLUTION: _bindgen_ty_21 = 1000000000;
+     |                                                 ^^^^^^^^^^ help: consider: `1_000_000_000`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: long literal lacking separators
+    --> /app/output/split_d9CWM4VQVp/target/debug/build/foo-231262516476aec2/out/bindings.rs:7941:40
+     |
+7941 | pub const IO_BUFSIZE: _bindgen_ty_25 = 262144;
+     |                                        ^^^^^^ help: consider: `262_144`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: long literal lacking separators
+    --> /app/output/split_d9CWM4VQVp/target/debug/build/foo-231262516476aec2/out/bindings.rs:7969:45
+     |
+7969 | pub const SYS_BUFSIZE_MAX: _bindgen_ty_26 = 2146435072;
+     |                                             ^^^^^^^^^^ help: consider: `2_146_435_072`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: redundant else block
+   --> src/main.rs:317:12
+    |
+317 |       } else {
+    |  ____________^
+318 | |         // Reallocate memory
+319 | |         unsafe {
+320 | |             // We don't know the original size, so we can't create the exact original layout
+...   |
+330 | |         }
+331 | |     }
+    | |_____^
+    |
+    = help: remove the `else` block and move the contents out
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_else
+    = note: `-W clippy::redundant-else` implied by `-W clippy::pedantic`
+    = help: to override `-W clippy::pedantic` add `#[allow(clippy::redundant_else)]`
+
+warning: redundant else block
+   --> src/main.rs:295:16
+    |
+295 |           } else {
+    |  ________________^
+296 | |             let layout = Layout::from_size_align(size, 1).unwrap();
+297 | |             unsafe {
+298 | |                 let new_ptr = alloc::alloc(layout);
+...   |
+305 | |             }
+306 | |         }
+    | |_________^
+    |
+    = help: remove the `else` block and move the contents out
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_else
+
+warning: long literal lacking separators
+   --> src/main.rs:627:25
+    |
+627 |     if (127 * 2 + 1) <= 2147483647 {
+    |                         ^^^^^^^^^^ help: consider: `2_147_483_647`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: redundant else block
+    --> src/main.rs:1241:20
+     |
+1241 |               } else {
+     |  ____________________^
+1242 | |                 return (Err(StrtolError::Invalid), rest);
+1243 | |             }
+     | |_____________^
+     |
+     = help: remove the `else` block and move the contents out
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_else
+
+warning: redundant else block
+    --> src/main.rs:2043:12
+     |
+2043 |       } else {
+     |  ____________^
+2044 | |         // Try to duplicate the fd to the desired number
+2045 | |         unsafe {
+2046 | |             let fd2 = libc::dup2(fd, desired_fd);
+...    |
+2051 | |         }
+2052 | |     }
+     | |_____^
+     |
+     = help: remove the `else` block and move the contents out
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_else
+
+warning: binding's name is too similar to existing binding
+    --> src/main.rs:2069:12
+     |
+2069 |         Ok(file_str) => fd_reopen_rust(desired_fd, file_str, flags, mode),
+     |            ^^^^^^^^
+     |
+note: existing binding defined here
+    --> src/main.rs:2067:9
+     |
+2067 |     let file_cstr = CStr::from_ptr(file);
+     |         ^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#similar_names
+     = note: `-W clippy::similar-names` implied by `-W clippy::pedantic`
+     = help: to override `-W clippy::pedantic` add `#[allow(clippy::similar_names)]`
+
+warning: long literal lacking separators
+    --> src/main.rs:2224:19
+     |
+2224 |     if (st_mode & 0o170000) == 0o100000 && (blocksize & (blocksize - 1)) != 0 {
+     |                   ^^^^^^^^ help: consider: `0o170_000`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: long literal lacking separators
+    --> src/main.rs:2224:32
+     |
+2224 |     if (st_mode & 0o170000) == 0o100000 && (blocksize & (blocksize - 1)) != 0 {
+     |                                ^^^^^^^^ help: consider: `0o100_000`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: unnecessary parentheses around `if` condition
+    --> src/main.rs:2478:12
+     |
+2478 |         if (!is_reading || is_seekable) {
+     |            ^                          ^
+     |
+     = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+     |
+2478 -         if (!is_reading || is_seekable) {
+2478 +         if !is_reading || is_seekable {
+     |
+
+warning: binding's name is too similar to existing binding
+    --> src/main.rs:3062:9
+     |
+3062 |     let file_str = match file_cstr.to_str() {
+     |         ^^^^^^^^
+     |
+note: existing binding defined here
+    --> src/main.rs:3061:9
+     |
+3061 |     let file_cstr = CStr::from_ptr(file);
+     |         ^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#similar_names
+
+warning: this is a decimal constant
+    --> src/main.rs:3068:34
+     |
+3068 |     let mode_value = if (flags & 0100) != 0 { mode } else { 0 };
+     |                                  ^^^^
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#zero_prefixed_literal
+     = note: `-W clippy::zero-prefixed-literal` implied by `-W clippy::all`
+     = help: to override `-W clippy::all` add `#[allow(clippy::zero_prefixed_literal)]`
+help: if you mean to use a decimal constant, remove the `0` to avoid confusion
+     |
+3068 |     let mode_value = if (flags & 100) != 0 { mode } else { 0 };
+     |                                  ~~~
+help: if you mean to use an octal constant, use `0o`
+     |
+3068 |     let mode_value = if (flags & 0o100) != 0 { mode } else { 0 };
+     |                                  ~~~~~
+
+warning: long literal lacking separators
+    --> src/main.rs:3287:36
+     |
+3287 |     const SYS_BUFSIZE_MAX: usize = 0x7ffff000; // Common value, adjust if needed
+     |                                    ^^^^^^^^^^ help: consider: `0x7fff_f000`
+     |
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unreadable_literal
+
+warning: redundant else block
+    --> src/main.rs:3295:16
+     |
+3295 |           } else {
+     |  ________________^
+3296 | |             // Get the errno
+3297 | |             let errno = io::Error::last_os_error().raw_os_error().unwrap_or(0);
+...    |
+3308 | |             }
+3309 | |         }
+     | |_________^
+     |
+     = help: remove the `else` block and move the contents out
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_else
+
+warning: redundant else block
+    --> src/main.rs:3305:20
+     |
+3305 |               } else {
+     |  ____________________^
+3306 | |                 // Other error, return the negative result
+3307 | |                 return result;
+3308 | |             }
+     | |_____________^
+     |
+     = help: remove the `else` block and move the contents out
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_else
+
+warning: redundant else block
+    --> src/main.rs:3324:12
+     |
+3324 |       } else {
+     |  ____________^
+3325 | |         return result as size_t;
+3326 | |     }
+     | |_____^
+     |
+     = help: remove the `else` block and move the contents out
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_else
+
+warning: binding's name is too similar to existing binding
+    --> src/main.rs:3508:13
+     |
+3508 |         let initial_read_usize = initial_read as usize;
+     |             ^^^^^^^^^^^^^^^^^^
+     |
+note: existing binding defined here
+    --> src/main.rs:3477:5
+     |
+3477 |     initial_read_size: i64,
+     |     ^^^^^^^^^^^^^^^^^
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#similar_names
+
+warning: unreachable statement
+   --> src/main.rs:143:9
+    |
+142 |         libc::abort();
+    |         ------------- any code following this expression is unreachable
+143 |         return;
+    |         ^^^^^^^ unreachable statement
+    |
+    = note: `#[warn(unreachable_code)]` on by default
+
+warning: unreachable statement
+   --> src/main.rs:435:13
+    |
+434 |             xalloc_die_rust();
+    |             ----------------- any code following this expression is unreachable
+435 |             unreachable!();
+    |             ^^^^^^^^^^^^^^ unreachable statement
+    |
+    = note: this warning originates in the macro `unreachable` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unreachable statement
+   --> src/main.rs:450:17
+    |
+449 |                 xalloc_die_rust();
+    |                 ----------------- any code following this expression is unreachable
+450 |                 unreachable!();
+    |                 ^^^^^^^^^^^^^^ unreachable statement
+    |
+    = note: this warning originates in the macro `unreachable` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unreachable statement
+   --> src/main.rs:462:17
+    |
+461 |                 xalloc_die_rust();
+    |                 ----------------- any code following this expression is unreachable
+462 |                 unreachable!();
+    |                 ^^^^^^^^^^^^^^ unreachable statement
+    |
+    = note: this warning originates in the macro `unreachable` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0308]: mismatched types
+    --> src/main.rs:2250:21
+     |
+2250 |     io_blksize_rust(st_blksize, st_mode as u32) as libc::ssize_t
+     |     --------------- ^^^^^^^^^^ expected `i32`, found `i64`
+     |     |
+     |     arguments to this function are incorrect
+     |
+note: function defined here
+    --> src/main.rs:2203:4
+     |
+2203 | fn io_blksize_rust(st_blksize: i32, st_mode: u32) -> isize {
+     |    ^^^^^^^^^^^^^^^ ---------------
+help: you can convert an `i64` to an `i32` and panic if the converted value doesn't fit
+     |
+2250 |     io_blksize_rust(st_blksize.try_into().unwrap(), st_mode as u32) as libc::ssize_t
+     |                               ++++++++++++++++++++
+
+warning: creating a shared reference to mutable static is discouraged
+    --> src/main.rs:3144:28
+     |
+3144 |             let stat_buf = &in_stat_buf;
+     |                            ^^^^^^^^^^^^ shared reference to mutable static
+     |
+     = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+     = note: this will be a hard error in the 2024 edition
+     = note: this shared reference has lifetime `'static`, but if the static ever gets mutated, or a mutable reference is created, then any further use of this shared reference is Undefined Behavior
+     = note: `#[warn(static_mut_refs)]` on by default
+help: use `addr_of!` instead to create a raw pointer
+     |
+3144 |             let stat_buf = addr_of!(in_stat_buf);
+     |                            ~~~~~~~~~           +
+
+warning: unused import: `MetadataExt`
+  --> src/main.rs:18:27
+   |
+18 |         fs::{FileTypeExt, MetadataExt, OpenOptionsExt, PermissionsExt},
+   |                           ^^^^^^^^^^^
+
+warning: value assigned to `nbytes` is never read
+   --> src/main.rs:402:9
+    |
+402 |         nbytes = adjusted_nbytes - (adjusted_nbytes % elem_size);
+    |         ^^^^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `translation`
+   --> src/main.rs:642:9
+    |
+642 |     let translation = unsafe {
+    |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_translation`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `options`
+   --> src/main.rs:783:25
+    |
+783 | fn convert_to_idiomatic(options: quoting_options) -> QuotingOptions {
+    |                         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_options`
+
+warning: unused variable: `options`
+   --> src/main.rs:796:22
+    |
+796 | fn convert_to_c_type(options: &QuotingOptions) -> quoting_options {
+    |                      ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_options`
+
+warning: unnecessary `unsafe` block
+   --> src/main.rs:971:22
+    |
+971 |     let quoted_str = unsafe { quote_rust(n_str) };
+    |                      ^^^^^^ unnecessary `unsafe` block
+    |
+    = note: `#[warn(unused_unsafe)]` on by default
+
+warning: unnecessary `unsafe` block
+    --> src/main.rs:1749:9
+     |
+1749 |         unsafe {
+     |         ^^^^^^ unnecessary `unsafe` block
+
+warning: unused variable: `n`
+    --> src/main.rs:2131:5
+     |
+2131 |     n: i32,
+     |     ^ help: if this is intentional, prefix it with an underscore: `_n`
+
+warning: unused variable: `size`
+    --> src/main.rs:2133:5
+     |
+2133 |     size: usize,
+     |     ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `options`
+    --> src/main.rs:2134:5
+     |
+2134 |     options: &quoting_options_rust,
+     |     ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_options`
+
+warning: unused variable: `metadata`
+    --> src/main.rs:2319:9
+     |
+2319 |     let metadata = std::fs::metadata("/dev/null").unwrap(); // Get a valid Metadata to start with
+     |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_metadata`
+
+warning: value assigned to `current_pos` is never read
+    --> src/main.rs:3502:13
+     |
+3502 |     let mut current_pos = 0;
+     |             ^^^^^^^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: variable does not need to be mutable
+    --> src/main.rs:3565:13
+     |
+3565 |         let mut file_out = unsafe { std::fs::File::from_raw_fd(1) };
+     |             ----^^^^^^^^
+     |             |
+     |             help: remove this `mut`
+     |
+     = note: `#[warn(unused_mut)]` on by default
+
+warning: unused variable: `total_size`
+    --> src/main.rs:3625:17
+     |
+3625 |     if let Some(total_size) = n.checked_mul(s) {
+     |                 ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_total_size`
+
+warning: unused variable: `p`
+    --> src/main.rs:3634:18
+     |
+3634 |             Some(p) => {
+     |                  ^ help: if this is intentional, prefix it with an underscore: `_p`
+
+For more information about this error, try `rustc --explain E0308`.
+warning: `foo` (bin "split") generated 53 warnings
+error: could not compile `foo` (bin "split") due to 1 previous error; 53 warnings emitted

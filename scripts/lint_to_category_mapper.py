@@ -17,6 +17,6 @@ def mapper():
     lint_to_severity = dict(zip(df["Lint Name"], df["Severity"]))
     all_categories = sorted(
         cat for cat in set(merged_df)
-        if cat and "deprecated" not in cat.lower()
+        if cat and "deprecated" not in cat.lower() and "build configuration issues" not in cat.lower() 
     )
     return lint_to_custom_category, lint_to_severity, all_categories
